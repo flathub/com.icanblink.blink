@@ -1,0 +1,14 @@
+diff --git a/resources/add_account.ui b/resources/add_account.ui
+index 5b1b27a..821475c 100644
+--- a/resources/add_account.ui
++++ b/resources/add_account.ui
+@@ -13,6 +13,9 @@
+   <property name="windowTitle">
+    <string>Add Account</string>
+   </property>
++  <property name="styleSheet">
++   <string notr="true">color:#000000;</string>
++  </property>
+   <layout class="QVBoxLayout" name="dialog_layout">
+    <property name="spacing">
+     <number>0</number>

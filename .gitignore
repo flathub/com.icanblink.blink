@@ -1,4 +1,4 @@
 *.flatpak
 /.flatpak-builder
 /build-dir
-/test-repo
+/test-repo-blink

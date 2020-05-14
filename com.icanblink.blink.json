@@ -347,6 +347,11 @@
         },
         {
           "type": "file",
+          "path": "fixes.patch",
+          "sha256": "a79eba626ea4038971c2d85ba080fd7d66dab088468d789fb99304f877af806b"
+        },
+        {
+          "type": "file",
           "path": "blink.desktop",
           "sha256": "3cc980eae9aed6b1fb42987426944f0d7b8677391bc32ebfe9fe1557b3d0fbc3"
         },
@@ -363,6 +368,7 @@
       ],
       "buildsystem": "simple",
       "build-commands": [
+        "patch -p1 < fixes.patch",
         "python2 setup.py build_ext",
         "python2 setup.py install"
       ],
