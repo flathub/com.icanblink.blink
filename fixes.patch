@@ -1,14 +1,20 @@
 diff --git a/resources/add_account.ui b/resources/add_account.ui
-index 5b1b27a..821475c 100644
+index 5b1b27a..702c31b 100644
 --- a/resources/add_account.ui
 +++ b/resources/add_account.ui
-@@ -13,6 +13,9 @@
-   <property name="windowTitle">
-    <string>Add Account</string>
-   </property>
-+  <property name="styleSheet">
-+   <string notr="true">color:#000000;</string>
-+  </property>
-   <layout class="QVBoxLayout" name="dialog_layout">
-    <property name="spacing">
-     <number>0</number>
+@@ -91,7 +91,14 @@
+       <item>
+        <widget class="QFrame" name="input_frame">
+         <property name="styleSheet">
+-         <string>QFrame#input_frame {
++         <string>
++* {
++	color: #000000;
++}
++QWidget {
++	background-color: transparent;
++}
++QFrame#input_frame {
+ 	border: 2px;
+ 	border-radius: 4px;
+ 	border-style: solid;
