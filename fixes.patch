@@ -18,3 +18,21 @@ index 5b1b27a..702c31b 100644
  	border: 2px;
  	border-radius: 4px;
  	border-style: solid;
+diff --git a/resources/audio_session.ui b/resources/audio_session.ui
+index 62e10de..b68d08c 100644
+--- a/resources/audio_session.ui
++++ b/resources/audio_session.ui
+@@ -13,6 +13,13 @@
+   <property name="windowTitle">
+    <string>Session</string>
+   </property>
++  <property name="styleSheet">
++    <string>
++* {
++	color: #000000;
++}
++    </string>
++  </property>
+   <layout class="QVBoxLayout" name="session_layout">
+    <property name="spacing">
+     <number>0</number>
