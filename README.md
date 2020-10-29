@@ -35,20 +35,19 @@ The changelog is available at http://icanblink.com/changelog/
 
 ### Here follows some commands I use to test and prefer to keep together with the repo for quick copy and paste:
 ```bash
-sudo apt-get -y install flatpak flatpak-builder
-flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-flatpak -y install flathub org.kde.Platform//5.14
-flatpak -y install flathub org.kde.Sdk//5.14
-flatpak -y install flathub io.qt.qtwebkit.BaseApp//5.14
+sudo zypper install flatpak flatpak-builder
+sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+sudo flatpak -y install flathub org.kde.Platform//5.14 org.kde.Sdk//5.14 io.qt.qtwebkit.BaseApp//5.14
 
 # BUILD
 flatpak-builder --force-clean --repo=test-repo-blink build-dir com.icanblink.blink.json
 
 # TEST
 flatpak remote-add --no-gpg-verify test-repo-blink test-repo-blink
+flatpak -y remove com.icanblink.blink
 flatpak -y --system install test-repo-blink com.icanblink.blink
 flatpak run com.icanblink.blink
-flatpak -y remove com.icanblink.blink
+flatpak run --command=/bin/bash com.icanblink.blink
 
 # EXPORT
 flatpak build-bundle test-repo-blink Blink-3.2.1.flatpak com.icanblink.blink

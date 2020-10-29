@@ -1,6 +1,7 @@
 {
   "id": "com.icanblink.blink",
   "command": "blink",
+  "separate-locales": false,
   "base": "io.qt.qtwebkit.BaseApp",
   "base-version": "5.14",
   "runtime": "org.kde.Platform",
@@ -11,14 +12,12 @@
     "--filesystem=home",
     "--share=ipc",
     "--share=network",
-    "--socket=fallback-x11",
     "--socket=pulseaudio",
-    "--socket=wayland",
+    "--socket=x11",
     "--talk-name=org.freedesktop.Notifications",
     "--talk-name=org.gtk.Notifications",
     "--talk-name=org.kde.StatusNotifierWatcher"
   ],
-  "rename-desktop-file": "blink.desktop",
   "modules": [
     {
       "name": "cpython",
@@ -354,17 +353,17 @@
         },
         {
           "type": "file",
-          "path": "blink.desktop",
+          "path": "com.icanblink.blink.desktop",
           "sha256": "3cc980eae9aed6b1fb42987426944f0d7b8677391bc32ebfe9fe1557b3d0fbc3"
         },
         {
           "type": "file",
-          "path": "blink.png",
+          "path": "com.icanblink.blink.png",
           "sha256": "c30c6a66bed48d65c17d7ed68303ccc87710d8ac35645e83ac51d7985f4b5ae9"
         },
         {
           "type": "file",
-          "path": "blink.metainfo.xml",
+          "path": "com.icanblink.blink.metainfo.xml",
           "sha256": "4f6e2c9518aba7a8336c04eaf7d46577c70424fedac27926fae91f4b7007ce6a"
         }
       ],
@@ -375,9 +374,9 @@
         "python2 setup.py install"
       ],
       "post-install": [
-        "install -Dm644 blink.desktop /app/share/applications/blink.desktop",
-        "install -Dm644 blink.png /app/share/icons/com.icanblink.blink.png",
-        "install -Dm644 blink.metainfo.xml /app/share/metainfo/com.icanblink.blink.metainfo.xml"
+        "install -Dm644 com.icanblink.blink.desktop /app/share/applications/com.icanblink.blink.desktop",
+        "install -Dm644 com.icanblink.blink.png /app/share/icons/com.icanblink.blink.png",
+        "install -Dm644 com.icanblink.blink.metainfo.xml /app/share/metainfo/com.icanblink.blink.metainfo.xml"
       ]
     }
   ]
