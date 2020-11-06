@@ -37,12 +37,16 @@ The changelog is available at http://icanblink.com/changelog/
 ```bash
 sudo zypper install flatpak flatpak-builder
 sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo flatpak -y install flathub org.kde.Platform//5.14 org.kde.Sdk//5.14 io.qt.qtwebkit.BaseApp//5.14
+sudo flatpak -y --system install flathub org.kde.Platform//5.14 org.kde.Sdk//5.14 io.qt.qtwebkit.BaseApp//5.14
 
 # BUILD
 flatpak-builder --force-clean --repo=test-repo-blink build-dir com.icanblink.blink.json
 
 # TEST
+flatpak-builder --run build-dir com.icanblink.blink.json /app/bin/blink
+flatpak-builder --run build-dir com.icanblink.blink.json /bin/bash
+
+# INSTALL
 flatpak remote-add --no-gpg-verify test-repo-blink test-repo-blink
 flatpak -y remove com.icanblink.blink
 flatpak -y --system install test-repo-blink com.icanblink.blink
@@ -53,8 +57,8 @@ flatpak run --command=/bin/bash com.icanblink.blink
 flatpak build-bundle test-repo-blink Blink-3.2.1.flatpak com.icanblink.blink
 
 # IMPORT
-sudo flatpak -y install Blink-3.2.1.flatpak
 sudo flatpak -y remove com.icanblink.blink
+sudo flatpak -y install Blink-3.2.1.flatpak
 
 ```
 
@@ -82,4 +86,3 @@ mkdir pip
 /root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION Twisted --output pip/Twisted
 
 ```
-
