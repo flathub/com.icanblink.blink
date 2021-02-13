@@ -314,7 +314,7 @@
         {
           "type": "archive",
           "path": "sources/python-cjson-1.2.2.tar.gz",
-          "sha256": "e39baed8037430cf4328fb6213f687e411983531b2ea234a0a177a2b60b9b972"
+          "sha256": "dacb2206b7d5d0fdf8d2901ed9a4c3994b8a3fc65d82f100ed5535e43e174452"
         }
       ],
       "buildsystem": "simple",
