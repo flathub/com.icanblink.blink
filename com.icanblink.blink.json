@@ -286,7 +286,7 @@
         {
           "type": "archive",
           "path": "sources/python-xcaplib-1.2.2.tar.gz",
-          "sha256": "ec8a2086ff0e2a467b70473fa8ab4bfc39d8dde67bdd2ffbafd7eb90e90df5b3"
+          "sha256": "f6a45792fa4d47272c087e4108f74adb7d9fe7199d17b3d7e213f1f6ca4b4e73"
         }
       ],
       "buildsystem": "simple",
