@@ -1,3 +1,33 @@
+diff --git a/blink/contacts.py b/blink/contacts.py
+index b23513e..e8b6f6d 100644
+--- a/blink/contacts.py
++++ b/blink/contacts.py
+@@ -948,7 +948,7 @@ class GoogleContactsManager(object):
+         settings = SIPSimpleSettings()
+         settings.google_contacts.username = notification.data.email
+         settings.save()
+-        self._service = build('people', 'v1', credentials=notification.data.credentials, http=Http(timeout=10), cache_discovery=False)  # todo: what's the best fix for cache?
++        self._service = build('people', 'v1', credentials=notification.data.credentials, cache_discovery=False)  # todo: what's the best fix for cache?
+         self.active = True
+         self.sync_contacts()  # sync_contacts is always scheduled in order to not queue posting notifications until after sync_contacts finishes, when called from a notification handler
+ 
+@@ -1604,8 +1604,6 @@ class ContactWidget(base_class, ui_class):
+         super(ContactWidget, self).__init__(parent)
+         with Resources.directory:
+             self.setupUi(self)
+-        self.info_label.setForegroundRole(QPalette.Dark)
+-        # AlternateBase set to #f0f4ff or #e0e9ff
+ 
+     def paintEvent(self, event):
+         super(ContactWidget, self).paintEvent(event)
+@@ -3907,7 +3905,6 @@ class ContactDetailView(QListView):
+     def __init__(self, contact_list):
+         super(ContactDetailView, self).__init__(contact_list.parent())
+         palette = self.palette()
+-        palette.setColor(QPalette.AlternateBase, QColor('#eeeeee'))
+         self.setPalette(palette)
+         self.contact_list = contact_list
+         self.setItemDelegate(ContactDetailDelegate(self))
 diff --git a/resources/add_account.ui b/resources/add_account.ui
 index 5b1b27a..702c31b 100644
 --- a/resources/add_account.ui
@@ -36,3 +66,259 @@ index 62e10de..b68d08c 100644
    <layout class="QVBoxLayout" name="session_layout">
     <property name="spacing">
      <number>0</number>
+diff --git a/resources/chat_session.ui b/resources/chat_session.ui
+index 3f52c64..eab3dd1 100644
+--- a/resources/chat_session.ui
++++ b/resources/chat_session.ui
+@@ -31,15 +31,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Window">
+@@ -60,15 +51,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Window">
+@@ -89,15 +71,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </disabled>
+    </palette>
+   </property>
+diff --git a/resources/chat_window.ui b/resources/chat_window.ui
+index 32b7a1e..18e9ff4 100644
+--- a/resources/chat_window.ui
++++ b/resources/chat_window.ui
+@@ -1627,15 +1627,6 @@ QToolButton:pressed {
+                          </color>
+                         </brush>
+                        </colorrole>
+-                       <colorrole role="AlternateBase">
+-                        <brush brushstyle="SolidPattern">
+-                         <color alpha="255">
+-                          <red>144</red>
+-                          <green>0</green>
+-                          <blue>0</blue>
+-                         </color>
+-                        </brush>
+-                       </colorrole>
+                       </active>
+                       <inactive>
+                        <colorrole role="Button">
+@@ -1665,15 +1656,6 @@ QToolButton:pressed {
+                          </color>
+                         </brush>
+                        </colorrole>
+-                       <colorrole role="AlternateBase">
+-                        <brush brushstyle="SolidPattern">
+-                         <color alpha="255">
+-                          <red>144</red>
+-                          <green>0</green>
+-                          <blue>0</blue>
+-                         </color>
+-                        </brush>
+-                       </colorrole>
+                       </inactive>
+                       <disabled>
+                        <colorrole role="Button">
+@@ -1703,15 +1685,6 @@ QToolButton:pressed {
+                          </color>
+                         </brush>
+                        </colorrole>
+-                       <colorrole role="AlternateBase">
+-                        <brush brushstyle="SolidPattern">
+-                         <color alpha="255">
+-                          <red>144</red>
+-                          <green>96</green>
+-                          <blue>96</blue>
+-                         </color>
+-                        </brush>
+-                       </colorrole>
+                       </disabled>
+                      </palette>
+                     </property>
+diff --git a/resources/contact.ui b/resources/contact.ui
+index e1cd468..1a8522d 100644
+--- a/resources/contact.ui
++++ b/resources/contact.ui
+@@ -22,15 +22,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Window">
+@@ -42,15 +33,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Window">
+@@ -62,15 +44,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </disabled>
+    </palette>
+   </property>
+diff --git a/resources/contact_editor.ui b/resources/contact_editor.ui
+index 093727b..e7e8a3d 100644
+--- a/resources/contact_editor.ui
++++ b/resources/contact_editor.ui
+@@ -166,43 +166,6 @@
+    </item>
+    <item row="2" column="0" colspan="3">
+     <widget class="ContactURITableView" name="addresses_table">
+-     <property name="palette">
+-      <palette>
+-       <active>
+-        <colorrole role="AlternateBase">
+-         <brush brushstyle="SolidPattern">
+-          <color alpha="255">
+-           <red>238</red>
+-           <green>238</green>
+-           <blue>238</blue>
+-          </color>
+-         </brush>
+-        </colorrole>
+-       </active>
+-       <inactive>
+-        <colorrole role="AlternateBase">
+-         <brush brushstyle="SolidPattern">
+-          <color alpha="255">
+-           <red>238</red>
+-           <green>238</green>
+-           <blue>238</blue>
+-          </color>
+-         </brush>
+-        </colorrole>
+-       </inactive>
+-       <disabled>
+-        <colorrole role="AlternateBase">
+-         <brush brushstyle="SolidPattern">
+-          <color alpha="255">
+-           <red>238</red>
+-           <green>238</green>
+-           <blue>238</blue>
+-          </color>
+-         </brush>
+-        </colorrole>
+-       </disabled>
+-      </palette>
+-     </property>
+      <property name="alternatingRowColors">
+       <bool>true</bool>
+      </property>
+diff --git a/resources/filetransfer_item.ui b/resources/filetransfer_item.ui
+index 988b406..f95dcb1 100644
+--- a/resources/filetransfer_item.ui
++++ b/resources/filetransfer_item.ui
+@@ -31,15 +31,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Window">
+@@ -60,15 +51,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Window">
+@@ -89,15 +71,6 @@
+        </color>
+       </brush>
+      </colorrole>
+-     <colorrole role="AlternateBase">
+-      <brush brushstyle="SolidPattern">
+-       <color alpha="255">
+-        <red>240</red>
+-        <green>244</green>
+-        <blue>255</blue>
+-       </color>
+-      </brush>
+-     </colorrole>
+     </disabled>
+    </palette>
+   </property>
