@@ -1,0 +1,6 @@
+*.I_HATE_PYTHON
+
+*.flatpak
+/.flatpak-builder
+/build-dir
+/repo.com.icanblink.blink

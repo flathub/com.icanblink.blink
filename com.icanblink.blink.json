@@ -1,0 +1,1002 @@
+{
+  "id": "com.icanblink.blink",
+  "command": "/app/start.sh",
+  "separate-locales": false,
+  "base": "io.qt.qtwebkit.BaseApp",
+  "base-version": "5.15",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "5.15",
+  "sdk": "org.kde.Sdk",
+  "finish-args": [
+    "--device=all",
+    "--filesystem=home",
+    "--share=ipc",
+    "--share=network",
+    "--socket=pulseaudio",
+    "--socket=x11",
+    "--talk-name=org.freedesktop.Notifications",
+    "--talk-name=org.gtk.Notifications",
+    "--talk-name=org.kde.StatusNotifierWatcher"
+  ],
+  "modules": [
+    {
+      "name": "cpython",
+      "sources": [
+        {
+          "type": "archive",
+          "path": "sources/cpython-v3.7.11.tar.gz"
+        }
+      ],
+      "config-opts": [
+        "--with-ensurepip=install"
+      ],
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ]
+    },
+    {
+      "name": "pip-wheel",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-wheel/wheel-0.36.2-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-pip",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pip\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-pip/pip-21.1.3-py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-PyQt-builder",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyQt-builder\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-PyQt-builder/packaging-20.9-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-PyQt-builder/pyparsing-2.4.7-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-PyQt-builder/PyQt_builder-1.10.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-PyQt-builder/sip-6.1.1-cp37-cp37m-manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-PyQt-builder/toml-0.10.2-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "python3-PyQt5_sip",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "path": "sources/PyQt5_sip-12.9.0.tar.gz"
+        }
+      ]
+    },
+    {
+      "name": "python3-PyQt5",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-options": {
+        "env": {
+          "QMAKEPATH": "/app/lib"
+        }
+      },
+      "build-commands": [
+        "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.8/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "path": "sources/PyQt5-5.15.4.tar.gz"
+        }
+      ]
+    },
+    {
+      "name": "python3-application",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-application.git",
+          "branch": "master"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-eventlib",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-eventlib.git",
+          "branch": "master"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-gnutls",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-gnutls.git",
+          "branch": "master"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-otr",
+      "modules": [
+        {
+          "name": "pip-otr",
+          "modules": [
+            {
+              "name": "mpfr",
+              "sources": [
+                {
+                  "type": "archive",
+                  "path": "sources/mpfr-4.1.0.tar.bz2"
+                }
+              ]
+            },
+            {
+              "name": "mpc",
+              "sources": [
+                {
+                  "type": "archive",
+                  "path": "sources/mpc-1.2.1.tar.gz"
+                }
+              ]
+            }
+          ],
+          "buildsystem": "simple",
+          "ensure-writable": [
+            "/lib/python*/site-packages/easy-install.pth",
+            "/app/lib/python*/site-packages/easy-install.pth"
+          ],
+          "build-commands": [
+            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.interface\"",
+            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gmpy2\"",
+            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography\""
+          ],
+          "sources": [
+            {
+              "type": "file",
+              "path": "sources/pip-otr/cffi-1.14.5-cp37-cp37m-manylinux1_x86_64.whl"
+            },
+            {
+              "type": "file",
+              "path": "sources/pip-otr/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl"
+            },
+            {
+              "type": "file",
+              "path": "sources/pip-otr/gmpy2-2.0.8.zip"
+            },
+            {
+              "type": "file",
+              "path": "sources/pip-otr/pycparser-2.20-py2.py3-none-any.whl"
+            },
+            {
+              "type": "file",
+              "path": "sources/pip-otr/setuptools-57.0.0-py3-none-any.whl"
+            },
+            {
+              "type": "file",
+              "path": "sources/pip-otr/zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-otr.git",
+          "branch": "master"
+        },
+        {
+          "type": "patch",
+          "path": "patches/python3-otr.patch"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-msrplib",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-msrplib.git",
+          "branch": "master"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-xcaplib",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-xcaplib.git",
+          "branch": "master"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-sipsimple",
+      "modules": [
+        {
+          "name": "libmpv",
+          "buildsystem": "simple",
+          "ensure-writable": [
+            "/lib/python*/site-packages/easy-install.pth",
+            "/app/lib/python*/site-packages/easy-install.pth"
+          ],
+          "build-commands": [
+            "/app/bin/python3.7 waf configure --prefix=${FLATPAK_DEST} --enable-libmpv-shared --disable-cplayer --disable-alsa --disable-manpage-build --disable-debug-build",
+            "/app/bin/python3.7 waf build",
+            "/app/bin/python3.7 waf install"
+          ],
+          "sources": [
+            {
+              "type": "archive",
+              "path": "sources/mpv-0.33.1.tar.gz"
+            },
+            {
+              "type": "file",
+              "path": "sources/waf-2.0.22",
+              "dest-filename": "waf"
+            }
+          ],
+          "modules": [
+            {
+              "name": "libass",
+              "config-opts": [
+                "--disable-static"
+              ],
+              "sources": [
+                {
+                  "type": "archive",
+                  "path": "sources/libass-0.15.1.tar.xz"
+                }
+              ],
+              "modules": [
+                {
+                  "name": "fribidi",
+                  "buildsystem": "simple",
+                  "build-commands": [
+                    "meson setup --prefix=${FLATPAK_DEST} --buildtype=release build -D docs=false",
+                    "ninja -C build",
+                    "ninja -C build install"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "path": "sources/fribidi-1.0.10.tar.xz"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "ffmpeg",
+              "config-opts": [
+                "--enable-shared",
+                "--disable-static",
+                "--disable-debug",
+                "--enable-gnutls",
+                "--disable-doc",
+                "--disable-ffplay",
+                "--enable-gpl",
+                "--enable-libass",
+                "--enable-libmp3lame",
+                "--enable-libpulse",
+                "--enable-libtheora",
+                "--enable-libvorbis",
+                "--enable-libvpx",
+                "--enable-libx264",
+                "--enable-version3"
+              ],
+              "sources": [
+                {
+                  "type": "archive",
+                  "path": "sources/ffmpeg-4.3.1.tar.xz"
+                }
+              ],
+              "modules": [
+                {
+                  "name": "v4l-utils",
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "path": "sources/v4l-utils-1.20.0.tar.bz2"
+                    }
+                  ],
+                  "config-opts": [
+                    "--disable-bpf",
+                    "--disable-doxygen-doc",
+                    "--disable-libdvbv5",
+                    "--disable-static",
+                    "--enable-shared",
+                    "--with-udevdir=${FLATPAK_DEST}/lib/udev"
+                  ]
+                },
+                {
+                  "name": "libvpx",
+                  "config-opts": [
+                    "--enable-runtime-cpu-detect",
+                    "--enable-shared",
+                    "--disable-static",
+                    "--enable-pic",
+                    "--disable-install-bins",
+                    "--disable-install-docs",
+                    "--disable-install-srcs",
+                    "--enable-vp8",
+                    "--enable-postproc",
+                    "--enable-vp9",
+                    "--enable-vp9-highbitdepth"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "path": "sources/libvpx-1.10.0.tar.gz"
+                    }
+                  ]
+                },
+                {
+                  "name": "x264",
+                  "config-opts": [
+                    "--prefix=${FLATPAK_DEST}",
+                    "--enable-shared",
+                    "--disable-cli",
+                    "--disable-lavf",
+                    "--enable-pic",
+                    "--disable-asm"
+                  ],
+                  "post-install": [
+                    "ln -srf ${FLATPAK_DEST}/lib/libx264.so.* ${FLATPAK_DEST}/lib/libx264.so"
+                  ],
+                  "sources": [
+                    {
+                      "type": "git",
+                      "url": "https://code.videolan.org/videolan/x264.git",
+                      "branch": "stable"
+                    }
+                  ]
+                },
+                {
+                  "name": "lame",
+                  "config-opts": [
+                    "--enable-shared",
+                    "--disable-static",
+                    "--disable-frontend",
+                    "--enable-nasm"
+                  ],
+                  "sources": [
+                    {
+                      "type": "archive",
+                      "path": "sources/lame-3.100.tar.gz"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "pip-Cython",
+          "buildsystem": "simple",
+          "ensure-writable": [
+            "/lib/python*/site-packages/easy-install.pth",
+            "/app/lib/python*/site-packages/easy-install.pth"
+          ],
+          "build-commands": [
+            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Cython\""
+          ],
+          "sources": [
+            {
+              "type": "file",
+              "path": "sources/pip-Cython/Cython-0.29.23-cp37-cp37m-manylinux1_x86_64.whl"
+            }
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-sipsimple.git",
+          "branch": "master"
+        },
+        {
+          "type": "file",
+          "path": "sources/pjproject-2.10.tar.gz",
+          "dest": "deps",
+          "dest-filename": "2.10.tar.gz"
+        },
+        {
+          "type": "git",
+          "url": "https://github.com/syco/ZRTPCPP.git",
+          "commit": "6b3cd8e6783642292bad0c21e3e5e5ce45ff3e03",
+          "dest": "deps/ZRTPCPP"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "./get_dependencies.sh",
+        "/app/bin/python3.7 setup.py build_ext",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "LibVNC",
+      "sources": [
+        {
+          "type": "archive",
+          "path": "sources/LibVNCServer-0.9.13.zip"
+        }
+      ],
+      "buildsystem": "cmake"
+    },
+    {
+      "name": "x11vnc",
+      "sources": [
+        {
+          "type": "archive",
+          "path": "sources/x11vnc-0.9.16.tar.gz"
+        },
+        {
+          "type": "patch",
+          "path": "patches/x11vnc-xfc-null-ptr.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/x11vnc-gcc10-fix.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/x11vnc-scan-limit-access-to-shared-memory.patch"
+        }
+      ]
+    },
+    {
+      "name": "pip-dnspython",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dnspython\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-dnspython/dnspython-2.1.0-py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-greenlet",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"greenlet\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-greenlet/greenlet-1.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-gevent",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gevent\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-gevent/gevent-21.1.2-cp37-cp37m-manylinux2010_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-gevent/greenlet-1.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-gevent/setuptools-57.0.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-gevent/zope.event-4.5.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-gevent/zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-lxml",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lxml\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-lxml/lxml-4.6.3-cp37-cp37m-manylinux2014_x86_64.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-twisted",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"twisted\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/attrs-21.2.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/Automat-20.2.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/constantly-15.1.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/docutils-0.17.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/hyperlink-21.0.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/idna-3.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/incremental-21.3.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/m2r-0.2.1.tar.gz"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/mistune-0.8.4-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/setuptools-57.0.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/six-1.16.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/Twisted-21.2.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-twisted/zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-python-dateutil",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-dateutil\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-python-dateutil/python_dateutil-2.8.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-python-dateutil/six-1.16.0-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-pyOpenSSL",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyOpenSSL\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-pyOpenSSL/cffi-1.14.5-cp37-cp37m-manylinux1_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pyOpenSSL/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pyOpenSSL/pycparser-2.20-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pyOpenSSL/pyOpenSSL-20.0.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pyOpenSSL/six-1.16.0-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-oauth2client",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"oauth2client\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/httplib2-0.19.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/oauth2client-4.1.3-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/pyasn1-0.4.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/pyasn1_modules-0.2.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/pyparsing-2.4.7-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/rsa-4.7.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-oauth2client/six-1.16.0-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-service-identity",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"service-identity\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/attrs-21.2.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/cffi-1.14.5-cp37-cp37m-manylinux1_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/pyasn1-0.4.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/pyasn1_modules-0.2.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/pycparser-2.20-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/service_identity-21.1.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-service-identity/six-1.16.0-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-google-api-python-client",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"google-api-python-client\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/cachetools-4.2.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/certifi-2021.5.30-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/chardet-4.0.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/google_api_core-1.30.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.10.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.53.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/google_auth-1.32.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/google_auth_httplib2-0.1.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/httplib2-0.19.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/idna-2.10-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/packaging-20.9-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/protobuf-3.17.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/pyasn1-0.4.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/pyasn1_modules-0.2.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/pyparsing-2.4.7-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/pytz-2021.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/requests-2.25.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/rsa-4.7.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/setuptools-57.0.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/six-1.16.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/uritemplate-3.0.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-google-api-python-client/urllib3-1.26.6-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "blink",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/blink-qt.git",
+          "branch": "master"
+        },
+        {
+          "type": "script",
+          "dest-filename": "start.sh",
+          "commands": [
+            "/app/bin/python3.7 /app/bin/blink $@"
+          ]
+        },
+        {
+          "type": "patch",
+          "path": "patches/blink-qt.patch"
+        },
+        {
+          "type": "file",
+          "path": "com.icanblink.blink.desktop"
+        },
+        {
+          "type": "file",
+          "path": "com.icanblink.blink.png"
+        },
+        {
+          "type": "file",
+          "path": "com.icanblink.blink.metainfo.xml"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.7 setup.py build_ext",
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
+      "post-install": [
+        "install -Dm644 com.icanblink.blink.desktop ${FLATPAK_DEST}/share/applications/com.icanblink.blink.desktop",
+        "install -Dm644 com.icanblink.blink.png ${FLATPAK_DEST}/share/icons/com.icanblink.blink.png",
+        "install -Dm644 com.icanblink.blink.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.icanblink.blink.metainfo.xml"
+      ]
+    }
+  ]
+}
