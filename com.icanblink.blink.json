@@ -133,7 +133,7 @@
         }
       },
       "build-commands": [
-        "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.8/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
+        "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.7/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
       ],
       "sources": [
         {
@@ -990,7 +990,9 @@
       ],
       "build-commands": [
         "/app/bin/python3.7 setup.py build_ext",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}",
+        "mv start.sh /app/start.sh",
+        "chmod +x /app/start.sh"
       ],
       "post-install": [
         "install -Dm644 com.icanblink.blink.desktop ${FLATPAK_DEST}/share/applications/com.icanblink.blink.desktop",
