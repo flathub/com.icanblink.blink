@@ -2,7 +2,7 @@
 <component type="desktop-application">
   <id>com.icanblink.blink</id>
   <name>Blink</name>
-  <project_license>GPL-3.0+</project_license>
+  <project_license>LicenseRef-proprietary=https://ag-projects.com/</project_license>
   <metadata_license>CC0-1.0</metadata_license>
   <summary>Blink SIP client</summary>
   <developer_name>AG Projects</developer_name>
@@ -69,6 +69,16 @@
   <provides>
     <binary>blink</binary>
   </provides>
+
+  <releases>
+    <release version="5.1.1" date="2021-06-26">
+      <description>
+        Fixed loading icons from XCAP server
+        Increase the size of some widgets
+
+      </description>
+    </release>
+  </releases>
 
   <content_rating type="oars-1.1">
     <content_attribute id="social-chat">intense</content_attribute>
