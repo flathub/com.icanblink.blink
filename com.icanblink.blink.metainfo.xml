@@ -16,66 +16,113 @@
 
   <screenshots>
     <screenshot type="default">
-      <image>http://icanblink.com/screenshots/blink-linux/0-BlinkQTScreenshot-Contacts.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/0-BlinkQTScreenshot-Contacts.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Enrollment-1.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Enrollment-1.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Enrollment-2.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Enrollment-2.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-AddContact.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-AddContact.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-AlertPanel.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-AlertPanel.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Conference-1.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Conference-1.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Conference-2.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Conference-2.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Conference.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Conference.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-FileTransfer.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-FileTransfer.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Google.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Google.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-ServerSettings.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-ServerSettings.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-1.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-1.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-2.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-2.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-3.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-3.png</image>
     </screenshot>
     <screenshot>
-      <image>http://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-4.png</image>
+      <image>https://icanblink.com/screenshots/blink-linux/BlinkQTScreenshot-Preferences-4.png</image>
     </screenshot>
   </screenshots>
 
-  <url type="homepage">https://github.com/AGProjects/blink-qt</url>
-  <url type="bugtracker">https://github.com/AGProjects/blink-qt</url>
-  <url type="help">http://icanblink.com/help/</url>
+  <url type="homepage">https://icanblink.com/</url>
+  <url type="bugtracker">https://icanblink.com/help/</url>
+  <url type="help">https://icanblink.com/help/</url>
+  <url type="changelog">https://icanblink.com/changelog-linux/</url>
 
   <provides>
     <binary>blink</binary>
   </provides>
 
   <releases>
+    <release version="5.1.3" date="2021-07-07">
+      <description>
+        Bump SDK minimum version to benefit of bug fixes
+      </description>
+    </release>
+    <release version="5.1.2" date="2021-07-03">
+      <description>
+        Fixed handling drag and drop inline images in chat window
+      </description>
+    </release>
     <release version="5.1.1" date="2021-06-26">
       <description>
         Fixed loading icons from XCAP server
         Increase the size of some widgets
-
+      </description>
+    </release>
+    <release version="5.1.0" date="2021-06-22">
+      <description>
+        Implemented auto answer
+        Added per contact auto answer setting
+        Added NAT traversal preferences panel
+        Fixed XCAP getheaders of HTTP objects, renamed to get in Python3
+        Fixed xcap trace logging
+        Fixed saving local icon
+        Fixed a broken import
+        Rename chat window title
+        Automatically set sip2sip.info server settings URL
+        Refactored application menus
+        Rename some preferences options
+      </description>
+    </release>
+    <release version="5.0.0" date="2021-06-14">
+      <description>
+        Added VP9 codec
+        Implemented TLS certificate verification
+        Added per account TLS peer name to verify against
+        Update default CA list
+        Enable by default TLS transport
+        Fixed logging
+      </description>
+    </release>
+    <release version="4.1.0" date="2021-04-09">
+      <description>
+        Google Contacts integration solved
+        Allow calling to all URIs belonging to a contact
+      </description>
+    </release>
+    <release version="4.0.0" date="2021-02-06">
+      <description>
+        Migrate to Python 3
+        Show sip account registrar address in preferences panel
       </description>
     </release>
   </releases>
