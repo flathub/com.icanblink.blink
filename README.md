@@ -35,57 +35,57 @@ The changelog is available at http://icanblink.com/changelog/
 
 ## pip
 ```bash
-docker run -it --rm -v ${PWD}:/root:rw python:3.7 /bin/bash
+docker run -it --rm -v ${PWD}:/root:rw python:3.9 /bin/bash
 
 cd
 
 rm -Rf sources/pip-wheel
-pip3.7 download -d sources/pip-wheel/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-wheel" "wheel"
+pip3.9 download -d sources/pip-wheel/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-wheel" "wheel"
 
 rm -Rf sources/pip-pip
-pip3.7 download -d sources/pip-pip/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pip" "pip"
+pip3.9 download -d sources/pip-pip/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pip" "pip"
 
 rm -Rf sources/pip-PyQt-builder
-pip3.7 download -d sources/pip-PyQt-builder/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-PyQt-builder" "PyQt-builder"
+pip3.9 download -d sources/pip-PyQt-builder/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-PyQt-builder" "PyQt-builder"
 
 rm -Rf sources/pip-otr
-pip3.7 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "zope.interface"
-pip3.7 download -d sources/pip-otr/ --find-links="file://${PWD}/sources/pip-otr" "gmpy2"
-pip3.7 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "cryptography"
+pip3.9 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "zope.interface"
+pip3.9 download -d sources/pip-otr/ --find-links="file://${PWD}/sources/pip-otr" "gmpy2"
+pip3.9 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "cryptography"
 
 rm -Rf sources/pip-Cython
-pip3.7 download -d sources/pip-Cython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-Cython" "Cython"
+pip3.9 download -d sources/pip-Cython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-Cython" "Cython"
 
 rm -Rf sources/pip-dnspython
-pip3.7 download -d sources/pip-dnspython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-dnspython" "dnspython"
+pip3.9 download -d sources/pip-dnspython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-dnspython" "dnspython"
 
 rm -Rf sources/pip-greenlet
-pip3.7 download -d sources/pip-greenlet/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-greenlet" "greenlet"
+pip3.9 download -d sources/pip-greenlet/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-greenlet" "greenlet"
 
 rm -Rf sources/pip-gevent
-pip3.7 download -d sources/pip-gevent/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-gevent" "gevent"
+pip3.9 download -d sources/pip-gevent/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-gevent" "gevent"
 
 rm -Rf sources/pip-lxml
-pip3.7 download -d sources/pip-lxml/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-lxml" "lxml"
+pip3.9 download -d sources/pip-lxml/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-lxml" "lxml"
 
 rm -Rf sources/pip-twisted
-pip3.7 download -d sources/pip-twisted/ --find-links="file://${PWD}/sources/pip-twisted" "m2r"
-pip3.7 download -d sources/pip-twisted/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-twisted" "twisted"
+pip3.9 download -d sources/pip-twisted/ --find-links="file://${PWD}/sources/pip-twisted" "m2r"
+pip3.9 download -d sources/pip-twisted/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-twisted" "twisted"
 
 rm -Rf sources/pip-python-dateutil
-pip3.7 download -d sources/pip-python-dateutil/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-python-dateutil" "python-dateutil"
+pip3.9 download -d sources/pip-python-dateutil/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-python-dateutil" "python-dateutil"
 
 rm -Rf sources/pip-pyOpenSSL
-pip3.7 download -d sources/pip-pyOpenSSL/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pyOpenSSL" "pyOpenSSL"
+pip3.9 download -d sources/pip-pyOpenSSL/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pyOpenSSL" "pyOpenSSL"
 
 rm -Rf sources/pip-oauth2client
-pip3.7 download -d sources/pip-oauth2client/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-oauth2client" "oauth2client"
+pip3.9 download -d sources/pip-oauth2client/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-oauth2client" "oauth2client"
 
 rm -Rf sources/pip-service-identity
-pip3.7 download -d sources/pip-service-identity/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-service-identity" "service-identity"
+pip3.9 download -d sources/pip-service-identity/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-service-identity" "service-identity"
 
 rm -Rf sources/pip-google-api-python-client
-pip3.7 download -d sources/pip-google-api-python-client/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-google-api-python-client" "google-api-python-client"
+pip3.9 download -d sources/pip-google-api-python-client/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-google-api-python-client" "google-api-python-client"
 
 exit
 

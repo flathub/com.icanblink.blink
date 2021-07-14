@@ -65,7 +65,6 @@
   <url type="homepage">https://icanblink.com/</url>
   <url type="bugtracker">https://icanblink.com/help/</url>
   <url type="help">https://icanblink.com/help/</url>
-  <url type="changelog">https://icanblink.com/changelog-linux/</url>
 
   <provides>
     <binary>blink</binary>

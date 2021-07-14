@@ -1,5 +1,5 @@
 diff --git a/blink/contacts.py b/blink/contacts.py
-index ca49ef4..c9ec3b4 100644
+index 1586808..374d000 100644
 --- a/blink/contacts.py
 +++ b/blink/contacts.py
 @@ -953,7 +953,7 @@ class GoogleContactsManager(object, metaclass=Singleton):
@@ -29,7 +29,7 @@ index ca49ef4..c9ec3b4 100644
          self.contact_list = contact_list
          self.setItemDelegate(ContactDetailDelegate(self))
 diff --git a/blink/mainwindow.py b/blink/mainwindow.py
-index 06989e4..6f6d4ac 100644
+index 2bf340d..bd123dc 100644
 --- a/blink/mainwindow.py
 +++ b/blink/mainwindow.py
 @@ -484,7 +484,8 @@ class MainWindow(base_class, ui_class):
@@ -79,7 +79,7 @@ index 5b1b27a..702c31b 100644
  	border-radius: 4px;
  	border-style: solid;
 diff --git a/resources/audio_session.ui b/resources/audio_session.ui
-index 62e10de..b68d08c 100644
+index 96da0ad..1a45750 100644
 --- a/resources/audio_session.ui
 +++ b/resources/audio_session.ui
 @@ -13,6 +13,13 @@
@@ -149,10 +149,10 @@ index 3f52c64..eab3dd1 100644
     </palette>
    </property>
 diff --git a/resources/chat_window.ui b/resources/chat_window.ui
-index 32b7a1e..18e9ff4 100644
+index 51d1d34..f0547d9 100644
 --- a/resources/chat_window.ui
 +++ b/resources/chat_window.ui
-@@ -1627,15 +1627,6 @@ QToolButton:pressed {
+@@ -1632,15 +1632,6 @@ QToolButton:pressed {
                           </color>
                          </brush>
                         </colorrole>
@@ -168,7 +168,7 @@ index 32b7a1e..18e9ff4 100644
                        </active>
                        <inactive>
                         <colorrole role="Button">
-@@ -1665,15 +1656,6 @@ QToolButton:pressed {
+@@ -1670,15 +1661,6 @@ QToolButton:pressed {
                           </color>
                          </brush>
                         </colorrole>
@@ -184,7 +184,7 @@ index 32b7a1e..18e9ff4 100644
                        </inactive>
                        <disabled>
                         <colorrole role="Button">
-@@ -1703,15 +1685,6 @@ QToolButton:pressed {
+@@ -1708,15 +1690,6 @@ QToolButton:pressed {
                           </color>
                          </brush>
                         </colorrole>
@@ -201,7 +201,7 @@ index 32b7a1e..18e9ff4 100644
                       </palette>
                      </property>
 diff --git a/resources/contact.ui b/resources/contact.ui
-index e1cd468..1a8522d 100644
+index 6862832..f30a4ef 100644
 --- a/resources/contact.ui
 +++ b/resources/contact.ui
 @@ -22,15 +22,6 @@

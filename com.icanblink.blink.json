@@ -24,7 +24,7 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/cpython-v3.7.11.tar.gz"
+          "path": "sources/cpython-v3.9.6.tar.gz"
         }
       ],
       "config-opts": [
@@ -43,7 +43,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\""
       ],
       "sources": [
         {
@@ -60,7 +60,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pip\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pip\""
       ],
       "sources": [
         {
@@ -77,12 +77,12 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyQt-builder\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyQt-builder\""
       ],
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/packaging-20.9-py2.py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/packaging-21.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -90,11 +90,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/PyQt_builder-1.10.1-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/PyQt_builder-1.10.3-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/sip-6.1.1-cp37-cp37m-manylinux2014_x86_64.whl"
+          "path": "sources/pip-PyQt-builder/sip-6.1.1-cp39-cp39-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -110,8 +110,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ],
       "sources": [
         {
@@ -133,7 +133,7 @@
         }
       },
       "build-commands": [
-        "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.7/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
+        "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.9/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
       ],
       "sources": [
         {
@@ -157,8 +157,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -176,8 +176,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -195,8 +195,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -230,14 +230,14 @@
             "/app/lib/python*/site-packages/easy-install.pth"
           ],
           "build-commands": [
-            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.interface\"",
-            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gmpy2\"",
-            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography\""
+            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.interface\"",
+            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gmpy2\"",
+            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography\""
           ],
           "sources": [
             {
               "type": "file",
-              "path": "sources/pip-otr/cffi-1.14.5-cp37-cp37m-manylinux1_x86_64.whl"
+              "path": "sources/pip-otr/cffi-1.14.6-cp39-cp39-manylinux1_x86_64.whl"
             },
             {
               "type": "file",
@@ -253,11 +253,11 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-57.0.0-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-57.1.0-py3-none-any.whl"
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl"
+              "path": "sources/pip-otr/zope.interface-5.4.0-cp39-cp39-manylinux2010_x86_64.whl"
             }
           ]
         }
@@ -279,8 +279,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -298,8 +298,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -309,6 +309,10 @@
           "type": "git",
           "url": "https://github.com/syco/python3-xcaplib.git",
           "branch": "master"
+        },
+        {
+          "type": "patch",
+          "path": "patches/python3-xcaplib.patch"
         }
       ],
       "buildsystem": "simple",
@@ -317,8 +321,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -332,9 +336,9 @@
             "/app/lib/python*/site-packages/easy-install.pth"
           ],
           "build-commands": [
-            "/app/bin/python3.7 waf configure --prefix=${FLATPAK_DEST} --enable-libmpv-shared --disable-cplayer --disable-alsa --disable-manpage-build --disable-debug-build",
-            "/app/bin/python3.7 waf build",
-            "/app/bin/python3.7 waf install"
+            "/app/bin/python3.9 waf configure --prefix=${FLATPAK_DEST} --enable-libmpv-shared --disable-cplayer --disable-alsa --disable-manpage-build --disable-debug-build",
+            "/app/bin/python3.9 waf build",
+            "/app/bin/python3.9 waf install"
           ],
           "sources": [
             {
@@ -490,12 +494,12 @@
             "/app/lib/python*/site-packages/easy-install.pth"
           ],
           "build-commands": [
-            "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Cython\""
+            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Cython\""
           ],
           "sources": [
             {
               "type": "file",
-              "path": "sources/pip-Cython/Cython-0.29.23-cp37-cp37m-manylinux1_x86_64.whl"
+              "path": "sources/pip-Cython/Cython-0.29.23-cp39-cp39-manylinux1_x86_64.whl"
             }
           ]
         }
@@ -526,8 +530,8 @@
       ],
       "build-commands": [
         "./get_dependencies.sh",
-        "/app/bin/python3.7 setup.py build_ext",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -569,7 +573,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dnspython\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dnspython\""
       ],
       "sources": [
         {
@@ -586,12 +590,12 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"greenlet\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"greenlet\""
       ],
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-greenlet/greenlet-1.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip-greenlet/greenlet-1.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         }
       ]
     },
@@ -603,20 +607,20 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gevent\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gevent\""
       ],
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-gevent/gevent-21.1.2-cp37-cp37m-manylinux2010_x86_64.whl"
+          "path": "sources/pip-gevent/gevent-21.1.2-cp39-cp39-manylinux2010_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/greenlet-1.1.0-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip-gevent/greenlet-1.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-57.0.0-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-57.1.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -624,7 +628,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl"
+          "path": "sources/pip-gevent/zope.interface-5.4.0-cp39-cp39-manylinux2010_x86_64.whl"
         }
       ]
     },
@@ -636,12 +640,12 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lxml\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lxml\""
       ],
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-lxml/lxml-4.6.3-cp37-cp37m-manylinux2014_x86_64.whl"
+          "path": "sources/pip-lxml/lxml-4.6.3-cp39-cp39-manylinux2014_x86_64.whl"
         }
       ]
     },
@@ -653,7 +657,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"twisted\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"twisted\""
       ],
       "sources": [
         {
@@ -694,7 +698,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-57.0.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-57.1.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -706,7 +710,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/zope.interface-5.4.0-cp37-cp37m-manylinux2010_x86_64.whl"
+          "path": "sources/pip-twisted/zope.interface-5.4.0-cp39-cp39-manylinux2010_x86_64.whl"
         }
       ]
     },
@@ -718,7 +722,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-dateutil\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-dateutil\""
       ],
       "sources": [
         {
@@ -739,12 +743,12 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyOpenSSL\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyOpenSSL\""
       ],
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cffi-1.14.5-cp37-cp37m-manylinux1_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cffi-1.14.6-cp39-cp39-manylinux1_x86_64.whl"
         },
         {
           "type": "file",
@@ -772,7 +776,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"oauth2client\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"oauth2client\""
       ],
       "sources": [
         {
@@ -813,7 +817,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"service-identity\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"service-identity\""
       ],
       "sources": [
         {
@@ -822,7 +826,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cffi-1.14.5-cp37-cp37m-manylinux1_x86_64.whl"
+          "path": "sources/pip-service-identity/cffi-1.14.6-cp39-cp39-manylinux1_x86_64.whl"
         },
         {
           "type": "file",
@@ -858,7 +862,7 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/pip3.7 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"google-api-python-client\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"google-api-python-client\""
       ],
       "sources": [
         {
@@ -871,15 +875,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/chardet-4.0.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_core-1.30.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_core-1.31.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.10.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.13.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -887,7 +891,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_auth-1.32.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_auth-1.32.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -899,15 +903,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/idna-2.10-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/idna-3.2-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/packaging-20.9-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/packaging-21.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/protobuf-3.17.3-cp37-cp37m-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+          "path": "sources/pip-google-api-python-client/protobuf-3.17.3-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
         },
         {
           "type": "file",
@@ -927,7 +931,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/requests-2.25.1-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/requests-2.26.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -935,7 +939,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/setuptools-57.0.0-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/setuptools-57.1.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -963,7 +967,7 @@
           "type": "script",
           "dest-filename": "start.sh",
           "commands": [
-            "/app/bin/python3.7 /app/bin/blink $@"
+            "/app/bin/python3.9 /app/bin/blink $@"
           ]
         },
         {
@@ -989,8 +993,8 @@
         "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "/app/bin/python3.7 setup.py build_ext",
-        "/app/bin/python3.7 setup.py install --prefix=${FLATPAK_DEST}",
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
         "mv start.sh /app/start.sh",
         "chmod +x /app/start.sh"
       ],
