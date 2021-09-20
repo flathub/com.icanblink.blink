@@ -71,6 +71,21 @@
   </provides>
 
   <releases>
+    <release version="5.1.7" date="2021-09-15">
+      <description>
+        Fix for account creation
+      </description>
+    </release>
+    <release version="5.1.6" date="2021-09-06">
+      <description>
+        Remove obsolete python-enum34 dependency
+      </description>
+    </release>
+    <release version="5.1.5" date="2021-08-27">
+      <description>
+        Screen sharing fixes
+      </description>
+    </release>
     <release version="5.1.4" date="2021-08-17">
       <description>
         Added presence and message_summary account settings
