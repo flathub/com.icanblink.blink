@@ -35,9 +35,11 @@ The changelog is available at http://icanblink.com/changelog/
 
 ## pip
 ```bash
-docker run --net host -it --rm -v ${PWD}:/root:rw python:3.9 /bin/bash -l
+docker run --net host -it --rm -v ${PWD}:/root:rw python:3.9 /bin/bash
 
 bind 'set enable-bracketed-paste off'
+
+cd
 
 rm -Rf sources/pip-wheel
 pip3.9 download -d sources/pip-wheel/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-wheel" "wheel"

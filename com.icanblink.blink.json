@@ -82,11 +82,11 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/packaging-21.2-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/packaging-21.3-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/pyparsing-2.4.7-py2.py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/pyparsing-3.0.6-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -94,11 +94,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/setuptools-59.0.1-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/setuptools-59.4.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/sip-6.4.0-cp36-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip-PyQt-builder/sip-6.5.0-cp36-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -245,7 +245,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/cryptography-35.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+              "path": "sources/pip-otr/cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
             },
             {
               "type": "file",
@@ -257,7 +257,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-59.0.1-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-59.4.0-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -624,7 +624,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-59.0.1-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-59.4.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -678,7 +678,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/docutils-0.18-py2.py3-none-any.whl"
+          "path": "sources/pip-twisted/docutils-0.18.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -702,7 +702,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-59.0.1-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-59.4.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -714,7 +714,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/typing_extensions-4.0.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/typing_extensions-4.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -760,7 +760,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cryptography-35.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -809,7 +809,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-oauth2client/rsa-4.7.2-py3-none-any.whl"
+          "path": "sources/pip-oauth2client/rsa-4.8-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -838,7 +838,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cryptography-35.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-service-identity/cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -883,7 +883,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.7-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.8-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -891,7 +891,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.30.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.32.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -935,11 +935,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/rsa-4.7.2-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/rsa-4.8-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/setuptools-59.0.1-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/setuptools-59.4.0-py3-none-any.whl"
         },
         {
           "type": "file",
