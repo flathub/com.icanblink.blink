@@ -65,7 +65,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-pip/pip-21.2.4-py3-none-any.whl"
+          "path": "sources/pip-pip/pip-21.3.1-py3-none-any.whl"
         }
       ]
     },
@@ -82,7 +82,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/packaging-21.0-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/packaging-21.2-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -90,11 +90,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/PyQt_builder-1.10.3-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/PyQt_builder-1.12.2-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/sip-6.1.1-cp39-cp39-manylinux2014_x86_64.whl"
+          "path": "sources/pip-PyQt-builder/setuptools-59.0.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-PyQt-builder/sip-6.4.0-cp36-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -237,11 +241,11 @@
           "sources": [
             {
               "type": "file",
-              "path": "sources/pip-otr/cffi-1.14.6-cp39-cp39-manylinux1_x86_64.whl"
+              "path": "sources/pip-otr/cffi-1.15.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl"
+              "path": "sources/pip-otr/cryptography-35.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
             },
             {
               "type": "file",
@@ -249,11 +253,11 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/pycparser-2.20-py2.py3-none-any.whl"
+              "path": "sources/pip-otr/pycparser-2.21-py2.py3-none-any.whl"
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-57.4.0-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-59.0.1-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -595,7 +599,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-greenlet/greenlet-1.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip-greenlet/greenlet-1.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         }
       ]
     },
@@ -616,11 +620,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/greenlet-1.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip-gevent/greenlet-1.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-57.4.0-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-59.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -645,7 +649,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-lxml/lxml-4.6.3-cp39-cp39-manylinux2014_x86_64.whl"
+          "path": "sources/pip-lxml/lxml-4.6.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
         }
       ]
     },
@@ -674,7 +678,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/docutils-0.17.1-py2.py3-none-any.whl"
+          "path": "sources/pip-twisted/docutils-0.18-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -682,7 +686,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/idna-3.2-py3-none-any.whl"
+          "path": "sources/pip-twisted/idna-3.3-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -698,7 +702,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-57.4.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-59.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -710,7 +714,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/typing_extensions-3.10.0.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/typing_extensions-4.0.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -752,19 +756,19 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cffi-1.14.6-cp39-cp39-manylinux1_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cffi-1.15.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cryptography-35.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/pycparser-2.20-py2.py3-none-any.whl"
+          "path": "sources/pip-pyOpenSSL/pycparser-2.21-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/pyOpenSSL-20.0.1-py2.py3-none-any.whl"
+          "path": "sources/pip-pyOpenSSL/pyOpenSSL-21.0.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -785,7 +789,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-oauth2client/httplib2-0.19.1-py3-none-any.whl"
+          "path": "sources/pip-oauth2client/httplib2-0.20.2-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -801,7 +805,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-oauth2client/pyparsing-2.4.7-py2.py3-none-any.whl"
+          "path": "sources/pip-oauth2client/pyparsing-3.0.6-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -830,11 +834,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cffi-1.14.6-cp39-cp39-manylinux1_x86_64.whl"
+          "path": "sources/pip-service-identity/cffi-1.15.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cryptography-3.4.7-cp36-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip-service-identity/cryptography-35.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -846,7 +850,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/pycparser-2.20-py2.py3-none-any.whl"
+          "path": "sources/pip-service-identity/pycparser-2.21-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -871,23 +875,23 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/cachetools-4.2.2-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/cachetools-4.2.4-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/certifi-2021.5.30-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/certifi-2021.10.8-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.4-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.7-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_core-2.0.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_core-2.2.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.17.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.30.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -895,7 +899,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_auth-2.0.1-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_auth-2.3.3-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -903,15 +907,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/httplib2-0.19.1-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/httplib2-0.20.2-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/idna-3.2-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/idna-3.3-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/protobuf-3.17.3-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+          "path": "sources/pip-google-api-python-client/protobuf-3.19.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -923,7 +927,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/pyparsing-2.4.7-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/pyparsing-3.0.6-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -935,7 +939,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/setuptools-57.4.0-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/setuptools-59.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -943,11 +947,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/uritemplate-3.0.1-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/uritemplate-4.1.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/urllib3-1.26.6-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/urllib3-1.26.7-py2.py3-none-any.whl"
         }
       ]
     },
