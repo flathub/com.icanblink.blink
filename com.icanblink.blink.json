@@ -94,7 +94,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/setuptools-59.4.0-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/setuptools-59.5.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -257,7 +257,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-59.4.0-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-59.5.0-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -503,7 +503,7 @@
           "sources": [
             {
               "type": "file",
-              "path": "sources/pip-Cython/Cython-0.29.24-cp39-cp39-manylinux1_x86_64.whl"
+              "path": "sources/pip-Cython/Cython-0.29.25-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
             }
           ]
         }
@@ -624,7 +624,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-59.4.0-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-59.5.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -698,11 +698,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/mistune-0.8.4-py2.py3-none-any.whl"
+          "path": "sources/pip-twisted/mistune-2.0.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-59.4.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-59.5.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -883,7 +883,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.8-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/charset_normalizer-2.0.9-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -939,7 +939,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/setuptools-59.4.0-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/setuptools-59.5.0-py3-none-any.whl"
         },
         {
           "type": "file",
