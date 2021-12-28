@@ -48,7 +48,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-wheel/wheel-0.37.0-py2.py3-none-any.whl"
+          "path": "sources/pip-wheel/wheel-0.37.1-py2.py3-none-any.whl"
         }
       ]
     },
@@ -94,7 +94,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/setuptools-59.5.0-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/setuptools-60.1.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -245,11 +245,11 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+              "path": "sources/pip-otr/cryptography-36.0.1-cp36-abi3-manylinux_2_24_x86_64.whl"
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/gmpy2-2.0.8.zip"
+              "path": "sources/pip-otr/gmpy2-2.1.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "type": "file",
@@ -257,7 +257,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-59.5.0-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-60.1.1-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -503,7 +503,7 @@
           "sources": [
             {
               "type": "file",
-              "path": "sources/pip-Cython/Cython-0.29.25-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+              "path": "sources/pip-Cython/Cython-0.29.26-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
             }
           ]
         }
@@ -616,7 +616,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-gevent/gevent-21.8.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+          "path": "sources/pip-gevent/gevent-21.12.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
         },
         {
           "type": "file",
@@ -624,7 +624,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-59.5.0-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-60.1.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -649,7 +649,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-lxml/lxml-4.6.4-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-lxml/lxml-4.7.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
         }
       ]
     },
@@ -666,7 +666,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-twisted/attrs-21.2.0-py2.py3-none-any.whl"
+          "path": "sources/pip-twisted/attrs-21.3.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -702,7 +702,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-59.5.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-60.1.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -760,7 +760,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cryptography-36.0.1-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -830,7 +830,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-service-identity/attrs-21.2.0-py2.py3-none-any.whl"
+          "path": "sources/pip-service-identity/attrs-21.3.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -838,7 +838,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cryptography-36.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-service-identity/cryptography-36.0.1-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -887,15 +887,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_core-2.2.2-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_core-2.3.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.32.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.33.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.53.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.54.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -939,7 +939,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/setuptools-59.5.0-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/setuptools-60.1.1-py3-none-any.whl"
         },
         {
           "type": "file",
