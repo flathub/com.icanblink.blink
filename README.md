@@ -33,56 +33,71 @@ The changelog is available at http://icanblink.com/changelog/
 
 ------
 
-### Here follows some commands I use to test and prefer to keep together with the repo for quick copy and paste:
+## pip
 ```bash
-sudo zypper install flatpak flatpak-builder
-sudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
-sudo flatpak -y --system install flathub org.kde.Platform//5.14 org.kde.Sdk//5.14 io.qt.qtwebkit.BaseApp//5.14
+docker run --net host -it --rm -v ${PWD}:/root:rw python:3.9 /bin/bash
 
-# BUILD
-flatpak-builder --force-clean --repo=test-repo-blink build-dir com.icanblink.blink.json
+bind 'set enable-bracketed-paste off'
 
-# TEST
-flatpak-builder --run build-dir com.icanblink.blink.json /app/bin/blink
-flatpak-builder --run build-dir com.icanblink.blink.json /bin/bash
+cd
 
-# INSTALL
-flatpak remote-add --no-gpg-verify test-repo-blink test-repo-blink
-flatpak -y remove com.icanblink.blink
-flatpak -y --system install test-repo-blink com.icanblink.blink
-flatpak run com.icanblink.blink
-flatpak run --command=/bin/bash com.icanblink.blink
+rm -Rf sources/pip-wheel
+pip3.9 download -d sources/pip-wheel/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-wheel" "wheel"
 
-# EXPORT
-flatpak build-bundle test-repo-blink Blink-3.2.1.flatpak com.icanblink.blink
+rm -Rf sources/pip-pip
+pip3.9 download -d sources/pip-pip/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pip" "pip"
 
-# IMPORT
-sudo flatpak -y remove com.icanblink.blink
-sudo flatpak -y install Blink-3.2.1.flatpak
+rm -Rf sources/pip-PyQt-builder
+pip3.9 download -d sources/pip-PyQt-builder/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-PyQt-builder" "PyQt-builder"
 
-```
+rm -Rf sources/pip-otr
+pip3.9 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "zope.interface"
+pip3.9 download -d sources/pip-otr/ --find-links="file://${PWD}/sources/pip-otr" "gmpy2"
+pip3.9 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "cryptography"
 
-## flatpak-pip-generator
-```bash
-git clone https://github.com/flatpak/flatpak-builder-tools.git /root/flatpak-builder-tools
+rm -Rf sources/pip-Cython
+pip3.9 download -d sources/pip-Cython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-Cython" "Cython"
 
-mkdir pip
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION pip --output pip/pip
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION setuptools --output pip/setuptools
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION wheel --output pip/wheel
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION Cython --output pip/Cython
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION cffi --output pip/cffi
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION dnspython --output pip/dnspython
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION gmpy2 --output pip/gmpy2
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION google-api-python-client --output pip/google-api-python-client
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION greenlet --output pip/greenlet
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION incremental --output pip/incremental
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION lxml --output pip/lxml
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION oauth2client --output pip/oauth2client
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION python-application --output pip/python-application
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION python-dateutil --output pip/python-dateutil
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION python-gnutls --output pip/python-gnutls
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION python-otr --output pip/python-otr
-/root/flatpak-builder-tools/pip/flatpak-pip-generator --python2 --no-build-isolation NO_BUILD_ISOLATION Twisted --output pip/Twisted
+rm -Rf sources/pip-dnspython
+pip3.9 download -d sources/pip-dnspython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-dnspython" "dnspython"
+
+rm -Rf sources/pip-greenlet
+pip3.9 download -d sources/pip-greenlet/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-greenlet" "greenlet"
+
+rm -Rf sources/pip-gevent
+pip3.9 download -d sources/pip-gevent/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-gevent" "gevent"
+
+rm -Rf sources/pip-lxml
+pip3.9 download -d sources/pip-lxml/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-lxml" "lxml"
+
+rm -Rf sources/pip-twisted
+pip3.9 download -d sources/pip-twisted/ --find-links="file://${PWD}/sources/pip-twisted" "m2r"
+pip3.9 download -d sources/pip-twisted/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-twisted" "twisted"
+
+rm -Rf sources/pip-python-dateutil
+pip3.9 download -d sources/pip-python-dateutil/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-python-dateutil" "python-dateutil"
+
+rm -Rf sources/pip-pyOpenSSL
+pip3.9 download -d sources/pip-pyOpenSSL/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pyOpenSSL" "pyOpenSSL"
+
+rm -Rf sources/pip-oauth2client
+pip3.9 download -d sources/pip-oauth2client/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-oauth2client" "oauth2client"
+
+rm -Rf sources/pip-service-identity
+pip3.9 download -d sources/pip-service-identity/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-service-identity" "service-identity"
+
+rm -Rf sources/pip-google-api-python-client
+pip3.9 download -d sources/pip-google-api-python-client/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-google-api-python-client" "google-api-python-client"
+
+exit
+
+rm -f .bash_history
+sudo chown $(id -u).$(id -g) . -R
+
+find sources -type d -name 'pip-*' | cut -c 9- | while IFS='' read -r x; do
+  SOURCES="$(find sources/${x} -type f | sort | awk '{print "{\"type\": \"file\", \"path\": \""$0"\"}"}' | jq -s -r -c '.')"
+  cat <<< $(jq --arg KEY "${x}" --argjson SOURCES "$SOURCES" -r '(.modules[] | select(.name == $KEY).sources) = $SOURCES' com.icanblink.blink.json) > com.icanblink.blink.json
+  cat <<< $(jq --arg KEY "${x}" --argjson SOURCES "$SOURCES" -r '(.modules[] | .modules[]? | select(.name == $KEY).sources) = $SOURCES' com.icanblink.blink.json) > com.icanblink.blink.json
+done
 
 ```

@@ -1,17 +1,17 @@
 diff --git a/blink/contacts.py b/blink/contacts.py
-index b23513e..e8b6f6d 100644
+index 1586808..374d000 100644
 --- a/blink/contacts.py
 +++ b/blink/contacts.py
-@@ -948,7 +948,7 @@ class GoogleContactsManager(object):
-         settings = SIPSimpleSettings()
+@@ -953,7 +953,7 @@ class GoogleContactsManager(object, metaclass=Singleton):
          settings.google_contacts.username = notification.data.email
          settings.save()
--        self._service = build('people', 'v1', credentials=notification.data.credentials, http=Http(timeout=10), cache_discovery=False)  # todo: what's the best fix for cache?
-+        self._service = build('people', 'v1', credentials=notification.data.credentials, cache_discovery=False)  # todo: what's the best fix for cache?
-         self.active = True
-         self.sync_contacts()  # sync_contacts is always scheduled in order to not queue posting notifications until after sync_contacts finishes, when called from a notification handler
- 
-@@ -1604,8 +1604,6 @@ class ContactWidget(base_class, ui_class):
+         try:
+-            self._service = build('people', 'v1', credentials=notification.data.credentials, http=Http(timeout=10), cache_discovery=False)  # todo: what's the best fix for cache?
++            self._service = build('people', 'v1', credentials=notification.data.credentials, cache_discovery=False)  # todo: what's the best fix for cache?
+         except Exception as e:
+             log.error('Error fetching Google contacts: %s' % str(e))
+         else:
+@@ -1612,8 +1612,6 @@ class ContactWidget(base_class, ui_class):
          super(ContactWidget, self).__init__(parent)
          with Resources.directory:
              self.setupUi(self)
@@ -20,7 +20,7 @@ index b23513e..e8b6f6d 100644
  
      def paintEvent(self, event):
          super(ContactWidget, self).paintEvent(event)
-@@ -3907,7 +3905,6 @@ class ContactDetailView(QListView):
+@@ -3971,7 +3969,6 @@ class ContactDetailView(QListView):
      def __init__(self, contact_list):
          super(ContactDetailView, self).__init__(contact_list.parent())
          palette = self.palette()
@@ -28,6 +28,36 @@ index b23513e..e8b6f6d 100644
          self.setPalette(palette)
          self.contact_list = contact_list
          self.setItemDelegate(ContactDetailDelegate(self))
+diff --git a/blink/mainwindow.py b/blink/mainwindow.py
+index 2bf340d..bd123dc 100644
+--- a/blink/mainwindow.py
++++ b/blink/mainwindow.py
+@@ -484,7 +484,8 @@ class MainWindow(base_class, ui_class):
+     def _AH_QuitActionTriggered(self):
+         if self.system_tray_icon is not None:
+             self.system_tray_icon.hide()
+-        QApplication.instance().quit()
++        #QApplication.instance().quit()
++        os._exit(0)
+ 
+     def _SH_AccountStateChanged(self):
+         self.activity_note.setText(self.account_state.note)
+diff --git a/blink/resources.py b/blink/resources.py
+index 76992be..87c0fbc 100644
+--- a/blink/resources.py
++++ b/blink/resources.py
+@@ -162,7 +162,10 @@ class IconManager(object, metaclass=Singleton):
+             pixmap.save(buffer, 'png')
+             data = buffer.data()
+             with open(filename, 'wb') as f:
+-                f.write(data)
++                if type(data) is bytes:
++                    f.write(data)
++                else:
++                    f.write(data.encode())
+             icon = QIcon(pixmap)
+             icon.filename = filename
+             icon.content = data
 diff --git a/resources/add_account.ui b/resources/add_account.ui
 index 5b1b27a..702c31b 100644
 --- a/resources/add_account.ui
@@ -49,7 +79,7 @@ index 5b1b27a..702c31b 100644
  	border-radius: 4px;
  	border-style: solid;
 diff --git a/resources/audio_session.ui b/resources/audio_session.ui
-index 62e10de..b68d08c 100644
+index 96da0ad..1a45750 100644
 --- a/resources/audio_session.ui
 +++ b/resources/audio_session.ui
 @@ -13,6 +13,13 @@
@@ -119,10 +149,10 @@ index 3f52c64..eab3dd1 100644
     </palette>
    </property>
 diff --git a/resources/chat_window.ui b/resources/chat_window.ui
-index 32b7a1e..18e9ff4 100644
+index 51d1d34..f0547d9 100644
 --- a/resources/chat_window.ui
 +++ b/resources/chat_window.ui
-@@ -1627,15 +1627,6 @@ QToolButton:pressed {
+@@ -1632,15 +1632,6 @@ QToolButton:pressed {
                           </color>
                          </brush>
                         </colorrole>
@@ -138,7 +168,7 @@ index 32b7a1e..18e9ff4 100644
                        </active>
                        <inactive>
                         <colorrole role="Button">
-@@ -1665,15 +1656,6 @@ QToolButton:pressed {
+@@ -1670,15 +1661,6 @@ QToolButton:pressed {
                           </color>
                          </brush>
                         </colorrole>
@@ -154,7 +184,7 @@ index 32b7a1e..18e9ff4 100644
                        </inactive>
                        <disabled>
                         <colorrole role="Button">
-@@ -1703,15 +1685,6 @@ QToolButton:pressed {
+@@ -1708,15 +1690,6 @@ QToolButton:pressed {
                           </color>
                          </brush>
                         </colorrole>
@@ -171,7 +201,7 @@ index 32b7a1e..18e9ff4 100644
                       </palette>
                      </property>
 diff --git a/resources/contact.ui b/resources/contact.ui
-index e1cd468..1a8522d 100644
+index 6862832..f30a4ef 100644
 --- a/resources/contact.ui
 +++ b/resources/contact.ui
 @@ -22,15 +22,6 @@
@@ -223,7 +253,7 @@ index e1cd468..1a8522d 100644
     </palette>
    </property>
 diff --git a/resources/contact_editor.ui b/resources/contact_editor.ui
-index 093727b..e7e8a3d 100644
+index cbe3f07..3792ff4 100644
 --- a/resources/contact_editor.ui
 +++ b/resources/contact_editor.ui
 @@ -166,43 +166,6 @@

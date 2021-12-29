@@ -1,3 +1,5 @@
+*.I_HATE_PYTHON
+
 *.flatpak
 /.flatpak-builder
 /build-dir
