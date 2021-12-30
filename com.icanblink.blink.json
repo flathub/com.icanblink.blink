@@ -24,7 +24,7 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/cpython-v3.9.6.tar.gz"
+          "path": "sources/cpython-3.9.9.tar.gz"
         }
       ],
       "config-opts": [
@@ -142,7 +142,7 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/PyQt5-5.15.4.tar.gz"
+          "path": "sources/PyQt5-5.15.6.tar.gz"
         }
       ]
     },
@@ -347,11 +347,11 @@
           "sources": [
             {
               "type": "archive",
-              "path": "sources/mpv-0.33.1.tar.gz"
+              "path": "sources/mpv-0.34.0.tar.gz"
             },
             {
               "type": "file",
-              "path": "sources/waf-2.0.22",
+              "path": "sources/waf-2.0.23",
               "dest-filename": "waf"
             }
           ],
@@ -364,7 +364,7 @@
               "sources": [
                 {
                   "type": "archive",
-                  "path": "sources/libass-0.15.1.tar.xz"
+                  "path": "sources/libass-0.15.2.tar.xz"
                 }
               ],
               "modules": [
@@ -379,7 +379,7 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "path": "sources/fribidi-1.0.10.tar.xz"
+                      "path": "sources/fribidi-1.0.11.tar.xz"
                     }
                   ]
                 }
@@ -407,7 +407,7 @@
               "sources": [
                 {
                   "type": "archive",
-                  "path": "sources/ffmpeg-4.3.1.tar.xz"
+                  "path": "sources/ffmpeg-4.4.1.tar.xz"
                 }
               ],
               "modules": [
@@ -416,7 +416,7 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "path": "sources/v4l-utils-1.20.0.tar.bz2"
+                      "path": "sources/v4l-utils-1.22.1.tar.bz2"
                     }
                   ],
                   "config-opts": [
@@ -446,7 +446,7 @@
                   "sources": [
                     {
                       "type": "archive",
-                      "path": "sources/libvpx-1.10.0.tar.gz"
+                      "path": "sources/libvpx-1.11.0.tar.gz"
                     }
                   ]
                 },
