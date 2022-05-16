@@ -65,7 +65,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-pip/pip-22.0.4-py3-none-any.whl"
+          "path": "sources/pip-pip/pip-22.1-py3-none-any.whl"
         }
       ]
     },
@@ -90,7 +90,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/pyparsing-3.0.8-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/pyparsing-3.0.9-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -98,7 +98,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/setuptools-62.1.0-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/setuptools-62.2.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -249,7 +249,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/cryptography-37.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+              "path": "sources/pip-otr/cryptography-37.0.2-cp36-abi3-manylinux_2_24_x86_64.whl"
             },
             {
               "type": "file",
@@ -261,7 +261,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-62.1.0-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-62.2.0-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -620,7 +620,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-62.1.0-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-62.2.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -698,7 +698,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-62.1.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-62.2.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -756,7 +756,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cryptography-37.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cryptography-37.0.2-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -797,7 +797,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-oauth2client/pyparsing-3.0.8-py3-none-any.whl"
+          "path": "sources/pip-oauth2client/pyparsing-3.0.9-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -830,7 +830,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cryptography-37.0.0-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-service-identity/cryptography-37.0.2-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
@@ -867,7 +867,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/cachetools-5.0.0-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/cachetools-5.1.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -879,15 +879,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_core-2.7.2-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_core-2.7.3-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.46.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.47.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.56.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.56.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -919,7 +919,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/pyparsing-3.0.8-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/pyparsing-3.0.9-py3-none-any.whl"
         },
         {
           "type": "file",
