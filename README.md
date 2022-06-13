@@ -70,6 +70,9 @@ pip3.9 download -d sources/pip-gevent/ --only-binary=:all: --find-links="file://
 rm -Rf sources/pip-lxml
 pip3.9 download -d sources/pip-lxml/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-lxml" "lxml"
 
+rm -Rf sources/pip-sqlobject
+pip3.9 download -d sources/pip-sqlobject/ --find-links="file://${PWD}/sources/pip-sqlobject" "sqlobject"
+
 rm -Rf sources/pip-twisted
 pip3.9 download -d sources/pip-twisted/ --find-links="file://${PWD}/sources/pip-twisted" "m2r"
 pip3.9 download -d sources/pip-twisted/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-twisted" "twisted"

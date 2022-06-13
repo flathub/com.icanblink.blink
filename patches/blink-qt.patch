@@ -2,16 +2,7 @@ diff --git a/blink/contacts.py b/blink/contacts.py
 index 1586808..374d000 100644
 --- a/blink/contacts.py
 +++ b/blink/contacts.py
-@@ -953,7 +953,7 @@ class GoogleContactsManager(object, metaclass=Singleton):
-         settings.google_contacts.username = notification.data.email
-         settings.save()
-         try:
--            self._service = build('people', 'v1', credentials=notification.data.credentials, http=Http(timeout=10), cache_discovery=False)  # todo: what's the best fix for cache?
-+            self._service = build('people', 'v1', credentials=notification.data.credentials, cache_discovery=False)  # todo: what's the best fix for cache?
-         except Exception as e:
-             log.error('Error fetching Google contacts: %s' % str(e))
-         else:
-@@ -1612,8 +1612,6 @@ class ContactWidget(base_class, ui_class):
+@@ -1616,8 +1616,6 @@ class ContactWidget(base_class, ui_class):
          super(ContactWidget, self).__init__(parent)
          with Resources.directory:
              self.setupUi(self)
@@ -20,7 +11,7 @@ index 1586808..374d000 100644
  
      def paintEvent(self, event):
          super(ContactWidget, self).paintEvent(event)
-@@ -3971,7 +3969,6 @@ class ContactDetailView(QListView):
+@@ -3990,7 +3988,6 @@ class ContactDetailView(QListView):
      def __init__(self, contact_list):
          super(ContactDetailView, self).__init__(contact_list.parent())
          palette = self.palette()

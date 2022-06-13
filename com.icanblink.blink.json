@@ -65,7 +65,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-pip/pip-22.1-py3-none-any.whl"
+          "path": "sources/pip-pip/pip-22.1.2-py3-none-any.whl"
         }
       ]
     },
@@ -98,7 +98,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-PyQt-builder/setuptools-62.2.0-py3-none-any.whl"
+          "path": "sources/pip-PyQt-builder/setuptools-62.3.3-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -261,7 +261,7 @@
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/setuptools-62.2.0-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-62.3.3-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -499,7 +499,7 @@
           "sources": [
             {
               "type": "file",
-              "path": "sources/pip-Cython/Cython-0.29.28-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+              "path": "sources/pip-Cython/Cython-0.29.30-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
             }
           ]
         }
@@ -620,7 +620,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-gevent/setuptools-62.2.0-py3-none-any.whl"
+          "path": "sources/pip-gevent/setuptools-62.3.3-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -645,7 +645,36 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-lxml/lxml-4.8.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-lxml/lxml-4.9.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-sqlobject",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sqlobject\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-sqlobject/FormEncode-2.0.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-sqlobject/PyDispatcher-2.0.5.zip"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-sqlobject/six-1.16.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-sqlobject/SQLObject-3.9.1-py2.py3-none-any.whl"
         }
       ]
     },
@@ -698,7 +727,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/setuptools-62.2.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/setuptools-62.3.3-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -867,11 +896,11 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/cachetools-5.1.0-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/cachetools-5.2.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/certifi-2021.10.8-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/certifi-2022.5.18.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -879,19 +908,19 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_core-2.7.3-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_core-2.8.1-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.47.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.50.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.56.1-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/googleapis_common_protos-1.56.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_auth-2.6.6-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_auth-2.7.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -923,7 +952,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/requests-2.27.1-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/requests-2.28.0-py3-none-any.whl"
         },
         {
           "type": "file",
