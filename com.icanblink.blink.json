@@ -156,7 +156,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-application.git",
-          "branch": "master"
+          "tag": "release-3.0.4"
         }
       ],
       "buildsystem": "simple",
@@ -175,7 +175,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-eventlib.git",
-          "branch": "master"
+          "tag": "0.3.0"
         }
       ],
       "buildsystem": "simple",
@@ -194,7 +194,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-gnutls.git",
-          "branch": "master"
+          "tag": "release-3.1.10"
         }
       ],
       "buildsystem": "simple",
@@ -274,7 +274,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-otr.git",
-          "branch": "master"
+          "tag": "2.0.1"
         }
       ],
       "buildsystem": "simple",
@@ -293,7 +293,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-msrplib.git",
-          "branch": "master"
+          "tag": "0.21.0"
         }
       ],
       "buildsystem": "simple",
@@ -312,7 +312,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-xcaplib.git",
-          "branch": "master"
+          "tag": "2.0.1"
         }
       ],
       "buildsystem": "simple",
@@ -508,7 +508,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-sipsimple.git",
-          "branch": "master"
+          "tag": "5.2.6"
         },
         {
           "type": "file",
@@ -978,7 +978,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/blink-qt.git",
-          "branch": "master"
+          "tag": "5.2.0"
         },
         {
           "type": "script",
