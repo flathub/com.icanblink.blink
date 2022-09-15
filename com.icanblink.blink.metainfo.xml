@@ -71,6 +71,18 @@
   </provides>
 
   <releases>
+    <release version="5.3.0" date="2022-09-07">
+      <description>
+        Added OpenPGP encryption for SIP Messages
+        Added offline messaging based on SylkServer API
+        Added multiple device synchronization for SIP messages
+        Added message trace/logging
+        Added advanced messaging options in account preferences
+        Improved python 3.10 compatibilty
+        Fixed Google contacts to not use deprecated OOB flow
+        Several fixes for IMDN and history storage
+      </description>
+    </release>
     <release version="5.1.8" date="2021-11-15">
       <description>
         Replaced Let's Encrypt Root CA

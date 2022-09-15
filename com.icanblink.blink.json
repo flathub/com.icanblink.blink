@@ -70,6 +70,68 @@
       ]
     },
     {
+      "name": "pip-cryptography",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-cryptography/cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-cryptography/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-cryptography/pycparser-2.21-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
+      "name": "pip-pgpy",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/lib/python*/site-packages/easy-install.pth",
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pgpy\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip-pgpy/cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pgpy/cryptography-38.0.1-cp36-abi3-manylinux_2_28_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pgpy/PGPy-0.5.4-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pgpy/pyasn1-0.4.8-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pgpy/pycparser-2.21-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip-pgpy/six-1.16.0-py2.py3-none-any.whl"
+        }
+      ]
+    },
+    {
       "name": "pip-PyQt-builder",
       "buildsystem": "simple",
       "ensure-writable": [
@@ -156,7 +218,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-application.git",
-          "branch": "master"
+          "tag": "release-3.0.4"
         }
       ],
       "buildsystem": "simple",
@@ -175,7 +237,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-eventlib.git",
-          "branch": "master"
+          "tag": "0.3.0"
         }
       ],
       "buildsystem": "simple",
@@ -194,7 +256,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-gnutls.git",
-          "branch": "master"
+          "tag": "release-3.1.10"
         }
       ],
       "buildsystem": "simple",
@@ -239,29 +301,16 @@
           ],
           "build-commands": [
             "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.interface\"",
-            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gmpy2\"",
-            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography\""
+            "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gmpy2\""
           ],
           "sources": [
-            {
-              "type": "file",
-              "path": "sources/pip-otr/cffi-1.15.0-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
-            },
-            {
-              "type": "file",
-              "path": "sources/pip-otr/cryptography-37.0.2-cp36-abi3-manylinux_2_24_x86_64.whl"
-            },
             {
               "type": "file",
               "path": "sources/pip-otr/gmpy2-2.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
             {
               "type": "file",
-              "path": "sources/pip-otr/pycparser-2.21-py2.py3-none-any.whl"
-            },
-            {
-              "type": "file",
-              "path": "sources/pip-otr/setuptools-62.3.3-py3-none-any.whl"
+              "path": "sources/pip-otr/setuptools-65.3.0-py3-none-any.whl"
             },
             {
               "type": "file",
@@ -274,7 +323,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-otr.git",
-          "branch": "master"
+          "commit": "fbb42e3d288f693b6b2b55cbed327f8b475e937e"
         }
       ],
       "buildsystem": "simple",
@@ -293,7 +342,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-msrplib.git",
-          "branch": "master"
+          "tag": "0.21.0"
         }
       ],
       "buildsystem": "simple",
@@ -312,7 +361,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-xcaplib.git",
-          "branch": "master"
+          "tag": "2.0.1"
         }
       ],
       "buildsystem": "simple",
@@ -508,7 +557,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-sipsimple.git",
-          "branch": "master"
+          "commit": "1e60156a4abc2bf8dfcabe33274d776078a6631e"
         },
         {
           "type": "file",
@@ -666,7 +715,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-sqlobject/PyDispatcher-2.0.5.zip"
+          "path": "sources/pip-sqlobject/PyDispatcher-2.0.6.tar.gz"
         },
         {
           "type": "file",
@@ -711,7 +760,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/idna-3.3-py3-none-any.whl"
+          "path": "sources/pip-twisted/idna-3.4-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -735,7 +784,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-twisted/Twisted-22.4.0-py3-none-any.whl"
+          "path": "sources/pip-twisted/Twisted-22.8.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -785,7 +834,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-pyOpenSSL/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-pyOpenSSL/cryptography-38.0.1-cp36-abi3-manylinux_2_28_x86_64.whl"
         },
         {
           "type": "file",
@@ -859,7 +908,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-service-identity/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-service-identity/cryptography-38.0.1-cp36-abi3-manylinux_2_28_x86_64.whl"
         },
         {
           "type": "file",
@@ -900,7 +949,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/certifi-2022.6.15-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/certifi-2022.9.14-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -908,11 +957,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_core-2.8.2-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_core-2.10.1-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/google_api_python_client-2.58.0-py2.py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/google_api_python_client-2.61.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -932,11 +981,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/idna-3.3-py3-none-any.whl"
+          "path": "sources/pip-google-api-python-client/idna-3.4-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-google-api-python-client/protobuf-4.21.5-cp37-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip-google-api-python-client/protobuf-4.21.6-cp37-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -978,7 +1027,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/blink-qt.git",
-          "tag": "5.2.0"
+          "tag": "5.3.0"
         },
         {
           "type": "script",

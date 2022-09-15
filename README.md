@@ -47,13 +47,18 @@ pip3.9 download -d sources/pip-wheel/ --only-binary=:all: --find-links="file://$
 rm -Rf sources/pip-pip
 pip3.9 download -d sources/pip-pip/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pip" "pip"
 
+rm -Rf sources/pip-cryptography
+pip3.9 download -d sources/pip-cryptography/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-cryptography" "cryptography<38.0.0"
+
+rm -Rf sources/pip-pgpy
+pip3.9 download -d sources/pip-pgpy/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-pgpy" "pgpy"
+
 rm -Rf sources/pip-PyQt-builder
 pip3.9 download -d sources/pip-PyQt-builder/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-PyQt-builder" "PyQt-builder"
 
 rm -Rf sources/pip-otr
 pip3.9 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "zope.interface"
 pip3.9 download -d sources/pip-otr/ --find-links="file://${PWD}/sources/pip-otr" "gmpy2"
-pip3.9 download -d sources/pip-otr/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-otr" "cryptography"
 
 rm -Rf sources/pip-Cython
 pip3.9 download -d sources/pip-Cython/ --only-binary=:all: --find-links="file://${PWD}/sources/pip-Cython" "Cython"
