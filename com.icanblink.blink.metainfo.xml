@@ -2,8 +2,8 @@
 <component type="desktop-application">
   <id>com.icanblink.blink</id>
   <name>Blink</name>
-  <project_license>LicenseRef-proprietary=https://ag-projects.com/</project_license>
-  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3+</project_license>
+  <metadata_license>GPL-3.0-or-later</metadata_license>
   <summary>Blink SIP client</summary>
   <developer_name>AG Projects</developer_name>
   <description>
@@ -71,6 +71,14 @@
   </provides>
 
   <releases>
+    <release version="5.4.0" date="2022-09-30">
+      <description>
+        Added OTR encryption to SIP Message sessions
+        Add option to add/remove realtime chat during audio/video calls
+        PGP encryption fixes
+        Added more log mesaages
+      </description>
+    </release>
     <release version="5.3.0" date="2022-09-07">
       <description>
         Added OpenPGP encryption for SIP Messages
@@ -81,6 +89,27 @@
         Improved python 3.10 compatibilty
         Fixed Google contacts to not use deprecated OOB flow
         Several fixes for IMDN and history storage
+      </description>
+    </release>
+    <release version="5.2.0" date="2022-06-09">
+      <description>
+        Added SIP Message functionality
+        Added history for chat and messages
+        Solved issues with python 3.10
+        Fixed wrong classes on chat messages
+        Fixed background icon path
+        Fixed encryption widget
+        Fixed monkey patch warning
+        Added status support for (chat) messages
+        Use SIP message method as default for 'chat'
+        Added IMDN support for messages
+        Added menuitem to show last conversations
+        Added setting to add unknown message contacts to contact list
+        Fixed google contacts
+        Reorganized 'Advanced' preferences
+        Added option to show name and uri in call history menu
+        Updated copyright years
+        Cleaned up code/syntax
       </description>
     </release>
     <release version="5.1.8" date="2021-11-15">
@@ -147,18 +176,6 @@
         Update default CA list
         Enable by default TLS transport
         Fixed logging
-      </description>
-    </release>
-    <release version="4.1.0" date="2021-04-09">
-      <description>
-        Google Contacts integration solved
-        Allow calling to all URIs belonging to a contact
-      </description>
-    </release>
-    <release version="4.0.0" date="2021-02-06">
-      <description>
-        Migrate to Python 3
-        Show sip account registrar address in preferences panel
       </description>
     </release>
   </releases>
