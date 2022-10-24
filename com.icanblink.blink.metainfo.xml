@@ -2,8 +2,8 @@
 <component type="desktop-application">
   <id>com.icanblink.blink</id>
   <name>Blink</name>
-  <project_license>GPL-3+</project_license>
-  <metadata_license>GPL-3.0-or-later</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <metadata_license>FSFAP</metadata_license>
   <summary>Blink SIP client</summary>
   <developer_name>AG Projects</developer_name>
   <description>
@@ -71,6 +71,17 @@
   </provides>
 
   <releases>
+    <release version="5.5.0" date="2022-10-21">
+      <description>
+        Added multi-language support
+        Added Dutch translation
+        Added documentation folder doc/
+        Added messaging notes
+        Improved python 3.10 compatibility
+        Added more logging
+        Fixed opening last coversations multiple times
+      </description>
+    </release>
     <release version="5.4.0" date="2022-09-30">
       <description>
         Added OTR encryption to SIP Message sessions
