@@ -71,6 +71,17 @@
   </provides>
 
   <releases>
+    <release version="5.5.0" date="2022-10-21">
+      <description>
+        Added multi-language support
+        Added Dutch translation
+        Added documentation folder doc/
+        Added messaging notes
+        Improved python 3.10 compatibility
+        Added more logging
+        Fixed opening last coversations multiple times
+      </description>
+    </release>
     <release version="5.4.0" date="2022-09-30">
       <description>
         Added OTR encryption to SIP Message sessions
