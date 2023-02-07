@@ -336,7 +336,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-application.git",
-          "tag": "release-3.0.4"
+          "tag": "release-3.0.5"
         }
       ],
       "buildsystem": "simple",
@@ -611,7 +611,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-sipsimple.git",
-          "commit": "1e60156a4abc2bf8dfcabe33274d776078a6631e"
+          "commit": "f57ecabb8a8c121bcf5db4f719188659d6f6e7c3"
         },
         {
           "type": "file",
