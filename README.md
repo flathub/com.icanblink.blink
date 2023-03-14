@@ -42,12 +42,12 @@ bind 'set enable-bracketed-paste off'
 cd
 
 rm -Rf sources/pip-zzz
-pip3.9 download -d sources/pip-zzz/ --find-links="file://${PWD}/sources/pip-zzz" "wheel" "pip" "cryptography<38.0.0" "pgpy" "PyQt-builder" "zope.interface" "gmpy2" "Cython" "dnspython" "greenlet" "gevent" "lxml" "sqlobject" "m2r" "twisted" "python-dateutil" "pyOpenSSL" "oauth2client" "service-identity" "google-api-python-client"
+pip download -d sources/pip-zzz/ --find-links="file://${PWD}/sources/pip-zzz" "wheel" "pip" "cryptography<38.0.0" "pgpy" "PyQt-builder" "zope.interface" "gmpy2" "Cython" "dnspython" "greenlet" "gevent" "lxml" "sqlobject" "m2r" "twisted" "python-dateutil" "pyOpenSSL" "oauth2client" "service-identity" "google-api-python-client"
 
 exit
 
 rm -f .bash_history
-sudo chown $(id -u).$(id -g) . -R
+sudo chown $(id -u):$(id -g) . -R
 
 SOURCES="$(find sources/pip-zzz -type f | sort | awk '{print "{\"type\": \"file\", \"path\": \""$0"\"}"}' | jq -s -r -c '.')"
 cat <<< $(jq --arg KEY "pip-zzz" --argjson SOURCES "$SOURCES" -r '(.modules[] | select(.name == $KEY).sources) = $SOURCES' com.icanblink.blink.json) > com.icanblink.blink.json

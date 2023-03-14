@@ -336,7 +336,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-application.git",
-          "tag": "release-3.0.5"
+          "tag": "release-3.0.6"
         }
       ],
       "buildsystem": "simple",
@@ -393,7 +393,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-otr.git",
-          "commit": "fbb42e3d288f693b6b2b55cbed327f8b475e937e"
+          "commit": "296b95e959b371f5767e2a965beb501dcbe74269"
         }
       ],
       "buildsystem": "simple",
