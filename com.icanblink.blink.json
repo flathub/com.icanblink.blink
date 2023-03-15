@@ -336,7 +336,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-application.git",
-          "tag": "release-3.0.4"
+          "tag": "release-3.0.6"
         }
       ],
       "buildsystem": "simple",
@@ -393,7 +393,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/python3-otr.git",
-          "commit": "fbb42e3d288f693b6b2b55cbed327f8b475e937e"
+          "commit": "296b95e959b371f5767e2a965beb501dcbe74269"
         }
       ],
       "buildsystem": "simple",
@@ -447,171 +447,13 @@
     {
       "name": "python3-sipsimple",
       "modules": [
-        {
-          "name": "libmpv",
-          "buildsystem": "simple",
-          "ensure-writable": [
-            "/lib/python*/site-packages/easy-install.pth",
-            "/app/lib/python*/site-packages/easy-install.pth"
-          ],
-          "build-commands": [
-            "/app/bin/python3.9 waf configure --prefix=${FLATPAK_DEST} --enable-libmpv-shared --disable-cplayer --disable-alsa --disable-manpage-build --disable-debug-build",
-            "/app/bin/python3.9 waf build",
-            "/app/bin/python3.9 waf install"
-          ],
-          "sources": [
-            {
-              "type": "archive",
-              "path": "sources/mpv-v0.34.1.tar.gz"
-            },
-            {
-              "type": "file",
-              "path": "sources/waf-2.0.24",
-              "dest-filename": "waf"
-            }
-          ],
-          "modules": [
-            {
-              "name": "libass",
-              "config-opts": [
-                "--disable-static"
-              ],
-              "sources": [
-                {
-                  "type": "archive",
-                  "path": "sources/libass-0.16.0.tar.xz"
-                }
-              ],
-              "modules": [
-                {
-                  "name": "fribidi",
-                  "buildsystem": "simple",
-                  "build-commands": [
-                    "meson setup --prefix=${FLATPAK_DEST} --buildtype=release build -D docs=false",
-                    "ninja -C build",
-                    "ninja -C build install"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "path": "sources/fribidi-1.0.12.tar.xz"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "ffmpeg",
-              "config-opts": [
-                "--enable-shared",
-                "--disable-static",
-                "--disable-debug",
-                "--enable-gnutls",
-                "--disable-doc",
-                "--disable-ffplay",
-                "--enable-gpl",
-                "--enable-libass",
-                "--enable-libmp3lame",
-                "--enable-libpulse",
-                "--enable-libtheora",
-                "--enable-libvorbis",
-                "--enable-libvpx",
-                "--enable-libx264",
-                "--enable-version3"
-              ],
-              "sources": [
-                {
-                  "type": "archive",
-                  "path": "sources/ffmpeg-4.4.1.tar.xz"
-                }
-              ],
-              "modules": [
-                {
-                  "name": "v4l-utils",
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "path": "sources/v4l-utils-1.22.1.tar.bz2"
-                    }
-                  ],
-                  "config-opts": [
-                    "--disable-bpf",
-                    "--disable-doxygen-doc",
-                    "--disable-libdvbv5",
-                    "--disable-static",
-                    "--enable-shared",
-                    "--with-udevdir=${FLATPAK_DEST}/lib/udev"
-                  ]
-                },
-                {
-                  "name": "libvpx",
-                  "config-opts": [
-                    "--enable-runtime-cpu-detect",
-                    "--enable-shared",
-                    "--disable-static",
-                    "--enable-pic",
-                    "--disable-install-bins",
-                    "--disable-install-docs",
-                    "--disable-install-srcs",
-                    "--enable-vp8",
-                    "--enable-postproc",
-                    "--enable-vp9",
-                    "--enable-vp9-highbitdepth"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "path": "sources/libvpx-1.12.0.tar.gz"
-                    }
-                  ]
-                },
-                {
-                  "name": "x264",
-                  "config-opts": [
-                    "--prefix=${FLATPAK_DEST}",
-                    "--enable-shared",
-                    "--disable-cli",
-                    "--disable-lavf",
-                    "--enable-pic",
-                    "--disable-asm"
-                  ],
-                  "post-install": [
-                    "ln -srf ${FLATPAK_DEST}/lib/libx264.so.* ${FLATPAK_DEST}/lib/libx264.so"
-                  ],
-                  "sources": [
-                    {
-                      "type": "git",
-                      "url": "https://code.videolan.org/videolan/x264.git",
-                      "branch": "stable",
-                      "commit": "baee400fa9ced6f5481a728138fed6e867b0ff7f"
-                    }
-                  ]
-                },
-                {
-                  "name": "lame",
-                  "config-opts": [
-                    "--enable-shared",
-                    "--disable-static",
-                    "--disable-frontend",
-                    "--enable-nasm"
-                  ],
-                  "sources": [
-                    {
-                      "type": "archive",
-                      "path": "sources/lame-3.100.tar.gz"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+        "modules/io.mpv.Mpv.yml"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-sipsimple.git",
-          "commit": "1e60156a4abc2bf8dfcabe33274d776078a6631e"
+          "commit": "f57ecabb8a8c121bcf5db4f719188659d6f6e7c3"
         },
         {
           "type": "file",
@@ -642,7 +484,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/LibVNCServer-0.9.13.zip"
+          "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz",
+          "sha256": "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5"
         }
       ],
       "buildsystem": "cmake"
