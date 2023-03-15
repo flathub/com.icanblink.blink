@@ -484,7 +484,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/LibVNCServer-0.9.13.zip"
+          "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz",
+          "sha256": "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5"
         }
       ],
       "buildsystem": "cmake"
