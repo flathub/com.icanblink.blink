@@ -15,7 +15,7 @@ Signed-off-by: Jonathan Liu <net147@gmail.com>
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/cursor.c b/src/cursor.c
-index 39e73a6..74a08c6 100644
+index 39e73a69..74a08c69 100644
 --- a/src/cursor.c
 +++ b/src/cursor.c
 @@ -1311,7 +1311,7 @@ static int get_exact_cursor(int init) {

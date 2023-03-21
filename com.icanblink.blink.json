@@ -24,7 +24,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/Python-3.9.13.tar.xz"
+          "url": "https://github.com/python/cpython/archive/refs/tags/v3.9.16.tar.gz",
+          "sha256": "9fe94a3fce1bf2fdc0be3164003ca8b4c4252685caa7882c26c24e4845e755fa"
         }
       ],
       "config-opts": [
@@ -40,7 +41,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/mpfr-4.1.0.tar.bz2"
+          "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.bz2",
+          "sha256": "691db39178e36fc460c046591e4b0f2a52c8f2b3ee6d750cc2eab25f1eaa999d"
         }
       ]
     },
@@ -49,7 +51,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/mpc-1.2.1.tar.gz"
+          "url": "https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz",
+          "sha256": "ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8"
         }
       ]
     },
@@ -304,7 +307,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/PyQt5_sip-12.11.0.tar.gz"
+          "url": "https://files.pythonhosted.org/packages/d2/f4/4c3e5fc1584f5a2964cfc89bf420cfcc59aba0b1f2d08446e2b491a21ed5/PyQt5_sip-12.11.1.tar.gz",
+          "sha256": "97d3fbda0f61edb1be6529ec2d5c7202ae83aee4353e4b264a159f8c9ada4369"
         }
       ]
     },
@@ -326,7 +330,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/PyQt5-5.15.7.tar.gz"
+          "url": "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz",
+          "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0"
         }
       ]
     },
@@ -457,7 +462,8 @@
         },
         {
           "type": "file",
-          "path": "sources/pjproject-2.10.tar.gz",
+          "url": "https://github.com/pjsip/pjproject/archive/refs/tags/2.10.tar.gz",
+          "sha256": "936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de",
           "dest": "deps",
           "dest-filename": "2.10.tar.gz"
         },
@@ -495,7 +501,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/x11vnc-0.9.16.tar.gz"
+          "url": "https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz",
+          "sha256": "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd"
         },
         {
           "type": "patch",

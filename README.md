@@ -71,3 +71,11 @@ yq -M -o json -P e /mnt/data/projects/personal/flatpak-github/io.mpv.Mpv/io.mpv.
   > io.mpv.Mpv.json
 
 ```
+
+## x11vnc
+```bash
+curl 'https://github.com/LibVNC/x11vnc/commit/69eeb9f7baa1.patch' > patches/x11vnc-scan-limit-access-to-shared-memory.patch
+curl 'https://github.com/LibVNC/x11vnc/commit/95a10ab64c2d.patch' > patches/x11vnc-xfc-null-ptr.patch
+curl 'https://github.com/LibVNC/x11vnc/commit/a48b0b1cd887.patch' > patches/x11vnc-gcc10-fix.patch
+
+```

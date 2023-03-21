@@ -10,7 +10,7 @@ GCC 10 defaults to -fno-common
  2 files changed, 6 insertions(+), 3 deletions(-)
 
 diff --git a/src/util.c b/src/util.c
-index a82a1a4..6a52ebf 100644
+index a82a1a42..6a52ebf4 100644
 --- a/src/util.c
 +++ b/src/util.c
 @@ -47,6 +47,9 @@ int hxl = 0;
@@ -24,7 +24,7 @@ index a82a1a4..6a52ebf 100644
  
  int nfix(int i, int n);
 diff --git a/src/util.h b/src/util.h
-index 35c1afd..99b5dd1 100644
+index 35c1afd2..99b5dd1d 100644
 --- a/src/util.h
 +++ b/src/util.h
 @@ -102,9 +102,9 @@ extern struct timeval _mysleep;
