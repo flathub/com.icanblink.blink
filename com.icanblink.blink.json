@@ -57,7 +57,7 @@
       ]
     },
     {
-      "name": "pip-zzz",
+      "name": "pip",
       "buildsystem": "simple",
       "ensure-writable": [
         "/lib/python*/site-packages/easy-install.pth",
@@ -69,227 +69,227 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-zzz/attrs-22.2.0-py3-none-any.whl"
+          "path": "sources/pip/attrs-22.2.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/Automat-22.10.0-py2.py3-none-any.whl"
+          "path": "sources/pip/Automat-22.10.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/cachetools-5.3.0-py3-none-any.whl"
+          "path": "sources/pip/cachetools-5.3.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/certifi-2022.12.7-py3-none-any.whl"
+          "path": "sources/pip/certifi-2022.12.7-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip/cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip/charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/constantly-15.1.0-py2.py3-none-any.whl"
+          "path": "sources/pip/constantly-15.1.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
+          "path": "sources/pip/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/Cython-0.29.33-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+          "path": "sources/pip/Cython-0.29.33-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/dnspython-2.3.0-py3-none-any.whl"
+          "path": "sources/pip/dnspython-2.3.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/docutils-0.19-py3-none-any.whl"
+          "path": "sources/pip/docutils-0.19-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/FormEncode-2.0.1-py2.py3-none-any.whl"
+          "path": "sources/pip/FormEncode-2.0.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/gevent-22.10.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip/gevent-22.10.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/gmpy2-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip/gmpy2-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_api_core-2.11.0-py3-none-any.whl"
+          "path": "sources/pip/google_api_core-2.11.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_api_python_client-2.82.0-py2.py3-none-any.whl"
+          "path": "sources/pip/google_api_python_client-2.82.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/googleapis_common_protos-1.59.0-py2.py3-none-any.whl"
+          "path": "sources/pip/googleapis_common_protos-1.59.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_auth-2.16.2-py2.py3-none-any.whl"
+          "path": "sources/pip/google_auth-2.16.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_auth_httplib2-0.1.0-py2.py3-none-any.whl"
+          "path": "sources/pip/google_auth_httplib2-0.1.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/greenlet-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip/greenlet-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/httplib2-0.21.0-py3-none-any.whl"
+          "path": "sources/pip/httplib2-0.21.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/hyperlink-21.0.0-py2.py3-none-any.whl"
+          "path": "sources/pip/hyperlink-21.0.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/idna-3.4-py3-none-any.whl"
+          "path": "sources/pip/idna-3.4-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/incremental-22.10.0-py2.py3-none-any.whl"
+          "path": "sources/pip/incremental-22.10.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/lxml-4.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+          "path": "sources/pip/lxml-4.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/m2r-0.3.1.tar.gz"
+          "path": "sources/pip/m2r-0.3.1.tar.gz"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/mistune-0.8.4-py2.py3-none-any.whl"
+          "path": "sources/pip/mistune-0.8.4-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/oauth2client-4.1.3-py2.py3-none-any.whl"
+          "path": "sources/pip/oauth2client-4.1.3-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/packaging-23.0-py3-none-any.whl"
+          "path": "sources/pip/packaging-23.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/PGPy-0.6.0.tar.gz"
+          "path": "sources/pip/PGPy-0.6.0.tar.gz"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pip-23.0.1-py3-none-any.whl"
+          "path": "sources/pip/pip-23.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/ply-3.11-py2.py3-none-any.whl"
+          "path": "sources/pip/ply-3.11-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/protobuf-4.22.1-cp37-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip/protobuf-4.22.1-cp37-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pyasn1-0.4.8-py2.py3-none-any.whl"
+          "path": "sources/pip/pyasn1-0.4.8-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pyasn1_modules-0.2.8-py2.py3-none-any.whl"
+          "path": "sources/pip/pyasn1_modules-0.2.8-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pycparser-2.21-py2.py3-none-any.whl"
+          "path": "sources/pip/pycparser-2.21-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/PyDispatcher-2.0.7-py3-none-any.whl"
+          "path": "sources/pip/PyDispatcher-2.0.7-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pyOpenSSL-22.0.0-py2.py3-none-any.whl"
+          "path": "sources/pip/pyOpenSSL-22.0.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pyparsing-3.0.9-py3-none-any.whl"
+          "path": "sources/pip/pyparsing-3.0.9-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/PyQt_builder-1.14.1-py3-none-any.whl"
+          "path": "sources/pip/PyQt_builder-1.14.1-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/python_dateutil-2.8.2-py2.py3-none-any.whl"
+          "path": "sources/pip/python_dateutil-2.8.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/requests-2.28.2-py3-none-any.whl"
+          "path": "sources/pip/requests-2.28.2-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/rsa-4.9-py3-none-any.whl"
+          "path": "sources/pip/rsa-4.9-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/service_identity-21.1.0-py2.py3-none-any.whl"
+          "path": "sources/pip/service_identity-21.1.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/setuptools-67.6.0-py3-none-any.whl"
+          "path": "sources/pip/setuptools-67.6.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/sip-6.7.7-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+          "path": "sources/pip/sip-6.7.7-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/six-1.16.0-py2.py3-none-any.whl"
+          "path": "sources/pip/six-1.16.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/SQLObject-3.10.1-py2.py3-none-any.whl"
+          "path": "sources/pip/SQLObject-3.10.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/toml-0.10.2-py2.py3-none-any.whl"
+          "path": "sources/pip/toml-0.10.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/Twisted-22.10.0-py3-none-any.whl"
+          "path": "sources/pip/Twisted-22.10.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/typing_extensions-4.5.0-py3-none-any.whl"
+          "path": "sources/pip/typing_extensions-4.5.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/uritemplate-4.1.1-py2.py3-none-any.whl"
+          "path": "sources/pip/uritemplate-4.1.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/urllib3-1.26.15-py2.py3-none-any.whl"
+          "path": "sources/pip/urllib3-1.26.15-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/wheel-0.40.0-py3-none-any.whl"
+          "path": "sources/pip/wheel-0.40.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/zope.event-4.6-py2.py3-none-any.whl"
+          "path": "sources/pip/zope.event-4.6-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/zope.interface-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip/zope.interface-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         }
       ]
     },
