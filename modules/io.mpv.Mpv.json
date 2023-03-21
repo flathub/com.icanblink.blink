@@ -1,0 +1,933 @@
+{
+  "cleanup": [
+    "*.la",
+    "*.a"
+  ],
+  "modules": [
+    {
+      "name": "libXmu",
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/freedesktop/libXmu/archive/libXmu-1.1.2.tar.gz",
+          "sha256": "fb1485a0ffcc360c0cc8fe18f54a2f49af6fc384da743c0b136ab99cc6c6e54c"
+        }
+      ]
+    },
+    {
+      "name": "xclip",
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/astrand/xclip/archive/0.13.tar.gz",
+          "sha256": "ca5b8804e3c910a66423a882d79bf3c9450b875ac8528791fb60ec9de667f758"
+        }
+      ]
+    },
+    {
+      "name": "libXpresent",
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://xorg.freedesktop.org/archive/individual/lib/libXpresent-1.0.1.tar.xz",
+          "sha256": "b964df9e5a066daa5e08d2dc82692c57ca27d00b8cc257e8e960c9f1cf26231b"
+        }
+      ]
+    },
+    {
+      "name": "luajit",
+      "no-autogen": true,
+      "cleanup": [
+        "/bin",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/LuaJIT/LuaJIT.git",
+          "commit": "505e2c03de35e2718eef0d2d3660712e06dadf1f",
+          "disable-shallow-clone": true
+        },
+        {
+          "type": "shell",
+          "commands": [
+            "sed -i 's|/usr/local|/app|' ./Makefile"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "uchardet",
+      "buildsystem": "cmake-ninja",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_STATIC=0"
+      ],
+      "cleanup": [
+        "/bin",
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz",
+          "sha256": "e97a60cfc00a1c147a674b097bb1422abd9fa78a2d9ce3f3fdcc2e78a34ac5f0"
+        }
+      ]
+    },
+    {
+      "name": "libass",
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "config-opts": [
+        "--disable-static"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/libass/libass.git",
+          "tag": "0.17.1",
+          "commit": "e8ad72accd3a84268275a9385beb701c9284e5b3"
+        }
+      ]
+    },
+    {
+      "name": "libv4l2",
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+      ],
+      "config-opts": [
+        "--disable-static",
+        "--disable-bpf",
+        "--with-udevdir=/app/lib/udev"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.24.1.tar.bz2",
+          "sha256": "cbb7fe8a6307f5ce533a05cded70bb93c3ba06395ab9b6d007eb53b75d805f5b"
+        }
+      ]
+    },
+    {
+      "name": "libcdio",
+      "config-opts": [
+        "--disable-static",
+        "--disable-example-progs"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://ftp.gnu.org/gnu/libcdio/libcdio-2.1.0.tar.bz2",
+          "sha256": "8550e9589dbd594bfac93b81ecf129b1dc9d0d51e90f9696f1b2f9b2af32712b"
+        }
+      ]
+    },
+    {
+      "name": "libcdio-paranoia",
+      "config-opts": [
+        "--disable-static",
+        "--disable-example-progs"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://ftp.gnu.org/gnu/libcdio/libcdio-paranoia-10.2+2.0.1.tar.bz2",
+          "sha256": "33b1cf305ccfbfd03b43936975615000ce538b119989c4bec469577570b60e8a"
+        }
+      ]
+    },
+    {
+      "name": "libdvdread",
+      "config-opts": [
+        "--disable-static"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.videolan.org/pub/videolan/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2",
+          "sha256": "ce35454997a208cbe50e91232f0e73fb1ac3471965813a13b8730a8f18a15369"
+        }
+      ]
+    },
+    {
+      "name": "libdvdnav",
+      "config-opts": [
+        "--disable-static"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://download.videolan.org/pub/videolan/libdvdnav/6.1.1/libdvdnav-6.1.1.tar.bz2",
+          "sha256": "c191a7475947d323ff7680cf92c0fb1be8237701885f37656c64d04e98d18d48"
+        }
+      ]
+    },
+    {
+      "name": "libaacs",
+      "config-opts": [
+        "--disable-static",
+        "--disable-bdjava-jar"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "sha256": "a88aa0ebe4c98a77f7aeffd92ab3ef64ac548c6b822e8248a8b926725bea0a39",
+          "type": "archive",
+          "url": "https://download.videolan.org/pub/videolan/libaacs/0.11.1/libaacs-0.11.1.tar.bz2"
+        }
+      ]
+    },
+    {
+      "name": "libbluray",
+      "config-opts": [
+        "--disable-static",
+        "--disable-bdjava-jar"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "sha256": "478ffd68a0f5dde8ef6ca989b7f035b5a0a22c599142e5cd3ff7b03bbebe5f2b",
+          "type": "archive",
+          "url": "https://download.videolan.org/pub/videolan/libbluray/1.3.4/libbluray-1.3.4.tar.bz2"
+        }
+      ]
+    },
+    {
+      "name": "zimg",
+      "config-opts": [
+        "--disable-static"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/doc"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "archive-type": "tar",
+          "url": "https://api.github.com/repos/sekrit-twc/zimg/tarball/release-3.0.4",
+          "sha256": "c86b5a169b22c562172a11d83ce76a82dbdafc82149edcb8a06d0beeb94b193e"
+        }
+      ]
+    },
+    {
+      "name": "rubberband",
+      "buildsystem": "meson",
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://breakfastquay.com/files/releases/rubberband-3.1.2.tar.bz2",
+          "sha256": "dda7e257b14c59a1f59c5ccc4d6f19412039f77834275955aa0ff511779b98d2"
+        }
+      ]
+    },
+    {
+      "name": "mujs",
+      "no-autogen": true,
+      "make-args": [
+        "release",
+        "shared"
+      ],
+      "make-install-args": [
+        "prefix=/app",
+        "install-shared"
+      ],
+      "cleanup": [
+        "/bin",
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/ccxvii/mujs.git",
+          "tag": "1.3.2",
+          "commit": "0e611cdc0c81a90dabfcb2ab96992acca95b886d"
+        }
+      ]
+    },
+    {
+      "name": "nv-codec-headers",
+      "cleanup": [
+        "*"
+      ],
+      "no-autogen": true,
+      "make-install-args": [
+        "PREFIX=/app"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/FFmpeg/nv-codec-headers.git",
+          "tag": "n12.0.16.0",
+          "commit": "c5e4af74850a616c42d39ed45b9b8568b71bf8bf"
+        }
+      ]
+    },
+    {
+      "name": "x264",
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+      ],
+      "config-opts": [
+        "--disable-cli",
+        "--enable-shared"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://code.videolan.org/videolan/x264.git",
+          "commit": "eaa68fad9e5d201d42fde51665f2d137ae96baf0"
+        }
+      ]
+    },
+    {
+      "name": "x265",
+      "buildsystem": "cmake",
+      "subdir": "source",
+      "config-opts": [
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DBUILD_STATIC=0"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/man"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://bitbucket.org/multicoreware/x265_git.git",
+          "tag": "3.5",
+          "commit": "f0c1022b6be121a753ff02853fbe33da71988656"
+        }
+      ]
+    },
+    {
+      "name": "libmysofa",
+      "buildsystem": "cmake",
+      "config-opts": [
+        "-DBUILD_TESTS=OFF"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "commit": "3002ea258686ae1129f042644a3c2a87860b7d31",
+          "tag": "v1.3.1",
+          "url": "https://github.com/hoene/libmysofa.git"
+        }
+      ]
+    },
+    {
+      "name": "libbs2b",
+      "buildsystem": "autotools",
+      "config-opts": [
+        "--disable-static"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "archive-type": "tar",
+          "url": "https://downloads.sourceforge.net/sourceforge/bs2b/libbs2b-3.1.0.tar.gz",
+          "sha256": "6aaafd81aae3898ee40148dd1349aab348db9bfae9767d0e66e0b07ddd4b2528"
+        },
+        {
+          "type": "shell",
+          "commands": [
+            "sed -i -e 's/lzma/xz/g' configure.ac",
+            "autoreconf -vif"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ffmpeg",
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig",
+        "/share/ffmpeg/examples"
+      ],
+      "config-opts": [
+        "--disable-static",
+        "--disable-debug",
+        "--disable-doc",
+        "--disable-programs",
+        "--enable-gnutls",
+        "--enable-shared",
+        "--enable-encoder=png",
+        "--enable-libv4l2",
+        "--enable-gpl",
+        "--enable-version3",
+        "--enable-libass",
+        "--enable-libfreetype",
+        "--enable-libmp3lame",
+        "--enable-libopus",
+        "--enable-libtheora",
+        "--enable-libvorbis",
+        "--enable-libvpx",
+        "--enable-libaom",
+        "--enable-libdav1d",
+        "--enable-libx264",
+        "--enable-libx265",
+        "--enable-libmysofa",
+        "--enable-libbs2b"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/FFmpeg/FFmpeg.git",
+          "commit": "ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2",
+          "tag": "n6.0"
+        }
+      ]
+    },
+    {
+      "name": "libsixel",
+      "buildsystem": "meson",
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "archive-type": "tar",
+          "url": "https://api.github.com/repos/libsixel/libsixel/tarball/refs/tags/v1.10.3",
+          "sha256": "7be774befba882d53701e131b6657836118f6cdb15a7515f92345c7bb6e2bb5c"
+        }
+      ]
+    },
+    {
+      "name": "vapoursynth",
+      "config-opts": [
+        "--disable-static",
+        "--with-python_prefix=/app"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/vapoursynth/vapoursynth.git",
+          "tag": "R61",
+          "commit": "35fe1e3b8b45553c6086c014645a9266388b43c6"
+        }
+      ]
+    },
+    {
+      "name": "libplacebo",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dvulkan=enabled",
+        "-Dshaderc=enabled"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://code.videolan.org/videolan/libplacebo.git",
+          "tag": "v5.264.0",
+          "commit": "8ae0648b459d8215bde7772501d5cba17e28bf53"
+        }
+      ],
+      "modules": [
+        {
+          "name": "shaderc",
+          "buildsystem": "cmake-ninja",
+          "builddir": true,
+          "config-opts": [
+            "-DSHADERC_SKIP_COPYRIGHT_CHECK=ON",
+            "-DSHADERC_SKIP_EXAMPLES=ON",
+            "-DSHADERC_SKIP_TESTS=ON",
+            "-DSPIRV_SKIP_EXECUTABLES=ON",
+            "-DENABLE_GLSLANG_BINARIES=OFF"
+          ],
+          "cleanup": [
+            "/bin",
+            "/include",
+            "/lib/cmake",
+            "/lib/pkgconfig"
+          ],
+          "sources": [
+            {
+              "type": "git",
+              "url": "https://github.com/google/shaderc.git",
+              "tag": "v2023.3",
+              "commit": "abe358c71dd63580ecb96b8225d286af45b6edd1"
+            },
+            {
+              "type": "git",
+              "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
+              "tag": "v2023.1",
+              "commit": "63de608daeb7e91fbea6d7477a50debe7cac57ce",
+              "dest": "third_party/spirv-tools"
+            },
+            {
+              "type": "git",
+              "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
+              "tag": "sdk-1.3.239.0",
+              "commit": "d13b52222c39a7e9a401b44646f0ca3a640fbd47",
+              "dest": "third_party/spirv-headers"
+            },
+            {
+              "type": "git",
+              "url": "https://github.com/KhronosGroup/glslang.git",
+              "tag": "12.0.0",
+              "commit": "ca8d07d0bc1c6390b83915700439fa7719de6a2a",
+              "dest": "third_party/glslang"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mpv",
+      "buildsystem": "meson",
+      "config-opts": [
+        "-Dbuild-date=false",
+        "-Dlibmpv=true",
+        "-Dmanpage-build=disabled",
+        "-Dalsa=disabled",
+        "-Dcdda=enabled",
+        "-Ddvbin=enabled",
+        "-Ddvdnav=enabled",
+        "-Dlibarchive=enabled",
+        "-Dsdl2=enabled",
+        "-Dshaderc=enabled",
+        "-Dvulkan=enabled"
+      ],
+      "cleanup": [
+        "/include",
+        "/lib/pkgconfig"
+      ],
+      "post-install": [
+        "echo \"screenshot-directory=~/Pictures/mpv\" > /app/etc/mpv/mpv.conf"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/mpv-player/mpv.git",
+          "tag": "v0.35.1",
+          "commit": "140ec21c89d671d392877a7f3b91d67e7d7b9239"
+        }
+      ]
+    },
+    {
+      "name": "mpv-mpris",
+      "no-autogen": true,
+      "make-install-args": [
+        "SCRIPTS_DIR=/app/etc/mpv/scripts"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "archive-type": "tar",
+          "url": "https://api.github.com/repos/hoyon/mpv-mpris/tarball/0.9",
+          "sha256": "7729c2de9c58adb7f4b52624ced841b7d52107c50f6b2540f71a22eb94a6d857"
+        }
+      ]
+    },
+    {
+      "name": "bc",
+      "build-options": {
+        "no-debuginfo": true
+      },
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://ftp.gnu.org/gnu/bc/bc-1.07.1.tar.gz",
+          "sha256": "62adfca89b0a1c0164c2cdca59ca210c1d44c3ffc46daf9931cf4942664cb02a"
+        }
+      ]
+    },
+    {
+      "name": "python_dateutil",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app python_dateutil*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl",
+          "sha256": "961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
+        }
+      ]
+    },
+    {
+      "name": "urllib3",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app urllib3*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/7b/f5/890a0baca17a61c1f92f72b81d3c31523c99bec609e60c292ea55b387ae8/urllib3-1.26.15-py2.py3-none-any.whl",
+          "sha256": "aa751d169e23c7479ce47a0cb0da579e3ede798f994f5816a74e4f4500dcea42"
+        }
+      ]
+    },
+    {
+      "name": "soupsieve",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app soupsieve*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/d2/70/2c92d7bc961ba43b7b21032b7622144de5f97dec14b62226533f6940798e/soupsieve-2.4-py3-none-any.whl",
+          "sha256": "49e5368c2cda80ee7e84da9dbe3e110b70a4575f196efb74e51b94549d921955"
+        }
+      ]
+    },
+    {
+      "name": "rebulk",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app rebulk-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/84/4d/df073d593f7e7e4a5a7e19148b2e9b4ae63b4ddcbb863f1e7bb2b6f19c62/rebulk-3.2.0-py3-none-any.whl",
+          "sha256": "6bc31ae4b37200623c5827d2f539f9ec3e52b50431322dad8154642a39b0a53e"
+        }
+      ]
+    },
+    {
+      "name": "pbr",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app pbr-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/01/06/4ab11bf70db5a60689fc521b636849c8593eb67a2c6bdf73a16c72d16a12/pbr-5.11.1-py2.py3-none-any.whl",
+          "sha256": "567f09558bae2b3ab53cb3c1e2e33e726ff3338e7bae3db5dc954b3a44eef12b"
+        }
+      ]
+    },
+    {
+      "name": "idna",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app idna-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/fc/34/3030de6f1370931b9dbb4dad48f6ab1015ab1d32447850b9fc94e60097be/idna-3.4-py3-none-any.whl",
+          "sha256": "90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"
+        }
+      ]
+    },
+    {
+      "name": "decorator",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app decorator-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/d5/50/83c593b07763e1161326b3b8c6686f0f4b0f24d5526546bee538c89837d6/decorator-5.1.1-py3-none-any.whl",
+          "sha256": "b8c3f85900b9dc423225913c5aace94729fe1fa9763b38939a95226f02d37186"
+        }
+      ]
+    },
+    {
+      "name": "charset_normalizer",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app charset_normalizer-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/ef/81/14b3b8f01ddaddad6cdec97f2f599aa2fa466bd5ee9af99b08b7713ccd29/charset_normalizer-3.1.0-py3-none-any.whl",
+          "sha256": "3d9098b479e78c85080c98e1e35ff40b4a31d8953102bb0fd7d1b6f8a2111a3d"
+        }
+      ]
+    },
+    {
+      "name": "certifi",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app certifi-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/71/4c/3db2b8021bd6f2f0ceb0e088d6b2d49147671f25832fb17970e9b583d742/certifi-2022.12.7-py3-none-any.whl",
+          "sha256": "4ad3232f5e926d6718ec31cfc1fcadfde020920e278684144551c91769c7bc18"
+        }
+      ]
+    },
+    {
+      "name": "stevedore",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app stevedore-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/41/1b/bad9124b400334d48aed1e04799032909fd8f1ca4a8e0eb30841284dd489/stevedore-5.0.0-py3-none-any.whl",
+          "sha256": "bd5a71ff5e5e5f5ea983880e4a1dd1bb47f8feebbb3d95b592398e2f02194771"
+        }
+      ]
+    },
+    {
+      "name": "requests",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app requests-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/d2/f4/274d1dbe96b41cf4e0efb70cbced278ffd61b5c7bb70338b62af94ccb25b/requests-2.28.2-py3-none-any.whl",
+          "sha256": "64299f4909223da747622c030b781c0d7811e359c37124b4bd368fb8c6518baa"
+        }
+      ]
+    },
+    {
+      "name": "rarfile",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app rarfile-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/95/f4/c92fab227c7457e3b76a4096ccb655ded9deac869849cb03afbe55dfdc1e/rarfile-4.0-py3-none-any.whl",
+          "sha256": "1094869119012f95c31a6f22cc3a9edbdca61861b805241116adbe2d737b68f8"
+        }
+      ]
+    },
+    {
+      "name": "pytz",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app pytz-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/2e/09/fbd3c46dce130958ee8e0090f910f1fe39e502cc5ba0aadca1e8a2b932e5/pytz-2022.7.1-py2.py3-none-any.whl",
+          "sha256": "78f4f37d8198e0627c5f1143240bb0206b8691d8d7ac6d78fee88b78733f8c4a"
+        }
+      ]
+    },
+    {
+      "name": "pysrt",
+      "buildsystem": "simple",
+      "build-commands": [
+        "python3 setup.py install --prefix=/app --root=/"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://files.pythonhosted.org/packages/31/1a/0d858da1c6622dcf16011235a2639b0a01a49cecf812f8ab03308ab4de37/pysrt-1.1.2.tar.gz",
+          "sha256": "b4f844ba33e4e7743e9db746492f3a193dc0bc112b153914698e7c1cdeb9b0b9"
+        }
+      ]
+    },
+    {
+      "name": "babelfish",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app babelfish-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/ce/2c/f7951f771261da6740af14fd9698064616aa040780cd8a03243fc43165c7/babelfish-0.6.0-py3-none-any.whl",
+          "sha256": "268f1c6279f2a04a66837972e8a9f3dcc68e16f1201eec57d2a4b828a8b41b11"
+        }
+      ]
+    },
+    {
+      "name": "guessit",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app guessit-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/db/5e/eec6416047845a745b1d2aee181244b380e59158e29d814021d2e511b267/guessit-3.7.1-py3-none-any.whl",
+          "sha256": "c3be280ee8ec581a45ca6a654a92e317bf89567fdc55e7167452226f4f5b8b38"
+        }
+      ]
+    },
+    {
+      "name": "enzyme",
+      "buildsystem": "simple",
+      "build-commands": [
+        "python3 setup.py install --prefix=/app --root=/"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://files.pythonhosted.org/packages/dd/99/e4eee822d9390ebf1f63a7a67e8351c09fb7cd75262e5bb1a5256898def9/enzyme-0.4.1.tar.gz",
+          "sha256": "f2167fa97c24d1103a94d4bf4eb20f00ca76c38a37499821049253b2059c62bb"
+        }
+      ]
+    },
+    {
+      "name": "dogpile",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app dogpile*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/66/62/c07222121b9032a1bc19865bee77cb8e4a9c36db75ec11a3fee780681c4c/dogpile.cache-1.1.8-py3-none-any.whl",
+          "sha256": "3f0ca10b46b165e0b0e65e0e74b1a4b36187787b69db7c0f7073077adff2f05d"
+        }
+      ]
+    },
+    {
+      "name": "click",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app click-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/c2/f1/df59e28c642d583f7dacffb1e0965d0e00b218e0186d7858ac5233dce840/click-8.1.3-py3-none-any.whl",
+          "sha256": "bb4d8133cb15a609f44e8213d9b391b0809795062913b383c62be0ee95b1db48"
+        }
+      ]
+    },
+    {
+      "name": "chardet",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app chardet-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/74/8f/8fc49109009e8d2169d94d72e6b1f4cd45c13d147ba7d6170fb41f22b08f/chardet-5.1.0-py3-none-any.whl",
+          "sha256": "362777fb014af596ad31334fde1e8c327dfdb076e1960d1694662d46a6917ab9"
+        }
+      ]
+    },
+    {
+      "name": "beautifulsoup4",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app beautifulsoup4-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/ee/a7/06b189a2e280e351adcef25df532af3c59442123187e228b960ab3238687/beautifulsoup4-4.12.0-py3-none-any.whl",
+          "sha256": "2130a5ad7f513200fae61a17abb5e338ca980fa28c439c0571014bc0217e9591"
+        }
+      ]
+    },
+    {
+      "name": "appdirs",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app appdirs-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/3b/00/2344469e2084fb287c2e0b57b72910309874c3245463acd6cf5e3db69324/appdirs-1.4.4-py2.py3-none-any.whl",
+          "sha256": "a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+        }
+      ]
+    },
+    {
+      "name": "subliminal",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app subliminal-*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/d6/f6/d523ddbb9304fa3597101903c0004bdba50c495a1e0d355cdd763df6f2d8/subliminal-2.1.0-py3-none-any.whl",
+          "sha256": "c7751e7af83e8e80c924c2c596318d9e2535f249784a41840eaee5f4a4f49d79"
+        }
+      ]
+    },
+    {
+      "name": "mpv_inhibit_gnome",
+      "buildsystem": "simple",
+      "build-commands": [
+        "make",
+        "install -D lib/mpv_inhibit_gnome.so /app/etc/mpv/scripts"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/Guldoman/mpv_inhibit_gnome/archive/refs/tags/v0.1.3.tar.gz",
+          "sha256": "185668823892c6c124ce60068209a1d15da1eefcbef775dcbc90d91c53403f94"
+        }
+      ]
+    }
+  ],
+  "name": "mpv-deps",
+  "buildsystem": "simple",
+  "build-commands": [
+    "echo"
+  ]
+}

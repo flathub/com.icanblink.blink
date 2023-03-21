@@ -8,7 +8,7 @@ Subject: [PATCH] scan: limit access to shared memory segments to current user
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/src/scan.c b/src/scan.c
-index 43e00d2..12994d5 100644
+index 43e00d20..12994d52 100644
 --- a/src/scan.c
 +++ b/src/scan.c
 @@ -320,7 +320,7 @@ static int shm_create(XShmSegmentInfo *shm, XImage **ximg_ptr, int w, int h,

@@ -24,7 +24,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/Python-3.9.13.tar.xz"
+          "url": "https://github.com/python/cpython/archive/refs/tags/v3.9.16.tar.gz",
+          "sha256": "9fe94a3fce1bf2fdc0be3164003ca8b4c4252685caa7882c26c24e4845e755fa"
         }
       ],
       "config-opts": [
@@ -40,7 +41,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/mpfr-4.1.0.tar.bz2"
+          "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.bz2",
+          "sha256": "691db39178e36fc460c046591e4b0f2a52c8f2b3ee6d750cc2eab25f1eaa999d"
         }
       ]
     },
@@ -49,7 +51,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/mpc-1.2.1.tar.gz"
+          "url": "https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz",
+          "sha256": "ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8"
         }
       ]
     },
@@ -66,19 +69,19 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip-zzz/attrs-22.1.0-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/attrs-22.2.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/Automat-20.2.0-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/Automat-22.10.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/cachetools-5.2.0-py3-none-any.whl"
+          "path": "sources/pip-zzz/cachetools-5.3.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/certifi-2022.9.24-py3-none-any.whl"
+          "path": "sources/pip-zzz/certifi-2022.12.7-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -86,7 +89,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/charset_normalizer-2.1.1-py3-none-any.whl"
+          "path": "sources/pip-zzz/charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -98,11 +101,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/Cython-0.29.32-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-zzz/Cython-0.29.33-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/dnspython-2.2.1-py3-none-any.whl"
+          "path": "sources/pip-zzz/dnspython-2.3.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -114,27 +117,27 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/gevent-22.10.1-cp39-cp39-manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+          "path": "sources/pip-zzz/gevent-22.10.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/gmpy2-2.1.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip-zzz/gmpy2-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_api_core-2.10.2-py3-none-any.whl"
+          "path": "sources/pip-zzz/google_api_core-2.11.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_api_python_client-2.65.0-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/google_api_python_client-2.82.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/googleapis_common_protos-1.56.4-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/googleapis_common_protos-1.59.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/google_auth-2.13.0-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/google_auth-2.16.2-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -142,11 +145,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/greenlet-1.1.3.post0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+          "path": "sources/pip-zzz/greenlet-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/httplib2-0.20.4-py3-none-any.whl"
+          "path": "sources/pip-zzz/httplib2-0.21.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -162,15 +165,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/lxml-4.9.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
+          "path": "sources/pip-zzz/lxml-4.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/m2r-0.2.1.tar.gz"
+          "path": "sources/pip-zzz/m2r-0.3.1.tar.gz"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/mistune-2.0.4-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/mistune-0.8.4-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -178,15 +181,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/packaging-21.3-py3-none-any.whl"
+          "path": "sources/pip-zzz/packaging-23.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/PGPy-0.5.4-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/PGPy-0.6.0.tar.gz"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/pip-22.3-py3-none-any.whl"
+          "path": "sources/pip-zzz/pip-23.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -194,7 +197,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/protobuf-4.21.8-cp37-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip-zzz/protobuf-4.22.1-cp37-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -210,7 +213,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/PyDispatcher-2.0.6.tar.gz"
+          "path": "sources/pip-zzz/PyDispatcher-2.0.7-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -222,7 +225,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/PyQt_builder-1.14.0-py3-none-any.whl"
+          "path": "sources/pip-zzz/PyQt_builder-1.14.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -230,7 +233,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/requests-2.28.1-py3-none-any.whl"
+          "path": "sources/pip-zzz/requests-2.28.2-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -242,11 +245,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/setuptools-65.5.0-py3-none-any.whl"
+          "path": "sources/pip-zzz/setuptools-67.6.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/sip-6.7.2-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+          "path": "sources/pip-zzz/sip-6.7.7-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
         },
         {
           "type": "file",
@@ -254,7 +257,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/SQLObject-3.10.0-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/SQLObject-3.10.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -262,11 +265,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/Twisted-22.8.0-py3-none-any.whl"
+          "path": "sources/pip-zzz/Twisted-22.10.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/typing_extensions-4.4.0-py3-none-any.whl"
+          "path": "sources/pip-zzz/typing_extensions-4.5.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -274,19 +277,19 @@
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/urllib3-1.26.12-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/urllib3-1.26.15-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/wheel-0.37.1-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/wheel-0.40.0-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/zope.event-4.5.0-py2.py3-none-any.whl"
+          "path": "sources/pip-zzz/zope.event-4.6-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip-zzz/zope.interface-5.5.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_12_x86_64.manylinux2010_x86_64.whl"
+          "path": "sources/pip-zzz/zope.interface-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
         }
       ]
     },
@@ -304,7 +307,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/PyQt5_sip-12.11.0.tar.gz"
+          "url": "https://files.pythonhosted.org/packages/d2/f4/4c3e5fc1584f5a2964cfc89bf420cfcc59aba0b1f2d08446e2b491a21ed5/PyQt5_sip-12.11.1.tar.gz",
+          "sha256": "97d3fbda0f61edb1be6529ec2d5c7202ae83aee4353e4b264a159f8c9ada4369"
         }
       ]
     },
@@ -326,7 +330,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/PyQt5-5.15.7.tar.gz"
+          "url": "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz",
+          "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0"
         }
       ]
     },
@@ -447,7 +452,7 @@
     {
       "name": "python3-sipsimple",
       "modules": [
-        "modules/io.mpv.Mpv.yml"
+        "modules/io.mpv.Mpv.json"
       ],
       "sources": [
         {
@@ -457,7 +462,8 @@
         },
         {
           "type": "file",
-          "path": "sources/pjproject-2.10.tar.gz",
+          "url": "https://github.com/pjsip/pjproject/archive/refs/tags/2.10.tar.gz",
+          "sha256": "936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de",
           "dest": "deps",
           "dest-filename": "2.10.tar.gz"
         },
@@ -495,7 +501,8 @@
       "sources": [
         {
           "type": "archive",
-          "path": "sources/x11vnc-0.9.16.tar.gz"
+          "url": "https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz",
+          "sha256": "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd"
         },
         {
           "type": "patch",
