@@ -447,7 +447,7 @@
     {
       "name": "python3-sipsimple",
       "modules": [
-        "modules/io.mpv.Mpv.yml"
+        "modules/io.mpv.Mpv.json"
       ],
       "sources": [
         {

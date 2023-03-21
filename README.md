@@ -53,3 +53,21 @@ SOURCES="$(find sources/pip-zzz -type f | sort | awk '{print "{\"type\": \"file\
 cat <<< $(jq --arg KEY "pip-zzz" --argjson SOURCES "$SOURCES" -r '(.modules[] | select(.name == $KEY).sources) = $SOURCES' com.icanblink.blink.json) > com.icanblink.blink.json
 
 ```
+
+## mpv
+```bash
+yq -M -o json -P e /mnt/data/projects/personal/flatpak-github/io.mpv.Mpv/io.mpv.Mpv.yml \
+  | jq '. |= . + {"name": "mpv-deps", "buildsystem": "simple", "build-commands": ["echo"]}' \
+  | jq 'del(."app-id")' \
+  | jq 'del(."runtime")' \
+  | jq 'del(."runtime-version")' \
+  | jq 'del(."sdk")' \
+  | jq 'del(."command")' \
+  | jq 'del(."rename-desktop-file")' \
+  | jq 'del(."rename-icon")' \
+  | jq 'del(."finish-args")' \
+  | jq 'del(.modules[] | select (.name == "appdata" or .name == "yt-dlp"))' \
+  | jq 'walk(if type == "object" then del(."x-checker-data") else . end)' \
+  > io.mpv.Mpv.json
+
+```
