@@ -24,7 +24,7 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/python/cpython/archive/refs/tags/v3.9.16.tar.gz",
+          "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.16",
           "dest-filename": "cpython.tar.gz",
           "sha256": "9fe94a3fce1bf2fdc0be3164003ca8b4c4252685caa7882c26c24e4845e755fa",
           "x-checker-data": {
@@ -509,7 +509,7 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz",
+          "url": "https://api.github.com/repos/LibVNC/libvncserver/tarball/LibVNCServer-0.9.14",
           "dest-filename": "libvncserver.tar.gz",
           "sha256": "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5",
           "x-checker-data": {
@@ -527,7 +527,7 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz",
+          "url": "https://api.github.com/repos/LibVNC/x11vnc/tarball/0.9.16",
           "dest-filename": "x11vnc.tar.gz",
           "sha256": "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd",
           "x-checker-data": {
