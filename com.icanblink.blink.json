@@ -26,7 +26,7 @@
           "type": "archive",
           "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.16",
           "dest-filename": "cpython.tar.gz",
-          "sha256": "9fe94a3fce1bf2fdc0be3164003ca8b4c4252685caa7882c26c24e4845e755fa",
+          "sha256": "035535c3e51500d75982d9ad60e78b5e1a156e3906c756077b91222381b35328",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
