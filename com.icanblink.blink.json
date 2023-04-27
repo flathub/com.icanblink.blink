@@ -529,7 +529,7 @@
           "type": "archive",
           "url": "https://api.github.com/repos/LibVNC/x11vnc/tarball/0.9.16",
           "dest-filename": "x11vnc.tar.gz",
-          "sha256": "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd",
+          "sha256": "82b7e503ae8b43e452c728d8a8ec129ea11e02546b1911e567f048e58d7e0287",
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/LibVNC/x11vnc/releases/latest",
