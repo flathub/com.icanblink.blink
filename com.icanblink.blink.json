@@ -30,7 +30,8 @@
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
-            "url-query": ".[] | select(.name | startswith(\"v3.9\")) | .tarball_url"
+            "version-query": "[.[] | select(.name | startswith(\"v3.9\"))][0] | .name",
+            "url-query": ".[] | select(.name==\" + $version + \") | .tarball_url"
           }
         }
       ],
@@ -514,6 +515,7 @@
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/LibVNC/libvncserver/releases/latest",
+            "version-query": ".tag_name | sub(\"^LibVNCServer-\"; \"\")",
             "url-query": ".tarball_url"
           }
         }
@@ -531,6 +533,7 @@
           "x-checker-data": {
             "type": "json",
             "url": "https://api.github.com/repos/LibVNC/x11vnc/releases/latest",
+            "version-query": ".tag_name",
             "url-query": ".tarball_url"
           }
         },
