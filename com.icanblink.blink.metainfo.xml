@@ -71,6 +71,11 @@
   </provides>
 
   <releases>
+    <release version="5.5.1" date="2022-11-06">
+      <description>
+        Handle scaling for different screen resolutions
+      </description>
+    </release>
     <release version="5.5.0" date="2022-10-21">
       <description>
         Added multi-language support
