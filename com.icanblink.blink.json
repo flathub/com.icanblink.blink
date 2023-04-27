@@ -24,8 +24,15 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/python/cpython/archive/refs/tags/v3.9.16.tar.gz",
-          "sha256": "9fe94a3fce1bf2fdc0be3164003ca8b4c4252685caa7882c26c24e4845e755fa"
+          "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.16",
+          "dest-filename": "cpython.tar.gz",
+          "sha256": "035535c3e51500d75982d9ad60e78b5e1a156e3906c756077b91222381b35328",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
+            "version-query": "[.[] | select(.name | startswith(\"v3.9\"))][0] | .name",
+            "url-query": ".[] | select(.name==\"\" + $version + \"\") | .tarball_url"
+          }
         }
       ],
       "config-opts": [
@@ -69,7 +76,7 @@
       "sources": [
         {
           "type": "file",
-          "path": "sources/pip/attrs-22.2.0-py3-none-any.whl"
+          "path": "sources/pip/attrs-23.1.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -129,7 +136,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/google_api_python_client-2.83.0-py2.py3-none-any.whl"
+          "path": "sources/pip/google_api_python_client-2.86.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -137,7 +144,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/google_auth-2.17.1-py2.py3-none-any.whl"
+          "path": "sources/pip/google_auth-2.17.3-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -181,7 +188,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/packaging-23.0-py3-none-any.whl"
+          "path": "sources/pip/packaging-23.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -189,7 +196,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/pip-23.0.1-py3-none-any.whl"
+          "path": "sources/pip/pip-23.1.2-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -197,15 +204,15 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/protobuf-4.22.1-cp37-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip/protobuf-4.22.3-cp37-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip/pyasn1-0.4.8-py2.py3-none-any.whl"
+          "path": "sources/pip/pyasn1-0.5.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip/pyasn1_modules-0.2.8-py2.py3-none-any.whl"
+          "path": "sources/pip/pyasn1_modules-0.3.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -225,7 +232,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/PyQt_builder-1.14.1-py3-none-any.whl"
+          "path": "sources/pip/PyQt_builder-1.15.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -233,7 +240,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/requests-2.28.2-py3-none-any.whl"
+          "path": "sources/pip/requests-2.29.0-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -245,11 +252,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/setuptools-67.6.1-py3-none-any.whl"
+          "path": "sources/pip/setuptools-67.7.2-py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip/sip-6.7.7-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+          "path": "sources/pip/sip-6.7.9-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
         },
         {
           "type": "file",
@@ -261,7 +268,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/toml-0.10.2-py2.py3-none-any.whl"
+          "path": "sources/pip/tomli-2.0.1-py3-none-any.whl"
         },
         {
           "type": "file",
@@ -307,8 +314,14 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://files.pythonhosted.org/packages/d2/f4/4c3e5fc1584f5a2964cfc89bf420cfcc59aba0b1f2d08446e2b491a21ed5/PyQt5_sip-12.11.1.tar.gz",
-          "sha256": "97d3fbda0f61edb1be6529ec2d5c7202ae83aee4353e4b264a159f8c9ada4369"
+          "url": "https://files.pythonhosted.org/packages/c1/61/4055e7a0f36339964956ff415e36f4abf82561904cc49c021da32949fc55/PyQt5_sip-12.12.1.tar.gz",
+          "dest-filename": "PyQt5_sip.tar.gz",
+          "sha256": "8fdc6e0148abd12d977a1d3828e7b79aae958e83c6cb5adae614916d888a6b10",
+          "x-checker-data": {
+            "type": "pypi",
+            "name": "PyQt5_sip",
+            "packagetype": "sdist"
+          }
         }
       ]
     },
@@ -331,7 +344,13 @@
         {
           "type": "archive",
           "url": "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz",
-          "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0"
+          "dest-filename": "PyQt5.tar.gz",
+          "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0",
+          "x-checker-data": {
+            "type": "pypi",
+            "name": "PyQt5",
+            "packagetype": "sdist"
+          }
         }
       ]
     },
@@ -490,8 +509,15 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LibVNC/libvncserver/archive/LibVNCServer-0.9.14.tar.gz",
-          "sha256": "83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5"
+          "url": "https://api.github.com/repos/LibVNC/libvncserver/tarball/LibVNCServer-0.9.14",
+          "dest-filename": "libvncserver.tar.gz",
+          "sha256": "a00d70e361df5a6e6c91d215597be6a5c70d4914a97c87fc49ad9d31535d65ac",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/LibVNC/libvncserver/releases/latest",
+            "version-query": ".tag_name | sub(\"^LibVNCServer-\"; \"\")",
+            "url-query": ".tarball_url"
+          }
         }
       ],
       "buildsystem": "cmake"
@@ -501,8 +527,15 @@
       "sources": [
         {
           "type": "archive",
-          "url": "https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz",
-          "sha256": "885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd"
+          "url": "https://api.github.com/repos/LibVNC/x11vnc/tarball/0.9.16",
+          "dest-filename": "x11vnc.tar.gz",
+          "sha256": "82b7e503ae8b43e452c728d8a8ec129ea11e02546b1911e567f048e58d7e0287",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/LibVNC/x11vnc/releases/latest",
+            "version-query": ".tag_name",
+            "url-query": ".tarball_url"
+          }
         },
         {
           "type": "patch",
@@ -524,7 +557,7 @@
         {
           "type": "git",
           "url": "https://github.com/syco/blink-qt.git",
-          "tag": "5.5.0"
+          "tag": "5.5.1"
         },
         {
           "type": "script",
