@@ -595,9 +595,9 @@
         "chmod +x /app/start.sh"
       ],
       "post-install": [
-        "install -Dm644 com.icanblink.blink.desktop ${FLATPAK_DEST}/share/applications/com.icanblink.blink.desktop",
-        "install -Dm644 com.icanblink.blink.png ${FLATPAK_DEST}/share/icons/com.icanblink.blink.png",
-        "install -Dm644 com.icanblink.blink.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.icanblink.blink.metainfo.xml"
+        "install -Dm644 com.icanblink.blink.desktop ${FLATPAK_DEST}/usr/share/applications/com.icanblink.blink.desktop",
+        "install -Dm644 com.icanblink.blink.png ${FLATPAK_DEST}/usr/share/icons/com.icanblink.blink.png",
+        "install -Dm644 com.icanblink.blink.metainfo.xml ${FLATPAK_DEST}/usr/share/metainfo/com.icanblink.blink.metainfo.xml"
       ]
     }
   ]
