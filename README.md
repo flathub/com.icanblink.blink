@@ -66,7 +66,8 @@ curl -s 'https://raw.githubusercontent.com/flathub/io.mpv.Mpv/master/io.mpv.Mpv.
   | jq 'del(."rename-desktop-file")' \
   | jq 'del(."rename-icon")' \
   | jq 'del(."finish-args")' \
-  | jq 'del(.modules[] | select (.name == "appdata" or .name == "yt-dlp"))' \
+  | jq 'del(.modules[] | select(.name == "appdata" or .name == "yt-dlp"))' \
+  | jq 'del(.modules[] | select(.name == "mpv") | .sources[] | select(.type == "file" or .type == "shell"))' \
   | jq 'walk(if type == "object" then del(."x-checker-data") else . end)' \
   > modules/io.mpv.Mpv.json
 
