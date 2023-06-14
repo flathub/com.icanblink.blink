@@ -58,7 +58,7 @@
             "https://luajit.org/git/luajit.git"
           ],
           "disable-shallow-clone": true,
-          "commit": "51fb2f2c3af778f03258fccee9092401ee4a0215"
+          "commit": "ff6c496ba1b51ed360065cbc5259f62becd70daa"
         },
         {
           "type": "shell",

@@ -39,7 +39,7 @@
         "--with-ensurepip=install"
       ],
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ]
     },
     {
@@ -66,10 +66,10 @@
       "name": "pip",
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" \"pip\" \"cryptography\" \"pgpy\" \"PyQt-builder\" \"zope.interface\" \"gmpy2\" \"Cython\" \"dnspython\" \"greenlet\" \"gevent\" \"lxml\" \"sqlobject\" \"twisted\" \"python-dateutil\" \"pyOpenSSL\" \"oauth2client\" \"service-identity\" \"google-api-python-client\""
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" \"pip\" \"cryptography\" \"pgpy\" \"PyQt-builder\" \"zope.interface\" \"gmpy2\" \"Cython\" \"dnspython\" \"greenlet\" \"gevent\" \"lxml\" \"sqlobject\" \"twisted\" \"python-dateutil\" \"pyOpenSSL\" \"oauth2client\" \"service-identity\" \"google-api-python-client\""
       ],
       "sources": [
         {
@@ -134,11 +134,11 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/google_api_python_client-2.88.0-py2.py3-none-any.whl"
+          "path": "sources/pip/google_api_python_client-2.89.0-py2.py3-none-any.whl"
         },
         {
           "type": "file",
-          "path": "sources/pip/googleapis_common_protos-1.59.0-py2.py3-none-any.whl"
+          "path": "sources/pip/googleapis_common_protos-1.59.1-py2.py3-none-any.whl"
         },
         {
           "type": "file",
@@ -302,11 +302,11 @@
       "name": "python3-PyQt5_sip",
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ],
       "sources": [
         {
@@ -326,11 +326,11 @@
       "name": "python3-PyQt5",
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-options": {
         "env": {
-          "QMAKEPATH": "${FLATPAK_DEST}/lib"
+          "QMAKEPATH": "/app/lib"
         }
       },
       "build-commands": [
@@ -361,11 +361,11 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -379,11 +379,11 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -397,11 +397,11 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -415,11 +415,11 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -433,11 +433,11 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -451,11 +451,11 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -485,12 +485,12 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
         "./get_dependencies.sh",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build_ext",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
@@ -574,18 +574,18 @@
       ],
       "buildsystem": "simple",
       "ensure-writable": [
-        "${FLATPAK_DEST}/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
-        "${FLATPAK_DEST}/bin/python3.9 setup.py build_ext",
-        "${FLATPAK_DEST}/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
-        "mv start.sh ${FLATPAK_DEST}/start.sh",
-        "chmod +x ${FLATPAK_DEST}/start.sh"
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
+        "mv start.sh /app/start.sh",
+        "chmod +x /app/start.sh"
       ],
       "post-install": [
-        "install -Dm644 ${FLATPAK_ID}.appdata.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.appdata.xml",
-        "install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
-        "install -Dm644 ${FLATPAK_ID}.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
+        "install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml",
+        "install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+        "install -Dm644 ${FLATPAK_ID}.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
       ]
     }
   ]
