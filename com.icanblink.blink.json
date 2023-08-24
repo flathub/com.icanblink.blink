@@ -24,9 +24,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.17",
+                    "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.18",
                     "dest-filename": "cpython.tar.gz",
-                    "sha256": "3ce9eb160b2c20b77dc89f476ab6ff7278ab2cab05ae6a2db9d628fa02a09bd2",
+                    "sha256": "a76a8beae7ab1c5e39872cdc1234676c33a5d9d3cc893e87557c6d3c6761f08f",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
