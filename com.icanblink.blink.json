@@ -1,592 +1,592 @@
 {
-    "id": "com.icanblink.blink",
-    "command": "/app/start.sh",
-    "separate-locales": false,
-    "base": "io.qt.qtwebkit.BaseApp",
-    "base-version": "5.15-22.08",
-    "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
-    "sdk": "org.kde.Sdk",
-    "finish-args": [
-        "--device=all",
-        "--filesystem=home",
-        "--share=ipc",
-        "--share=network",
-        "--socket=pulseaudio",
-        "--socket=x11",
-        "--talk-name=org.freedesktop.Notifications",
-        "--talk-name=org.gtk.Notifications",
-        "--talk-name=org.kde.StatusNotifierWatcher"
-    ],
-    "modules": [
+  "id": "com.icanblink.blink",
+  "command": "/app/start.sh",
+  "separate-locales": false,
+  "base": "io.qt.qtwebkit.BaseApp",
+  "base-version": "5.15-22.08",
+  "runtime": "org.kde.Platform",
+  "runtime-version": "5.15-22.08",
+  "sdk": "org.kde.Sdk",
+  "finish-args": [
+    "--device=all",
+    "--filesystem=home",
+    "--share=ipc",
+    "--share=network",
+    "--socket=pulseaudio",
+    "--socket=x11",
+    "--talk-name=org.freedesktop.Notifications",
+    "--talk-name=org.gtk.Notifications",
+    "--talk-name=org.kde.StatusNotifierWatcher"
+  ],
+  "modules": [
+    {
+      "name": "cpython",
+      "sources": [
         {
-            "name": "cpython",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.18",
-                    "dest-filename": "cpython.tar.gz",
-                    "sha256": "a76a8beae7ab1c5e39872cdc1234676c33a5d9d3cc893e87557c6d3c6761f08f",
-                    "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
-                        "version-query": "[.[] | select(.name | startswith(\"v3.9\"))][0] | .name",
-                        "url-query": ".[] | select(.name==\"\" + $version + \"\") | .tarball_url"
-                    }
-                }
-            ],
-            "config-opts": [
-                "--with-ensurepip=install"
-            ],
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ]
-        },
-        {
-            "name": "mpfr",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.bz2",
-                    "sha256": "691db39178e36fc460c046591e4b0f2a52c8f2b3ee6d750cc2eab25f1eaa999d"
-                }
-            ]
-        },
-        {
-            "name": "mpc",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz",
-                    "sha256": "ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8"
-                }
-            ]
-        },
-        {
-            "name": "pip",
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" \"pip\" \"cryptography\" \"pgpy\" \"PyQt-builder\" \"zope.interface\" \"gmpy2\" \"Cython\" \"dnspython\" \"greenlet\" \"gevent\" \"lxml\" \"sqlobject\" \"twisted\" \"python-dateutil\" \"pyOpenSSL\" \"oauth2client\" \"service-identity\" \"google-api-python-client\""
-            ],
-            "sources": [
-                {
-                    "type": "file",
-                    "path": "sources/pip/attrs-23.1.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/Automat-22.10.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/cachetools-5.3.1-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/certifi-2023.5.7-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/charset_normalizer-3.1.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/constantly-15.1.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/Cython-0.29.35-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/dnspython-2.3.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/docutils-0.20.1-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/FormEncode-2.0.1-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/gevent-22.10.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/gmpy2-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/google_api_core-2.11.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/google_api_python_client-2.89.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/googleapis_common_protos-1.59.1-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/google_auth-2.19.1-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/google_auth_httplib2-0.1.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/greenlet-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/httplib2-0.22.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/hyperlink-21.0.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/idna-3.4-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/incremental-22.10.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/lxml-4.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.manylinux_2_24_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/m2r-0.3.1.tar.gz"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/mistune-0.8.4-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/oauth2client-4.1.3-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/packaging-23.1-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/PGPy-0.6.0.tar.gz"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/pip-23.1.2-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/ply-3.11-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/protobuf-4.23.2-cp37-abi3-manylinux2014_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/pyasn1-0.5.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/pyasn1_modules-0.3.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/pycparser-2.21-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/PyDispatcher-2.0.7-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/pyOpenSSL-22.0.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/pyparsing-3.0.9-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/PyQt_builder-1.15.1-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/python_dateutil-2.8.2-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/requests-2.31.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/rsa-4.9-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/service_identity-21.1.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/setuptools-67.8.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/sip-6.7.9-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/six-1.16.0-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/SQLObject-3.10.1-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/tomli-2.0.1-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/Twisted-22.10.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/typing_extensions-4.6.3-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/uritemplate-4.1.1-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/urllib3-1.26.16-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/wheel-0.40.0-py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/zope.event-4.6-py2.py3-none-any.whl"
-                },
-                {
-                    "type": "file",
-                    "path": "sources/pip/zope.interface-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
-                }
-            ]
-        },
-        {
-            "name": "python3-PyQt5_sip",
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://files.pythonhosted.org/packages/99/61/6954ff8f8ab550a8fec56a2f29be362f281ee71b6edc7615b905adb0e6a9/PyQt5_sip-12.12.2.tar.gz",
-                    "dest-filename": "PyQt5_sip.tar.gz",
-                    "sha256": "10d9bfa9f59f0fd1cad81be187479316ffc95684f573efea94512cb4257d2b17",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "PyQt5_sip",
-                        "packagetype": "sdist"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "python3-PyQt5",
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-options": {
-                "env": {
-                    "QMAKEPATH": "/app/lib"
-                }
-            },
-            "build-commands": [
-                "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.9/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz",
-                    "dest-filename": "PyQt5.tar.gz",
-                    "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0",
-                    "x-checker-data": {
-                        "type": "pypi",
-                        "name": "PyQt5",
-                        "packagetype": "sdist"
-                    }
-                }
-            ]
-        },
-        {
-            "name": "python3-application",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-application.git",
-                    "tag": "release-3.0.6"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "python3-eventlib",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-eventlib.git",
-                    "tag": "0.3.0"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "python3-gnutls",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-gnutls.git",
-                    "tag": "release-3.1.10"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "python3-otr",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-otr.git",
-                    "tag": "2.0.1"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "python3-msrplib",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-msrplib.git",
-                    "tag": "0.21.0"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "python3-xcaplib",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-xcaplib.git",
-                    "tag": "2.0.1"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "python3-sipsimple",
-            "modules": [
-                "modules/io.mpv.Mpv.json"
-            ],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/python3-sipsimple.git",
-                    "tag": "5.3.0"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/pjsip/pjproject/archive/refs/tags/2.10.tar.gz",
-                    "sha256": "936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de",
-                    "dest": "deps",
-                    "dest-filename": "2.10.tar.gz"
-                },
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/ZRTPCPP.git",
-                    "commit": "6b3cd8e6783642292bad0c21e3e5e5ce45ff3e03",
-                    "dest": "deps/ZRTPCPP"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "./get_dependencies.sh",
-                "/app/bin/python3.9 setup.py build_ext",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
-            ]
-        },
-        {
-            "name": "LibVNC",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://api.github.com/repos/LibVNC/libvncserver/tarball/LibVNCServer-0.9.14",
-                    "dest-filename": "libvncserver.tar.gz",
-                    "sha256": "a00d70e361df5a6e6c91d215597be6a5c70d4914a97c87fc49ad9d31535d65ac",
-                    "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/LibVNC/libvncserver/releases/latest",
-                        "version-query": ".tag_name | sub(\"^LibVNCServer-\"; \"\")",
-                        "url-query": ".tarball_url"
-                    }
-                }
-            ],
-            "buildsystem": "cmake"
-        },
-        {
-            "name": "x11vnc",
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://api.github.com/repos/LibVNC/x11vnc/tarball/0.9.16",
-                    "dest-filename": "x11vnc.tar.gz",
-                    "sha256": "82b7e503ae8b43e452c728d8a8ec129ea11e02546b1911e567f048e58d7e0287",
-                    "x-checker-data": {
-                        "type": "json",
-                        "url": "https://api.github.com/repos/LibVNC/x11vnc/releases/latest",
-                        "version-query": ".tag_name",
-                        "url-query": ".tarball_url"
-                    }
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/x11vnc-xfc-null-ptr.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/x11vnc-gcc10-fix.patch"
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/x11vnc-scan-limit-access-to-shared-memory.patch"
-                }
-            ]
-        },
-        {
-            "name": "blink",
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://github.com/syco/blink-qt.git",
-                    "tag": "5.6.0"
-                },
-                {
-                    "type": "script",
-                    "dest-filename": "start.sh",
-                    "commands": [
-                        "/app/bin/python3.9 /app/bin/blink $@"
-                    ]
-                },
-                {
-                    "type": "patch",
-                    "path": "patches/blink-qt.patch"
-                },
-                {
-                    "type": "file",
-                    "path": "com.icanblink.blink.desktop"
-                },
-                {
-                    "type": "file",
-                    "path": "com.icanblink.blink.png"
-                },
-                {
-                    "type": "file",
-                    "path": "com.icanblink.blink.appdata.xml"
-                }
-            ],
-            "buildsystem": "simple",
-            "ensure-writable": [
-                "/app/lib/python*/site-packages/easy-install.pth"
-            ],
-            "build-commands": [
-                "/app/bin/python3.9 setup.py build_ext",
-                "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
-                "mv start.sh /app/start.sh",
-                "chmod +x /app/start.sh"
-            ],
-            "post-install": [
-                "install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml",
-                "install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
-                "install -Dm644 ${FLATPAK_ID}.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
-            ]
+          "type": "archive",
+          "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.18",
+          "dest-filename": "cpython.tar.gz",
+          "sha256": "a76a8beae7ab1c5e39872cdc1234676c33a5d9d3cc893e87557c6d3c6761f08f",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
+            "version-query": "[.[] | select(.name | startswith(\"v3.9\"))][0] | .name",
+            "url-query": ".[] | select(.name==\"\" + $version + \"\") | .tarball_url"
+          }
         }
-    ]
+      ],
+      "config-opts": [
+        "--with-ensurepip=install"
+      ],
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ]
+    },
+    {
+      "name": "mpfr",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.0.tar.bz2",
+          "sha256": "691db39178e36fc460c046591e4b0f2a52c8f2b3ee6d750cc2eab25f1eaa999d"
+        }
+      ]
+    },
+    {
+      "name": "mpc",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://ftp.gnu.org/gnu/mpc/mpc-1.3.1.tar.gz",
+          "sha256": "ab642492f5cf882b74aa0cb730cd410a81edcdbec895183ce930e706c1c759b8"
+        }
+      ]
+    },
+    {
+      "name": "pip",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" \"pip\" \"cryptography\" \"pgpy\" \"PyQt-builder\" \"zope.interface\" \"gmpy2\" \"Cython\" \"dnspython\" \"greenlet\" \"gevent\" \"lxml\" \"sqlobject\" \"twisted\" \"python-dateutil\" \"pyOpenSSL\" \"oauth2client\" \"service-identity\" \"google-api-python-client\""
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "path": "sources/pip/attrs-23.1.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/Automat-22.10.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/cachetools-5.3.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/certifi-2023.7.22-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/cffi-1.15.1-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/charset_normalizer-3.2.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/constantly-15.1.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/cryptography-37.0.4-cp36-abi3-manylinux_2_24_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/Cython-3.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/dnspython-2.4.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/docutils-0.20.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/FormEncode-2.0.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/gevent-23.9.0.post1-cp39-cp39-manylinux_2_28_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/gmpy2-2.1.5-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/google_api_core-2.11.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/google_api_python_client-2.97.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/googleapis_common_protos-1.60.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/google_auth-2.22.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/google_auth_httplib2-0.1.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/greenlet-2.0.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/httplib2-0.22.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/hyperlink-21.0.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/idna-3.4-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/incremental-22.10.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/lxml-4.9.3-cp39-cp39-manylinux_2_28_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/m2r-0.3.1.tar.gz"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/mistune-0.8.4-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/oauth2client-4.1.3-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/packaging-23.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/PGPy-0.6.0.tar.gz"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/pip-23.2.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/ply-3.11-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/protobuf-4.24.2-cp37-abi3-manylinux2014_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/pyasn1-0.5.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/pyasn1_modules-0.3.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/pycparser-2.21-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/PyDispatcher-2.0.7-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/pyOpenSSL-22.0.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/pyparsing-3.1.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/PyQt_builder-1.15.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/python_dateutil-2.8.2-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/requests-2.31.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/rsa-4.9-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/service_identity-23.1.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/setuptools-68.1.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/sip-6.7.11-cp37-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/six-1.16.0-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/SQLObject-3.10.2-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/tomli-2.0.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/twisted-23.8.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/typing_extensions-4.7.1-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/uritemplate-4.1.1-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/urllib3-1.26.16-py2.py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/wheel-0.41.2-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/zope.event-5.0-py3-none-any.whl"
+        },
+        {
+          "type": "file",
+          "path": "sources/pip/zope.interface-6.0-cp39-cp39-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
+        }
+      ]
+    },
+    {
+      "name": "python3-PyQt5_sip",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://files.pythonhosted.org/packages/99/61/6954ff8f8ab550a8fec56a2f29be362f281ee71b6edc7615b905adb0e6a9/PyQt5_sip-12.12.2.tar.gz",
+          "dest-filename": "PyQt5_sip.tar.gz",
+          "sha256": "10d9bfa9f59f0fd1cad81be187479316ffc95684f573efea94512cb4257d2b17",
+          "x-checker-data": {
+            "type": "pypi",
+            "name": "PyQt5_sip",
+            "packagetype": "sdist"
+          }
+        }
+      ]
+    },
+    {
+      "name": "python3-PyQt5",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-options": {
+        "env": {
+          "QMAKEPATH": "/app/lib"
+        }
+      },
+      "build-commands": [
+        "sip-install --qt-shared --confirm-license --debug --verbose --build-dir=${FLATPAK_BUILDER_BUILDDIR}/tmp --target-dir=${FLATPAK_DEST}/lib/python3.9/site-packages --no-dbus-python --no-designer-plugin --no-docstrings --no-qml-plugin --no-tools"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz",
+          "dest-filename": "PyQt5.tar.gz",
+          "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0",
+          "x-checker-data": {
+            "type": "pypi",
+            "name": "PyQt5",
+            "packagetype": "sdist"
+          }
+        }
+      ]
+    },
+    {
+      "name": "python3-application",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-application.git",
+          "tag": "release-3.0.6"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-eventlib",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-eventlib.git",
+          "tag": "0.3.0"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-gnutls",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-gnutls.git",
+          "tag": "release-3.1.10"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-otr",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-otr.git",
+          "tag": "2.0.1"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-msrplib",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-msrplib.git",
+          "tag": "0.21.0"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-xcaplib",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-xcaplib.git",
+          "tag": "2.0.1"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "python3-sipsimple",
+      "modules": [
+        "modules/io.mpv.Mpv.json"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/python3-sipsimple.git",
+          "tag": "5.3.0"
+        },
+        {
+          "type": "file",
+          "url": "https://github.com/pjsip/pjproject/archive/refs/tags/2.10.tar.gz",
+          "sha256": "936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de",
+          "dest": "deps",
+          "dest-filename": "2.10.tar.gz"
+        },
+        {
+          "type": "git",
+          "url": "https://github.com/syco/ZRTPCPP.git",
+          "commit": "6b3cd8e6783642292bad0c21e3e5e5ce45ff3e03",
+          "dest": "deps/ZRTPCPP"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "./get_dependencies.sh",
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ]
+    },
+    {
+      "name": "LibVNC",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://api.github.com/repos/LibVNC/libvncserver/tarball/LibVNCServer-0.9.14",
+          "dest-filename": "libvncserver.tar.gz",
+          "sha256": "a00d70e361df5a6e6c91d215597be6a5c70d4914a97c87fc49ad9d31535d65ac",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/LibVNC/libvncserver/releases/latest",
+            "version-query": ".tag_name | sub(\"^LibVNCServer-\"; \"\")",
+            "url-query": ".tarball_url"
+          }
+        }
+      ],
+      "buildsystem": "cmake"
+    },
+    {
+      "name": "x11vnc",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://api.github.com/repos/LibVNC/x11vnc/tarball/0.9.16",
+          "dest-filename": "x11vnc.tar.gz",
+          "sha256": "82b7e503ae8b43e452c728d8a8ec129ea11e02546b1911e567f048e58d7e0287",
+          "x-checker-data": {
+            "type": "json",
+            "url": "https://api.github.com/repos/LibVNC/x11vnc/releases/latest",
+            "version-query": ".tag_name",
+            "url-query": ".tarball_url"
+          }
+        },
+        {
+          "type": "patch",
+          "path": "patches/x11vnc-xfc-null-ptr.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/x11vnc-gcc10-fix.patch"
+        },
+        {
+          "type": "patch",
+          "path": "patches/x11vnc-scan-limit-access-to-shared-memory.patch"
+        }
+      ]
+    },
+    {
+      "name": "blink",
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/syco/blink-qt.git",
+          "tag": "5.6.0"
+        },
+        {
+          "type": "script",
+          "dest-filename": "start.sh",
+          "commands": [
+            "/app/bin/python3.9 /app/bin/blink $@"
+          ]
+        },
+        {
+          "type": "patch",
+          "path": "patches/blink-qt.patch"
+        },
+        {
+          "type": "file",
+          "path": "com.icanblink.blink.desktop"
+        },
+        {
+          "type": "file",
+          "path": "com.icanblink.blink.png"
+        },
+        {
+          "type": "file",
+          "path": "com.icanblink.blink.appdata.xml"
+        }
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
+        "mv start.sh /app/start.sh",
+        "chmod +x /app/start.sh"
+      ],
+      "post-install": [
+        "install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml",
+        "install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+        "install -Dm644 ${FLATPAK_ID}.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png"
+      ]
+    }
+  ]
 }
