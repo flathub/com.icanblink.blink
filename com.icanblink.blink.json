@@ -410,7 +410,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/syco/python3-otr.git",
-                    "commit": "296b95e959b371f5767e2a965beb501dcbe74269"
+                    "tag": "2.0.1"
                 }
             ],
             "buildsystem": "simple",
@@ -467,7 +467,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/syco/python3-sipsimple.git",
-                    "commit": "f57ecabb8a8c121bcf5db4f719188659d6f6e7c3"
+                    "tag": "5.3.0"
                 },
                 {
                     "type": "file",
@@ -546,7 +546,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/syco/blink-qt.git",
-                    "tag": "5.5.1"
+                    "tag": "5.6.0"
                 },
                 {
                     "type": "script",

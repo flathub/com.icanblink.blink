@@ -71,6 +71,28 @@
   </provides>
 
   <releases>
+    <release version="5.6.0" date="2023-07-10">
+      <description>
+        Added support for filetransfer messages
+        Added support for encrypting/decrypting MSRP file transfers
+        Added support for file encryption/decryption
+        Added support for displaying conference files
+        Added support for pull filetransfers
+        Added HTTP download function
+        Added filepane content
+        Added replace function for chat messages
+        Added menuitem in chat to send files
+        Added unique name generator function
+        Support removing messages
+        Fixed displaying decryption error
+        Fixed parsing images in chat, they should be base64 encoded
+        Fixed traceback for incoming messages without disposition
+        Prevent traceback on PGPKeys load when there is no chat in the session
+        Several UI fixes
+        Python >= 3.10 fixes
+        Update help and release notes urls
+      </description>
+    </release>
     <release version="5.5.1" date="2022-11-06">
       <description>
         Handle scaling for different screen resolutions
