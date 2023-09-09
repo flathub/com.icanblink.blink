@@ -21,6 +21,10 @@
   "modules": [
     {
       "name": "cpython",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
       "sources": [
         {
           "type": "archive",
@@ -37,9 +41,6 @@
       ],
       "config-opts": [
         "--with-ensurepip=install"
-      ],
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
       ]
     },
     {
@@ -66,7 +67,8 @@
       "name": "pip",
       "buildsystem": "simple",
       "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
         "/app/bin/pip3.9 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" \"pip\" \"cryptography\" \"pgpy\" \"PyQt-builder\" \"zope.interface\" \"gmpy2\" \"Cython\" \"dnspython\" \"greenlet\" \"gevent\" \"lxml\" \"sqlobject\" \"twisted\" \"python-dateutil\" \"pyOpenSSL\" \"oauth2client\" \"service-identity\" \"google-api-python-client\""
@@ -206,7 +208,7 @@
         },
         {
           "type": "file",
-          "path": "sources/pip/protobuf-4.24.2-cp37-abi3-manylinux2014_x86_64.whl"
+          "path": "sources/pip/protobuf-4.24.3-cp37-abi3-manylinux2014_x86_64.whl"
         },
         {
           "type": "file",
@@ -306,7 +308,8 @@
       "name": "python3-PyQt5_sip",
       "buildsystem": "simple",
       "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
       ],
       "build-commands": [
         "/app/bin/python3.9 setup.py build",
@@ -330,7 +333,8 @@
       "name": "python3-PyQt5",
       "buildsystem": "simple",
       "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
       ],
       "build-options": {
         "env": {
@@ -356,116 +360,132 @@
     },
     {
       "name": "python3-application",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-application.git",
           "tag": "release-3.0.6"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "python3-eventlib",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-eventlib.git",
           "tag": "0.3.0"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "python3-gnutls",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-gnutls.git",
           "tag": "release-3.1.10"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "python3-otr",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-otr.git",
           "tag": "2.0.1"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "python3-msrplib",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-msrplib.git",
           "tag": "0.21.0"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "python3-xcaplib",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
+      ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/syco/python3-xcaplib.git",
           "tag": "2.0.1"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "python3-sipsimple",
       "modules": [
         "modules/io.mpv.Mpv.json"
+      ],
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "./get_dependencies.sh",
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ],
       "sources": [
         {
@@ -486,19 +506,11 @@
           "commit": "6b3cd8e6783642292bad0c21e3e5e5ce45ff3e03",
           "dest": "deps/ZRTPCPP"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "./get_dependencies.sh",
-        "/app/bin/python3.9 setup.py build_ext",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}"
       ]
     },
     {
       "name": "LibVNC",
+      "buildsystem": "cmake",
       "sources": [
         {
           "type": "archive",
@@ -512,8 +524,7 @@
             "url-query": ".tarball_url"
           }
         }
-      ],
-      "buildsystem": "cmake"
+      ]
     },
     {
       "name": "x11vnc",
@@ -546,6 +557,17 @@
     },
     {
       "name": "blink",
+      "buildsystem": "simple",
+      "ensure-writable": [
+        "/app/lib/python*/site-packages/easy-install.pth",
+        "/lib/python*/site-packages/easy-install.pth"
+      ],
+      "build-commands": [
+        "/app/bin/python3.9 setup.py build_ext",
+        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
+        "mv start.sh /app/start.sh",
+        "chmod +x /app/start.sh"
+      ],
       "sources": [
         {
           "type": "git",
@@ -575,16 +597,6 @@
           "type": "file",
           "path": "com.icanblink.blink.appdata.xml"
         }
-      ],
-      "buildsystem": "simple",
-      "ensure-writable": [
-        "/app/lib/python*/site-packages/easy-install.pth"
-      ],
-      "build-commands": [
-        "/app/bin/python3.9 setup.py build_ext",
-        "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
-        "mv start.sh /app/start.sh",
-        "chmod +x /app/start.sh"
       ],
       "post-install": [
         "install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml",
