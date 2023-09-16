@@ -42,7 +42,7 @@ bind 'set enable-bracketed-paste off'
 cd
 
 rm -Rf sources/pip
-pip download -d sources/pip/ --find-links="file://${PWD}/sources/pip" "wheel" "pip" "cryptography<38.0.0" "pgpy" "PyQt-builder" "zope.interface" "gmpy2" "Cython" "dnspython" "greenlet" "gevent" "lxml" "sqlobject" "m2r" "twisted" "python-dateutil" "pyOpenSSL" "oauth2client" "service-identity" "google-api-python-client"
+pip download -d sources/pip/ --find-links="file://${PWD}/sources/pip" "cryptography<38.0.0" "Cython" "dnspython" "enum34" "gevent" "gmpy2" "google-api-python-client" "greenlet" "lxml" "m2r" "oauth2client" "pgpy" "pip" "pyOpenSSL" "PyQt-builder" "python-dateutil" "service_identity" "sqlobject" "twisted" "wheel" "zope.interface"
 
 exit
 

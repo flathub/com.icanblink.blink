@@ -122,7 +122,10 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://github.com/gjasny/v4l-utils.git",
+          "url": "https://git.linuxtv.org/v4l-utils.git",
+          "mirror-urls": [
+            "https://github.com/gjasny/v4l-utils.git"
+          ],
           "tag": "v4l-utils-1.24.1",
           "commit": "8799081b143627c9c09dea0c60ad3d1cc17cc848"
         }
@@ -258,8 +261,8 @@
         {
           "type": "archive",
           "archive-type": "tar",
-          "url": "https://api.github.com/repos/sekrit-twc/zimg/tarball/release-3.0.4",
-          "sha256": "c86b5a169b22c562172a11d83ce76a82dbdafc82149edcb8a06d0beeb94b193e"
+          "url": "https://api.github.com/repos/sekrit-twc/zimg/tarball/release-3.0.5",
+          "sha256": "1b8998f03f4a49e4d730033143722b32bc28a5306ef809ccfb3b4bbb29e4b784"
         }
       ]
     },
@@ -277,8 +280,8 @@
           "mirror-urls": [
             "https://hg.sr.ht/~breakfastquay/rubberband"
           ],
-          "tag": "v3.2.1",
-          "commit": "9e8ef1eeaf347d7304c1d9a98764601f1725efdb"
+          "tag": "v3.3.0",
+          "commit": "2be46b0dffb13273a67396c77bc9278736bb03d2"
         }
       ]
     },
@@ -424,8 +427,8 @@
         {
           "type": "git",
           "url": "https://github.com/libjxl/libjxl.git",
-          "tag": "v0.8.1",
-          "commit": "c27d499263435ac77007174e0f1cf54557cff23a",
+          "tag": "v0.8.2",
+          "commit": "954b460768c08a147abf47689ad69b0e7beff65e",
           "disable-shallow-clone": true
         }
       ]
@@ -440,7 +443,6 @@
       "config-opts": [
         "--disable-debug",
         "--disable-doc",
-        "--disable-programs",
         "--disable-static",
         "--enable-encoder=png",
         "--enable-gnutls",
@@ -502,8 +504,8 @@
         {
           "type": "git",
           "url": "https://github.com/vapoursynth/vapoursynth.git",
-          "tag": "R62",
-          "commit": "d10c0d3ebb7b32110e6c5c0e998c4028ead45bdb"
+          "tag": "R63",
+          "commit": "f7f4e42193b25edaf35042795b39c80173e1b55e"
         }
       ]
     },
@@ -525,8 +527,8 @@
           "mirror-urls": [
             "https://github.com/haasn/libplacebo.git"
           ],
-          "tag": "v5.264.1",
-          "commit": "ed29e541a55acf28022738440b2a925386292551"
+          "tag": "v6.292.1",
+          "commit": "06b51c6c1bc8be6153823929496eed255dd76e69"
         }
       ],
       "modules": [
@@ -564,7 +566,7 @@
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
-              "tag": "sdk-1.3.250.0",
+              "tag": "sdk-1.3.250.1",
               "commit": "268a061764ee69f09a477a695bf6a11ffe311b8d",
               "dest": "third_party/spirv-headers"
             },
@@ -586,7 +588,6 @@
         "-Dbuild-date=false",
         "-Dlibmpv=true",
         "-Dmanpage-build=disabled",
-        "-Dalsa=disabled",
         "-Dcdda=enabled",
         "-Ddvbin=enabled",
         "-Ddvdnav=enabled",
@@ -606,8 +607,8 @@
         {
           "type": "git",
           "url": "https://github.com/mpv-player/mpv.git",
-          "tag": "v0.35.1",
-          "commit": "140ec21c89d671d392877a7f3b91d67e7d7b9239"
+          "tag": "v0.36.0",
+          "commit": "f4210f84906c3b00a65fba198c8127b6757b9350"
         }
       ]
     },
@@ -906,8 +907,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/c2/f1/df59e28c642d583f7dacffb1e0965d0e00b218e0186d7858ac5233dce840/click-8.1.3-py3-none-any.whl",
-          "sha256": "bb4d8133cb15a609f44e8213d9b391b0809795062913b383c62be0ee95b1db48"
+          "url": "https://files.pythonhosted.org/packages/f9/a6/dc327484918f1656cc9fcebebe77efcfc0ef0d447fa925a8760ee55abe0e/click-8.1.4-py3-none-any.whl",
+          "sha256": "2739815aaa5d2c986a88f1e9230c55e17f0caad3d958a5e13ad0797c166db9e3"
         }
       ]
     },
@@ -920,8 +921,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/74/8f/8fc49109009e8d2169d94d72e6b1f4cd45c13d147ba7d6170fb41f22b08f/chardet-5.1.0-py3-none-any.whl",
-          "sha256": "362777fb014af596ad31334fde1e8c327dfdb076e1960d1694662d46a6917ab9"
+          "url": "https://files.pythonhosted.org/packages/38/6f/f5fbc992a329ee4e0f288c1fe0e2ad9485ed064cac731ed2fe47dcc38cbf/chardet-5.2.0-py3-none-any.whl",
+          "sha256": "e1cf59446890a00105fe7b7912492ea04b6e6f06d4b742b2c788469e34c82970"
         }
       ]
     },
