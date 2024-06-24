@@ -6,14 +6,79 @@
   ],
   "modules": [
     {
+      "name": "lmdb",
+      "sources": [
+        {
+          "sha256": "f3927859882eb608868c8c31586bb7eb84562a40a6bf5cc3e13b6b564641ea28",
+          "type": "archive",
+          "url": "https://github.com/LMDB/lmdb/archive/LMDB_0.9.22.tar.gz"
+        }
+      ],
+      "make-install-args": [
+        "prefix=/app"
+      ],
+      "no-autogen": true,
+      "subdir": "libraries/liblmdb"
+    },
+    {
+      "name": "parse-yapp",
+      "buildsystem": "simple",
+      "build-commands": [
+        "perl Makefile.PL INSTALL_BASE=/app",
+        "make",
+        "make install"
+      ],
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://cpan.metacpan.org/authors/id/W/WB/WBRASWELL/Parse-Yapp-1.21.tar.gz",
+          "sha256": "3810e998308fba2e0f4f26043035032b027ce51ce5c8a52a8b8e340ca65f13e5"
+        }
+      ]
+    },
+    {
+      "name": "smbclient",
+      "config-opts": [
+        "--without-json",
+        "--without-ad-dc",
+        "--without-ldap",
+        "--without-ads",
+        "--without-pam",
+        "--disable-python",
+        "--disable-cups",
+        "--disable-iprint",
+        "--without-systemd",
+        "--bindir=.",
+        "--sbindir=.",
+        "--sysconfdir=."
+      ],
+      "cleanup": [
+        "/lib/perl5"
+      ],
+      "build-options": {
+        "env": {
+          "PERL5LIB": "/app/lib/perl5"
+        }
+      },
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "archive-type": "tar",
+          "url": "https://download.samba.org/pub/samba/stable/samba-4.20.2.tar.gz",
+          "sha256": "f969ffed58ccf3e85cbbcc0e33a1726d025c2b40f42a653b1125b82b92d2e0e5"
+        }
+      ]
+    },
+    {
       "name": "libXmu",
       "buildsystem": "autotools",
       "sources": [
         {
           "type": "git",
           "url": "https://gitlab.freedesktop.org/xorg/lib/libxmu.git",
-          "tag": "libXmu-1.1.4",
-          "commit": "b29c739b577ee142877e69eb3fb07c7312d81557"
+          "tag": "libXmu-1.2.1",
+          "commit": "792f80402ee06ce69bca3a8f2a84295999c3a170"
         }
       ]
     },
@@ -58,7 +123,7 @@
             "https://luajit.org/git/luajit.git"
           ],
           "disable-shallow-clone": true,
-          "commit": "ff6c496ba1b51ed360065cbc5259f62becd70daa"
+          "commit": "93e87998b24021b94de8d1c8db244444c46fb6e9"
         },
         {
           "type": "shell",
@@ -102,22 +167,24 @@
         {
           "type": "git",
           "url": "https://github.com/libass/libass.git",
-          "tag": "0.17.1",
-          "commit": "e8ad72accd3a84268275a9385beb701c9284e5b3"
+          "tag": "0.17.2",
+          "commit": "cbb48cc4f2f076300004b8b06a86bec55281d0c2"
         }
       ]
     },
     {
       "name": "libv4l2",
+      "buildsystem": "meson",
       "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/share/man"
       ],
       "config-opts": [
-        "--disable-static",
-        "--disable-bpf",
-        "--with-udevdir=/app/lib/udev"
+        "-Ddoxygen-html=false",
+        "-Ddoxygen-doc=disabled",
+        "-Dbpf=disabled",
+        "-Dudevdir=/app/lib/udev"
       ],
       "sources": [
         {
@@ -126,8 +193,8 @@
           "mirror-urls": [
             "https://github.com/gjasny/v4l-utils.git"
           ],
-          "tag": "v4l-utils-1.24.1",
-          "commit": "8799081b143627c9c09dea0c60ad3d1cc17cc848"
+          "tag": "v4l-utils-1.26.1",
+          "commit": "4aee01a027923cab1e40969f56f8ba58d3e6c0d1"
         }
       ]
     },
@@ -190,6 +257,10 @@
         {
           "type": "archive",
           "url": "https://download.videolan.org/pub/videolan/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2",
+          "mirror-urls": [
+            "https://videolan.mirror.ba/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2",
+            "https://videolan.c3sl.ufpr.br/libdvdread/6.1.3/libdvdread-6.1.3.tar.bz2"
+          ],
           "sha256": "ce35454997a208cbe50e91232f0e73fb1ac3471965813a13b8730a8f18a15369"
         }
       ]
@@ -207,6 +278,10 @@
         {
           "type": "archive",
           "url": "https://download.videolan.org/pub/videolan/libdvdnav/6.1.1/libdvdnav-6.1.1.tar.bz2",
+          "mirror-urls": [
+            "https://videolan.mirror.ba/libdvdnav/6.1.1/libdvdnav-6.1.1.tar.bz2",
+            "https://videolan.c3sl.ufpr.br/libdvdnav/6.1.1/libdvdnav-6.1.1.tar.bz2"
+          ],
           "sha256": "c191a7475947d323ff7680cf92c0fb1be8237701885f37656c64d04e98d18d48"
         }
       ]
@@ -225,7 +300,11 @@
         {
           "sha256": "a88aa0ebe4c98a77f7aeffd92ab3ef64ac548c6b822e8248a8b926725bea0a39",
           "type": "archive",
-          "url": "https://download.videolan.org/pub/videolan/libaacs/0.11.1/libaacs-0.11.1.tar.bz2"
+          "url": "https://download.videolan.org/pub/videolan/libaacs/0.11.1/libaacs-0.11.1.tar.bz2",
+          "mirror-urls": [
+            "https://videolan.mirror.ba/libaacs/0.11.1/libaacs-0.11.1.tar.bz2",
+            "https://videolan.c3sl.ufpr.br/libaacs/0.11.1/libaacs-0.11.1.tar.bz2"
+          ]
         }
       ]
     },
@@ -243,7 +322,11 @@
         {
           "sha256": "478ffd68a0f5dde8ef6ca989b7f035b5a0a22c599142e5cd3ff7b03bbebe5f2b",
           "type": "archive",
-          "url": "https://download.videolan.org/pub/videolan/libbluray/1.3.4/libbluray-1.3.4.tar.bz2"
+          "url": "https://download.videolan.org/pub/videolan/libbluray/1.3.4/libbluray-1.3.4.tar.bz2",
+          "mirror-urls": [
+            "https://videolan.mirror.ba/libbluray/1.3.4/libbluray-1.3.4.tar.bz2",
+            "https://videolan.c3sl.ufpr.br/libbluray/1.3.4/libbluray-1.3.4.tar.bz2"
+          ]
         }
       ]
     },
@@ -308,8 +391,8 @@
           "mirror-urls": [
             "http://git.ghostscript.com/mujs.git"
           ],
-          "tag": "1.3.3",
-          "commit": "57e3f01d5f29c5823be725d96284488edf5f8ae1"
+          "tag": "1.3.5",
+          "commit": "0df0707f2f10187127e36acfbc3ba9b9ca5b5cf0"
         }
       ]
     },
@@ -329,8 +412,8 @@
           "mirror-urls": [
             "https://git.videolan.org/git/ffmpeg/nv-codec-headers.git"
           ],
-          "tag": "n12.0.16.0",
-          "commit": "c5e4af74850a616c42d39ed45b9b8568b71bf8bf"
+          "tag": "n12.2.72.0",
+          "commit": "c69278340ab1d5559c7d7bf0edf615dc33ddbba7"
         }
       ]
     },
@@ -348,8 +431,11 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://code.videolan.org/videolan/x264.git",
-          "commit": "a8b68ebfaa68621b5ac8907610d3335971839d52"
+          "url": "https://github.com/jpsdr/x264",
+          "mirror-urls": [
+            "https://code.videolan.org/videolan/x264.git"
+          ],
+          "commit": "4613ac3c15fd75cebc4b9f65b7fb95e70a3acce1"
         }
       ]
     },
@@ -370,8 +456,8 @@
         {
           "type": "git",
           "url": "https://bitbucket.org/multicoreware/x265_git.git",
-          "tag": "3.5",
-          "commit": "f0c1022b6be121a753ff02853fbe33da71988656"
+          "tag": "3.6",
+          "commit": "aa7f602f7592eddb9d87749be7466da005b556ee"
         }
       ]
     },
@@ -384,8 +470,8 @@
       "sources": [
         {
           "type": "git",
-          "commit": "3002ea258686ae1129f042644a3c2a87860b7d31",
-          "tag": "v1.3.1",
+          "commit": "33974839677da7044ef5a70be7ad5550735aae6e",
+          "tag": "v1.3.2",
           "url": "https://github.com/hoene/libmysofa.git"
         }
       ]
@@ -427,9 +513,20 @@
         {
           "type": "git",
           "url": "https://github.com/libjxl/libjxl.git",
-          "tag": "v0.8.2",
-          "commit": "954b460768c08a147abf47689ad69b0e7beff65e",
+          "tag": "v0.10.2",
+          "commit": "e1489592a770b989303b0edc5cc1dc447bbe0515",
           "disable-shallow-clone": true
+        }
+      ]
+    },
+    {
+      "name": "vulkan-headers",
+      "buildsystem": "cmake-ninja",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.3.286.tar.gz",
+          "sha256": "a82a6982efe5e603e23505ca19b469e8f3d876fc677c46b7bfb6177f517bf8fe"
         }
       ]
     },
@@ -464,7 +561,10 @@
         "--enable-libvpx",
         "--enable-libx264",
         "--enable-libx265",
-        "--enable-libwebp"
+        "--enable-libwebp",
+        "--enable-libsmbclient",
+        "--enable-libxml2",
+        "--enable-vulkan"
       ],
       "sources": [
         {
@@ -473,8 +573,8 @@
           "mirror-urls": [
             "https://git.ffmpeg.org/ffmpeg.git"
           ],
-          "commit": "ea3d24bbe3c58b171e55fe2151fc7ffaca3ab3d2",
-          "tag": "n6.0"
+          "commit": "af25a4bfd2503caf3ee485b27b99b620302f5718",
+          "tag": "n7.0.1"
         }
       ]
     },
@@ -504,8 +604,8 @@
         {
           "type": "git",
           "url": "https://github.com/vapoursynth/vapoursynth.git",
-          "tag": "R63",
-          "commit": "f7f4e42193b25edaf35042795b39c80173e1b55e"
+          "tag": "R68",
+          "commit": "18bf017f8e6fac14b2fdb6a6d0c6e44c6686e4f3"
         }
       ]
     },
@@ -523,12 +623,12 @@
       "sources": [
         {
           "type": "git",
-          "url": "https://code.videolan.org/videolan/libplacebo.git",
+          "url": "https://github.com/haasn/libplacebo.git",
           "mirror-urls": [
-            "https://github.com/haasn/libplacebo.git"
+            "https://code.videolan.org/videolan/libplacebo.git"
           ],
-          "tag": "v6.292.1",
-          "commit": "06b51c6c1bc8be6153823929496eed255dd76e69"
+          "tag": "v6.338.2",
+          "commit": "64c1954570f1cd57f8570a57e51fb0249b57bb90"
         }
       ],
       "modules": [
@@ -553,28 +653,26 @@
             {
               "type": "git",
               "url": "https://github.com/google/shaderc.git",
-              "tag": "v2023.4",
-              "commit": "45b735dfddefe26a99b77e5a74e30d860713ac64"
+              "commit": "40bced4e1e205ecf44630d2dfa357655b6dabd04"
             },
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
-              "tag": "v2023.2",
-              "commit": "44d72a9b36702f093dd20815561a56778b2d181e",
+              "tag": "v2024.1",
+              "commit": "04896c462d9f3f504c99a4698605b6524af813c1",
               "dest": "third_party/spirv-tools"
             },
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
-              "tag": "sdk-1.3.250.1",
-              "commit": "268a061764ee69f09a477a695bf6a11ffe311b8d",
+              "commit": "4f7b471f1a66b6d06462cd4ba57628cc0cd087d7",
               "dest": "third_party/spirv-headers"
             },
             {
               "type": "git",
               "url": "https://github.com/KhronosGroup/glslang.git",
-              "tag": "12.2.0",
-              "commit": "d1517d64cfca91f573af1bf7341dc3a5113349c0",
+              "tag": "14.2.0",
+              "commit": "e8dd0b6903b34f1879520b444634c75ea2deedf5",
               "dest": "third_party/glslang"
             }
           ]
@@ -593,22 +691,23 @@
         "-Ddvdnav=enabled",
         "-Dlibarchive=enabled",
         "-Dsdl2=enabled",
-        "-Dshaderc=enabled",
-        "-Dvulkan=enabled"
+        "-Dvulkan=enabled",
+        "-Dvulkan-interop=enabled"
       ],
       "cleanup": [
         "/include",
         "/lib/pkgconfig"
       ],
       "post-install": [
-        "echo \"screenshot-directory=~/Pictures/mpv\" > /app/etc/mpv/mpv.conf"
+        "mv /app/bin/mpv /app/bin/mpv-bin",
+        "echo \"screenshot-directory=~/.var/app/io.mpv.Mpv/Pictures/mpv\" > /app/etc/mpv/mpv.conf"
       ],
       "sources": [
         {
           "type": "git",
           "url": "https://github.com/mpv-player/mpv.git",
-          "tag": "v0.36.0",
-          "commit": "f4210f84906c3b00a65fba198c8127b6757b9350"
+          "tag": "v0.38.0",
+          "commit": "02254b92dd237f03aa0a151c2a68778c4ea848f9"
         }
       ]
     },
@@ -622,8 +721,27 @@
         {
           "type": "archive",
           "archive-type": "tar",
-          "url": "https://api.github.com/repos/hoyon/mpv-mpris/tarball/1.0",
-          "sha256": "d8983f4f02091f28921719f9f8457b7eaf88c1f1c5e3d15d830dd928b00f3ded"
+          "url": "https://api.github.com/repos/hoyon/mpv-mpris/tarball/1.1",
+          "sha256": "08d6b53a41224710ebed1c4d6daee815686e0f2f10e3f81778f4411562ed5958"
+        }
+      ]
+    },
+    {
+      "name": "ed",
+      "build-options": {
+        "no-debuginfo": true
+      },
+      "buildsystem": "autotools",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://ftp.gnu.org/gnu/ed/ed-1.20.2.tar.lz",
+          "mirror-urls": [
+            "https://mirrors.kernel.org/gnu/ed/ed-1.20.1.tar.lz",
+            "https://mirrors.ocf.berkeley.edu/gnu/ed/ed-1.20.1.tar.lz",
+            "https://ftpmirror.gnu.org/gnu/ed/ed-1.20.1.tar.lz"
+          ],
+          "sha256": "65fec7318f48c2ca17f334ac0f4703defe62037bb13cc23920de077b5fa24523"
         }
       ]
     },
@@ -655,8 +773,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl",
-          "sha256": "961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
+          "url": "https://files.pythonhosted.org/packages/ec/57/56b9bcc3c9c6a792fcbaf139543cee77261f3651ca9da0c93f5c1221264b/python_dateutil-2.9.0.post0-py2.py3-none-any.whl",
+          "sha256": "a8b2bc7bffae282281c8140a97d3aa9c14da0b136dfe83f850eea9a5f7470427"
         }
       ]
     },
@@ -669,8 +787,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/c5/05/c214b32d21c0b465506f95c4f28ccbcba15022e000b043b72b3df7728471/urllib3-1.26.16-py2.py3-none-any.whl",
-          "sha256": "8d36afa7616d8ab714608411b4a3b13e58f463aee519024578e062e141dce20f"
+          "url": "https://files.pythonhosted.org/packages/ae/6a/99eaaeae8becaa17a29aeb334a18e5d582d873b6f084c11f02581b8d7f7f/urllib3-1.26.19-py2.py3-none-any.whl",
+          "sha256": "37a0344459b199fce0e80b0d3569837ec6b6937435c5244e7fd73fa6006830f3"
         }
       ]
     },
@@ -683,8 +801,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/49/37/673d6490efc51ec46d198c75903d99de59baffdd47aea3d071b80a9e4e89/soupsieve-2.4.1-py3-none-any.whl",
-          "sha256": "1c1bfee6819544a3447586c889157365a27e10d88cde3ad3da0cf0ddf646feb8"
+          "url": "https://files.pythonhosted.org/packages/4c/f3/038b302fdfbe3be7da016777069f26ceefe11a681055ea1f7817546508e3/soupsieve-2.5-py3-none-any.whl",
+          "sha256": "eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"
         }
       ]
     },
@@ -711,8 +829,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/01/06/4ab11bf70db5a60689fc521b636849c8593eb67a2c6bdf73a16c72d16a12/pbr-5.11.1-py2.py3-none-any.whl",
-          "sha256": "567f09558bae2b3ab53cb3c1e2e33e726ff3338e7bae3db5dc954b3a44eef12b"
+          "url": "https://files.pythonhosted.org/packages/64/dd/171c9fb653591cf265bcc89c436eec75c9bde3dec921cc236fa71e5698df/pbr-6.0.0-py2.py3-none-any.whl",
+          "sha256": "4a7317d5e3b17a3dccb6a8cfe67dab65b20551404c52c8ed41279fa4f0cb4cda"
         }
       ]
     },
@@ -725,8 +843,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/fc/34/3030de6f1370931b9dbb4dad48f6ab1015ab1d32447850b9fc94e60097be/idna-3.4-py3-none-any.whl",
-          "sha256": "90b77e79eaa3eba6de819a0c442c0b4ceefc341a7a2ab77d7562bf49f425c5c2"
+          "url": "https://files.pythonhosted.org/packages/e5/3e/741d8c82801c347547f8a2a06aa57dbb1992be9e948df2ea0eda2c8b79e8/idna-3.7-py3-none-any.whl",
+          "sha256": "82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0"
         }
       ]
     },
@@ -753,8 +871,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/ef/81/14b3b8f01ddaddad6cdec97f2f599aa2fa466bd5ee9af99b08b7713ccd29/charset_normalizer-3.1.0-py3-none-any.whl",
-          "sha256": "3d9098b479e78c85080c98e1e35ff40b4a31d8953102bb0fd7d1b6f8a2111a3d"
+          "url": "https://files.pythonhosted.org/packages/28/76/e6222113b83e3622caa4bb41032d0b1bf785250607392e1b778aca0b8a7d/charset_normalizer-3.3.2-py3-none-any.whl",
+          "sha256": "3e4d1f6587322d2788836a99c69062fbb091331ec940e02d12d179c1d53e25fc"
         }
       ]
     },
@@ -767,8 +885,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/9d/19/59961b522e6757f0c9097e4493fa906031b95b3ebe9360b2c3083561a6b4/certifi-2023.5.7-py3-none-any.whl",
-          "sha256": "c6c2e98f5c7869efca1f8916fed228dd91539f9f1b444c314c06eef02980c716"
+          "url": "https://files.pythonhosted.org/packages/5b/11/1e78951465b4a225519b8c3ad29769c49e0d8d157a070f681d5b6d64737f/certifi-2024.6.2-py3-none-any.whl",
+          "sha256": "ddc6c8ce995e6987e7faf5e3f1b02b302836a0e5d98ece18392cb1a36c72ad56"
         }
       ]
     },
@@ -781,8 +899,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/4b/68/e739fd061b0aba464bef8e8be48428b2aabbfb3f2f8f2f8ca257363ee6b2/stevedore-5.1.0-py3-none-any.whl",
-          "sha256": "8cc040628f3cea5d7128f2e76cf486b2251a4e543c7b938f58d9a377f6694a2d"
+          "url": "https://files.pythonhosted.org/packages/eb/f1/c7c6205c367c764ee173537f7eaf070bba4dd0fa11bf081813c2f75285a3/stevedore-5.2.0-py3-none-any.whl",
+          "sha256": "1c15d95766ca0569cad14cb6272d4d31dae66b011a929d7c18219c176ea1b5c9"
         }
       ]
     },
@@ -795,8 +913,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/70/8e/0e2d847013cb52cd35b38c009bb167a1a26b2ce6cd6965bf26b47bc0bf44/requests-2.31.0-py3-none-any.whl",
-          "sha256": "58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f"
+          "url": "https://files.pythonhosted.org/packages/f9/9b/335f9764261e915ed497fcdeb11df5dfd6f7bf257d4a6a2a686d80da4d54/requests-2.32.3-py3-none-any.whl",
+          "sha256": "70761cfe03c773ceb22aa2f671b4757976145175cdfca038c02654d061d6dcc6"
         }
       ]
     },
@@ -809,8 +927,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/95/f4/c92fab227c7457e3b76a4096ccb655ded9deac869849cb03afbe55dfdc1e/rarfile-4.0-py3-none-any.whl",
-          "sha256": "1094869119012f95c31a6f22cc3a9edbdca61861b805241116adbe2d737b68f8"
+          "url": "https://files.pythonhosted.org/packages/62/fc/ab37559419ca36dd8dd317c3a98395ed4dcee2beeb28bf6059b972906727/rarfile-4.2-py3-none-any.whl",
+          "sha256": "8757e1e3757e32962e229cab2432efc1f15f210823cc96ccba0f6a39d17370c9"
         }
       ]
     },
@@ -823,8 +941,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/7f/99/ad6bd37e748257dd70d6f85d916cafe79c0b0f5e2e95b11f7fbc82bf3110/pytz-2023.3-py2.py3-none-any.whl",
-          "sha256": "a151b3abb88eda1d4e34a9814df37de2a80e301e68ba0fd856fb9b46bfbbbffb"
+          "url": "https://files.pythonhosted.org/packages/9c/3d/a121f284241f08268b21359bd425f7d4825cffc5ac5cd0e1b3d82ffd2b10/pytz-2024.1-py2.py3-none-any.whl",
+          "sha256": "328171f4e3623139da4983451950b28e95ac706e13f3f2630a879749e7a8b319"
         }
       ]
     },
@@ -851,8 +969,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/ce/2c/f7951f771261da6740af14fd9698064616aa040780cd8a03243fc43165c7/babelfish-0.6.0-py3-none-any.whl",
-          "sha256": "268f1c6279f2a04a66837972e8a9f3dcc68e16f1201eec57d2a4b828a8b41b11"
+          "url": "https://files.pythonhosted.org/packages/95/a1/bd4f759db13cd8beb9c9f68682aced5d966781b9d7380cf514a306f56762/babelfish-0.6.1-py3-none-any.whl",
+          "sha256": "512f1501d4c8f7d38f0921f48660be7542de1a7b24abb6a6a65324a670150293"
         }
       ]
     },
@@ -865,8 +983,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/db/5e/eec6416047845a745b1d2aee181244b380e59158e29d814021d2e511b267/guessit-3.7.1-py3-none-any.whl",
-          "sha256": "c3be280ee8ec581a45ca6a654a92e317bf89567fdc55e7167452226f4f5b8b38"
+          "url": "https://files.pythonhosted.org/packages/b8/9b/924a8f9709c3143d4c9a301a88042cbce37e09789378217284b19d4f8132/guessit-3.8.0-py3-none-any.whl",
+          "sha256": "eb5747b1d0fbca926562c1e5894dbc3f6507c35e8c0bd9e38148401cd9579d83"
         }
       ]
     },
@@ -885,6 +1003,20 @@
       ]
     },
     {
+      "name": "typing-extensions",
+      "buildsystem": "simple",
+      "build-commands": [
+        "pip3 install --prefix=/app typing*.whl"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "https://files.pythonhosted.org/packages/26/9f/ad63fc0248c5379346306f8668cda6e2e2e9c95e01216d2b8ffd9ff037d0/typing_extensions-4.12.2-py3-none-any.whl",
+          "sha256": "04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d"
+        }
+      ]
+    },
+    {
       "name": "dogpile",
       "buildsystem": "simple",
       "build-commands": [
@@ -893,8 +1025,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/37/b3/d95ba629fa9d52cc2ea86298d930976f1e6a560d20fec64527342e61e29e/dogpile.cache-1.2.1-py3-none-any.whl",
-          "sha256": "fa9c9c07640bdb66c5f5574e308123119b96c9a95c6856151d3fd2c91b4fb06a"
+          "url": "https://files.pythonhosted.org/packages/c9/b6/eb8bb5bced9f0bf475b22a53e86e4ed80fa60949de1133e2e673e23282d7/dogpile.cache-1.3.3-py3-none-any.whl",
+          "sha256": "5e211c4902ebdf88c678d268e22454b41e68071632daa9402d8ee24e825ed8ca"
         }
       ]
     },
@@ -907,8 +1039,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/f9/a6/dc327484918f1656cc9fcebebe77efcfc0ef0d447fa925a8760ee55abe0e/click-8.1.4-py3-none-any.whl",
-          "sha256": "2739815aaa5d2c986a88f1e9230c55e17f0caad3d958a5e13ad0797c166db9e3"
+          "url": "https://files.pythonhosted.org/packages/00/2e/d53fa4befbf2cfa713304affc7ca780ce4fc1fd8710527771b58311a3229/click-8.1.7-py3-none-any.whl",
+          "sha256": "ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28"
         }
       ]
     },
@@ -935,8 +1067,8 @@
       "sources": [
         {
           "type": "file",
-          "url": "https://files.pythonhosted.org/packages/57/f4/a69c20ee4f660081a7dedb1ac57f29be9378e04edfcb90c526b923d4bebc/beautifulsoup4-4.12.2-py3-none-any.whl",
-          "sha256": "bd2520ca0d9d7d12694a53d44ac482d181b4ec1888909b035a3dbf40d0f57d4a"
+          "url": "https://files.pythonhosted.org/packages/b1/fe/e8c672695b37eecc5cbf43e1d0638d88d66ba3a44c4d321c796f4e59167f/beautifulsoup4-4.12.3-py3-none-any.whl",
+          "sha256": "b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed"
         }
       ]
     },
@@ -951,20 +1083,6 @@
           "type": "file",
           "url": "https://files.pythonhosted.org/packages/3b/00/2344469e2084fb287c2e0b57b72910309874c3245463acd6cf5e3db69324/appdirs-1.4.4-py2.py3-none-any.whl",
           "sha256": "a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
-        }
-      ]
-    },
-    {
-      "name": "subliminal",
-      "buildsystem": "simple",
-      "build-commands": [
-        "pip3 install --prefix=/app subliminal-*.whl"
-      ],
-      "sources": [
-        {
-          "type": "file",
-          "url": "https://files.pythonhosted.org/packages/d6/f6/d523ddbb9304fa3597101903c0004bdba50c495a1e0d355cdd763df6f2d8/subliminal-2.1.0-py3-none-any.whl",
-          "sha256": "c7751e7af83e8e80c924c2c596318d9e2535f249784a41840eaee5f4a4f49d79"
         }
       ]
     },
