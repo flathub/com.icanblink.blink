@@ -3,9 +3,9 @@
     "command": "/app/start.sh",
     "separate-locales": false,
     "base": "io.qt.qtwebkit.BaseApp",
-    "base-version": "5.15-22.08",
+    "base-version": "5.15-23.08",
     "runtime": "org.kde.Platform",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "5.15-23.08",
     "sdk": "org.kde.Sdk",
     "finish-args": [
         "--device=all",
