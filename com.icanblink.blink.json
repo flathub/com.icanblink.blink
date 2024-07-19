@@ -24,9 +24,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.18",
+                    "url": "https://api.github.com/repos/python/cpython/tarball/refs/tags/v3.9.19",
                     "dest-filename": "cpython.tar.gz",
-                    "sha256": "a76a8beae7ab1c5e39872cdc1234676c33a5d9d3cc893e87557c6d3c6761f08f",
+                    "sha256": "256ae8ba32de48ee2e8f0591634999d8375404ba90f202c2aed8881278d0bcfd",
                     "x-checker-data": {
                         "type": "json",
                         "url": "https://api.github.com/repos/python/cpython/tags?per_page=1000",
@@ -311,9 +311,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://files.pythonhosted.org/packages/99/61/6954ff8f8ab550a8fec56a2f29be362f281ee71b6edc7615b905adb0e6a9/PyQt5_sip-12.12.2.tar.gz",
+                    "url": "https://files.pythonhosted.org/packages/1b/15/78318d50f10062c428e97e7ce387e772616a4673c356018b905f247a6a85/PyQt5_sip-12.15.0.tar.gz",
                     "dest-filename": "PyQt5_sip.tar.gz",
-                    "sha256": "10d9bfa9f59f0fd1cad81be187479316ffc95684f573efea94512cb4257d2b17",
+                    "sha256": "d23fdfcf363b5cedd9d39f8a9c5710e7d52804f5b08a58e91c638b36eafcb702",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "PyQt5_sip",
@@ -339,9 +339,9 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://files.pythonhosted.org/packages/5c/46/b4b6eae1e24d9432905ef1d4e7c28b6610e28252527cdc38f2a75997d8b5/PyQt5-5.15.9.tar.gz",
+                    "url": "https://files.pythonhosted.org/packages/0e/07/c9ed0bd428df6f87183fca565a79fee19fa7c88c7f00a7f011ab4379e77a/PyQt5-5.15.11.tar.gz",
                     "dest-filename": "PyQt5.tar.gz",
-                    "sha256": "dc41e8401a90dc3e2b692b411bd5492ab559ae27a27424eed4bd3915564ec4c0",
+                    "sha256": "fda45743ebb4a27b4b1a51c6d8ef455c4c1b5d610c90d2934c7802b5c1557c52",
                     "x-checker-data": {
                         "type": "pypi",
                         "name": "PyQt5",
