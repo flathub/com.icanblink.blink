@@ -1,6 +1,6 @@
 {
     "id": "com.icanblink.blink",
-    "command": "/app/start.sh",
+    "command": "start.sh",
     "separate-locales": false,
     "base": "io.qt.qtwebkit.BaseApp",
     "base-version": "5.15-23.08",
@@ -579,8 +579,8 @@
             "build-commands": [
                 "/app/bin/python3.9 setup.py build_ext",
                 "/app/bin/python3.9 setup.py install --prefix=${FLATPAK_DEST}",
-                "mv start.sh /app/start.sh",
-                "chmod +x /app/start.sh"
+                "mv start.sh $FLATPAK_DEST/bin/start.sh",
+                "chmod +x $FLATPAK_DEST/bin/start.sh"
             ],
             "post-install": [
                 "install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml",
