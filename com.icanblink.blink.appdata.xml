@@ -201,6 +201,6 @@
     <content_attribute id="social-info">moderate</content_attribute>
     <content_attribute id="social-audio">intense</content_attribute>
     <content_attribute id="social-contacts">intense</content_attribute>
-    <content_attribute id="money-purchasing">moderate</content_attribute>
+    <content_attribute id="money-advertising">moderate</content_attribute>
   </content_rating>
 </component>

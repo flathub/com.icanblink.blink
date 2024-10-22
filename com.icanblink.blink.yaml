@@ -1,0 +1,171 @@
+app-id: com.icanblink.blink
+runtime: org.kde.Platform
+runtime-version: 5.15-23.08
+sdk: org.kde.Sdk
+base: com.riverbankcomputing.PyQt.BaseApp
+base-version: 5.15-23.08
+cleanup-commands:
+  - /app/cleanup-BaseApp.sh
+command: blink.sh
+finish-args:
+  - --device=all
+  - --filesystem=home
+  - --share=ipc
+  - --share=network
+  - --socket=pulseaudio
+  - --socket=wayland
+  - --socket=fallback-x11
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.gtk.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
+cleanup:
+  - /include
+  - '*.a'
+  - '*.la'
+  - /lib*/cmake
+  - /lib*/debug
+  - /lib*/pkgconfig
+  - /share/man
+  - /share/cmake
+modules:
+
+  - name: libvncserver
+    buildsystem: cmake-ninja
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+    sources:
+      - type: archive
+        url: https://github.com/LibVNC/libvncserver/archive/refs/tags/LibVNCServer-0.9.14.tar.gz
+        sha256: 83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5
+
+  - name: x11vnc
+    sources:
+      - type: archive
+        url: https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz
+        sha256: 885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd
+      - type: patch
+        path: patches/x11vnc-xfc-null-ptr.patch
+      - type: patch
+        path: patches/x11vnc-gcc10-fix.patch
+      - type: patch
+        path: patches/x11vnc-scan-limit-access-to-shared-memory.patch
+
+  - name: x11vnc
+    sources:
+      - type: archive
+        url: https://github.com/LibVNC/x11vnc/archive/refs/tags/0.9.16.tar.gz
+        sha256: 885e5b5f5f25eec6f9e4a1e8be3d0ac71a686331ee1cfb442dba391111bd32bd
+      - type: patch
+        path: patches/x11vnc-xfc-null-ptr.patch
+      - type: patch
+        path: patches/x11vnc-gcc10-fix.patch
+      - type: patch
+        path: patches/x11vnc-scan-limit-access-to-shared-memory.patch
+
+  # Install Blink Python dependencies
+  - modules/python-dependencies.json
+
+  # Install Blink AGProjects dependencies
+  - name: python3-application
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-application
+        tag: release-3.0.7
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  - name: python3-eventlib
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-eventlib
+        tag: 0.3.0
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  - name: python3-gnutls
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-gnutls
+        tag: release-3.1.10
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  - name: python3-otr
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-otr
+        commit: 88d6b999a21bff80344cfbfa3d07964b52832139
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  - name: python3-msrplib
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-msrplib
+        tag: 0.21.0
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  - name: python3-xcaplib
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-xcaplib
+        tag: 2.0.1
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  - name: python3-sipsimple
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/python3-sipsimple
+        tag: 5.3.0
+      - type: file
+        url: https://github.com/pjsip/pjproject/archive/refs/tags/2.10.tar.gz
+        sha256: 936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de
+        dest: deps
+        dest-filename: 2.10.tar.gz
+      - type: git
+        url: https://github.com/wernerd/ZRTPCPP
+        tag: 4.7.0
+        dest: deps/ZRTPCPP
+    build-commands:
+      - ./get_dependencies.sh
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  # Install Blink from source
+  - name: blink-qt
+    buildsystem: simple
+    sources:
+      - type: git
+        url: https://github.com/AGProjects/blink-qt
+        tag: 5.9.1
+    build-commands:
+      - pip3 install --prefix=${FLATPAK_DEST} .
+
+  # Install desktop files and icons
+  - name: blink-desktop
+    buildsystem: simple
+    sources:
+      - type: file
+        path: com.icanblink.blink.desktop
+      - type: file
+        path: com.icanblink.blink.png
+      - type: file
+        path: com.icanblink.blink.appdata.xml
+      - type: script
+        commands:
+          - 'exec /app/bin/blink "$@"'
+        dest-filename: blink.sh
+    build-commands:
+      - install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml
+      - install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm644 ${FLATPAK_ID}.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png 
+      - install -D blink.sh /app/bin/blink.sh     

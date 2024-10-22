@@ -1,0 +1,23 @@
+# Dependencies for Blink
+# See: https://github.com/AGProjects/blink-qt/blob/master/INSTALL
+#
+# Dependencies for SIP SIMPLE SDK
+# See: https://github.com/AGProjects/python3-sipsimple/blob/master/docs/Install.linux
+
+cryptography
+dnspython
+gevent
+google-api-python-client
+gmpy2
+greenlet
+lxml
+lxml_html_clean
+oauth2client
+pgpy
+pyOpenSSL
+python-dateutil
+service-identity
+sqlobject
+twisted
+wheel
+zope.interface
