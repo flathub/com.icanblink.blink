@@ -5,10 +5,13 @@
   <project_license>GPL-3.0-or-later</project_license>
   <metadata_license>FSFAP</metadata_license>
   <summary>Blink SIP client</summary>
-  <developer_name>AG Projects</developer_name>
+  <developer id="com.ag-projects">
+    <name>AG Projects</name>
+  </developer>
   <description>
     <p>
       Blink, a fully featured, easy to use SIP client for Linux.
+      You can use it with many SIP providers, on the LAN using Bonjour and with SIP2SIP, a free service.
     </p>
   </description>
 
@@ -71,6 +74,66 @@
   </provides>
 
   <releases>
+    <release version="5.9.1" date="2024-07-17">
+      <description>
+        Fixed session selection in chat window
+        Fixed buttons in conference join dialog
+        Fixed start chat button in main window
+        Fixed updating menu in chat window    
+      </description>
+    </release>
+    <release version="5.9.0" date="2024-07-16">
+      <description>
+        Migrate code for QT6 compatibilty
+        Refactored web views to use latest QWebEngine
+        Chat window only opens on user interactions
+        Improved MacOS compatibilty
+        Implemented persistent Bonjour messaging
+        Added account selection for outgoing messages
+        Added audio/video call entries to messages
+        Added dialog to remove messages
+        Added option to start a random conference
+        Added menu item to show session info panel on audio calls
+        Added right-click contextual menu to calls
+        Added unread counter to contact and menu to show unread messages
+        Added virtual messages group to show all contacts that have messages
+        Added info button to audio sessions
+        Reorganized contact menu structure
+        Fix retrying sending locally failed messages
+        Fixed wrongly stored Sylk API messages
+        Fixed only deleting filetranfer files from cache
+        Send images by file transfers in messages/MSRP chat
+        Improved message rendering themes
+        Bugfixes for drag/drop
+        Bugfixes for filetransfers
+        Bugfixes for messages
+        Bugfixes for messages with Bonjour account
+        Bugfixes for PGP message handling
+        Bugfixes for sending IMDN messages        
+      </description>
+    </release>
+    <release version="5.6.0" date="2023-07-10">
+      <description>
+        Added support for filetransfer messages
+        Added support for encrypting/decrypting MSRP file transfers
+        Added support for file encryption/decryption
+        Added support for displaying conference files
+        Added support for pull filetransfers
+        Added HTTP download function
+        Added filepane content
+        Added replace function for chat messages
+        Added menuitem in chat to send files
+        Added unique name generator function
+        Support removing messages
+        Fixed displaying decryption error
+        Fixed parsing images in chat, they should be base64 encoded
+        Fixed traceback for incoming messages without disposition
+        Prevent traceback on PGPKeys load when there is no chat in the session
+        Several UI fixes
+        Python &gt;= 3.10 fixes
+        Update help and release notes urls    
+      </description>
+    </release>
     <release version="5.5.1" date="2022-11-06">
       <description>
         Handle scaling for different screen resolutions
