@@ -33,28 +33,28 @@ The changelog is available at http://icanblink.com/changelog/
 
 ------
 
-## pip
+## Flatpak development
+
+### Python dependencies
+
+Dependencies are declared in `requirements.txt` file. Download them in a support folder 
+(e.g. `build/python-dependencies`) using the target runtime and `pip3`:
+
 ```bash
-docker run -it --rm -v ${PWD}:/root:rw python:3.9 /bin/bash
-
-bind 'set enable-bracketed-paste off'
-
-cd
-
-rm -Rf sources/pip
-pip download -d sources/pip/ --find-links="file://${PWD}/sources/pip" "wheel" "pip" "cryptography<38.0.0" "pgpy" "PyQt-builder" "zope.interface" "gmpy2" "Cython" "dnspython" "greenlet" "gevent" "lxml" "sqlobject" "m2r" "twisted" "python-dateutil" "pyOpenSSL" "oauth2client" "service-identity" "google-api-python-client"
-
-exit
-
-rm -f .bash_history
-sudo chown $(id -u):$(id -g) . -R
-
-SOURCES="$(find sources/pip -type f | sort | awk '{print "{\"type\": \"file\", \"path\": \""$0"\"}"}' | jq -s -r -c '.')"
-cat <<< $(jq --arg KEY "pip" --argjson SOURCES "$SOURCES" -r '(.modules[] | select(.name == $KEY).sources) = $SOURCES' com.icanblink.blink.json) > com.icanblink.blink.json
+flatpak --user --share=network --filesystem=host --command='pip3' run 'org.kde.Sdk//5.15-23.08' \
+download --requirement requirements.txt --dest build/python-dependencies
 
 ```
 
-## mpv
+Use the `python-dependencies.sh` script to build/update the dependencies module:
+
+```bash
+./python-dependencies.sh build/python-dependencies > modules/python-dependencies.json
+
+```
+
+<!--
+### mpv
 ```bash
 curl -s 'https://raw.githubusercontent.com/flathub/io.mpv.Mpv/master/io.mpv.Mpv.yml' | yq -M -o json -P e \
   | jq '. |= . + {"name": "mpv-deps", "buildsystem": "simple", "build-commands": ["echo"]}' \
@@ -72,8 +72,9 @@ curl -s 'https://raw.githubusercontent.com/flathub/io.mpv.Mpv/master/io.mpv.Mpv.
   > modules/io.mpv.Mpv.json
 
 ```
+-->
 
-## x11vnc
+### x11vnc
 ```bash
 curl 'https://github.com/LibVNC/x11vnc/commit/69eeb9f7baa1.patch' > patches/x11vnc-scan-limit-access-to-shared-memory.patch
 curl 'https://github.com/LibVNC/x11vnc/commit/95a10ab64c2d.patch' > patches/x11vnc-xfc-null-ptr.patch
