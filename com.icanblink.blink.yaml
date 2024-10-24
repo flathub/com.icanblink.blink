@@ -20,9 +20,8 @@ finish-args:
   - --talk-name=org.kde.StatusNotifierWatcher
   - --env=QTWEBENGINEPROCESS_PATH=/app/bin/QtWebEngineProcess
 cleanup:
-  - /include
-  - '*.a'
-  - '*.la'
+  - /lib/*.a
+  - /lib/*.la
   - /lib*/cmake
   - /lib*/debug
   - /lib*/pkgconfig
@@ -149,23 +148,21 @@ modules:
         tag: 5.9.1
     build-commands:
       - pip3 install --prefix=${FLATPAK_DEST} .
+      # Install desktop files
+      - desktop-file-edit --set-icon=${FLATPAK_ID} debian/blink.desktop
+      - install -Dm 644 debian/blink.desktop /app/share/applications/${FLATPAK_ID}.desktop
+      - install -Dm 644 resources/icons/blink.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png 
 
-  # Install desktop files and icons
+  # Install application files
   - name: blink-desktop
     buildsystem: simple
     sources:
       - type: file
-        path: com.icanblink.blink.desktop
-      - type: file
-        path: com.icanblink.blink.png
-      - type: file
-        path: com.icanblink.blink.appdata.xml
+        path: com.icanblink.blink.metainfo.xml
       - type: script
         commands:
           - 'exec /app/bin/blink "$@"'
         dest-filename: blink.sh
     build-commands:
-      - install -Dm644 ${FLATPAK_ID}.appdata.xml /app/share/appdata/${FLATPAK_ID}.appdata.xml
-      - install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop
-      - install -Dm644 ${FLATPAK_ID}.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png 
+      - install -Dm644 ${FLATPAK_ID}.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml
       - install -D blink.sh /app/bin/blink.sh     

@@ -74,12 +74,14 @@
   </provides>
 
   <releases>
-    <release version="5.9.1" date="2024-07-17">
+    <release version="5.9.1" date="2024-07-17" urgency="medium">
       <description>
-        Fixed session selection in chat window
-        Fixed buttons in conference join dialog
-        Fixed start chat button in main window
-        Fixed updating menu in chat window    
+        <ul>
+          <li>Fixed session selection in chat window</li>
+          <li>Fixed buttons in conference join dialog</li>
+          <li>Fixed start chat button in main window</li>
+          <li>Fixed updating menu in chat window</li>
+        </ul>
       </description>
     </release>
     <release version="5.9.0" date="2024-07-16">
