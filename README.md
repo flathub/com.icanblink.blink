@@ -37,19 +37,13 @@ The changelog is available at http://icanblink.com/changelog/
 
 ### Python dependencies
 
-Dependencies are declared in `requirements.txt` file. Download them in a support folder 
-(e.g. `build/python-dependencies`) using the target runtime and `pip3`:
+Dependencies are declared in `requirements.txt` file. Use the target runtime and
+the `python-dependencies.sh` script to build/update the dependencies module:
 
 ```bash
-flatpak --user --share=network --filesystem=host --command='pip3' run 'org.kde.Sdk//5.15-23.08' \
-download --requirement requirements.txt --dest build/python-dependencies
-
-```
-
-Use the `python-dependencies.sh` script to build/update the dependencies module:
-
-```bash
-./python-dependencies.sh build/python-dependencies > modules/python-dependencies.json
+flatpak --user --share=network --filesystem=host --command=pip3 run 'org.kde.Sdk//5.15-23.08' \
+install --ignore-installed --report - --dry-run --quiet --requirement requirements.txt | \
+./python-dependencies.sh > modules/python-dependencies.json 
 
 ```
 

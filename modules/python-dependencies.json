@@ -2,18 +2,43 @@
   "name": "python-dependencies",
   "buildsystem": "simple",
   "build-commands": [
-    "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrs\" \"Automat\" \"cachetools\" \"certifi\" \"cffi\" \"charset-normalizer\" \"constantly\" \"cryptography\" \"dnspython\" \"FormEncode\" \"gevent\" \"gmpy2\" \"google-api-core\" \"google-api-python-client\" \"googleapis-common-protos\" \"google-auth\" \"google-auth-httplib2\" \"greenlet\" \"httplib2\" \"hyperlink\" \"idna\" \"incremental\" \"lxml\" \"lxml_html_clean\" \"oauth2client\" \"protobuf\" \"proto-plus\" \"pyasn1\" \"pyasn1_modules\" \"pycparser\" \"PyDispatcher\" \"pyOpenSSL\" \"pyparsing\" \"python-dateutil\" \"requests\" \"rsa\" \"service-identity\" \"setuptools\" \"six\" \"SQLObject\" \"Twisted\" \"typing_extensions\" \"uritemplate\" \"urllib3\" \"wheel\" \"zope.event\" \"zope.interface\" \"PGPy\""
+    "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Automat\" \"FormEncode\" \"PGPy\" \"PyDispatcher\" \"SQLObject\" \"Twisted\" \"attrs\" \"cachetools\" \"certifi\" \"cffi\" \"charset-normalizer\" \"constantly\" \"cryptography\" \"dnspython\" \"gevent\" \"gmpy2\" \"google-api-core\" \"google-api-python-client\" \"google-auth\" \"google-auth-httplib2\" \"googleapis-common-protos\" \"greenlet\" \"httplib2\" \"hyperlink\" \"idna\" \"incremental\" \"lxml\" \"lxml_html_clean\" \"oauth2client\" \"proto-plus\" \"protobuf\" \"pyOpenSSL\" \"pyasn1\" \"pyasn1_modules\" \"pycparser\" \"pyparsing\" \"python-dateutil\" \"requests\" \"rsa\" \"service-identity\" \"setuptools\" \"six\" \"typing_extensions\" \"uritemplate\" \"urllib3\" \"wheel\" \"zope.event\" \"zope.interface\""
   ],
   "sources": [
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl",
-      "sha256": "81921eb96de3191c8258c199618104dd27ac608d9366f5e35d011eae1867ede2"
+      "url": "https://files.pythonhosted.org/packages/af/cc/55a32a2c98022d88812b5986d2a92c4ff3ee087e83b712ebc703bba452bf/Automat-24.8.1-py3-none-any.whl",
+      "sha256": "bf029a7bc3da1e2c24da2343e7598affaa9f10bf0ab63ff808566ce90551e02a"
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/af/cc/55a32a2c98022d88812b5986d2a92c4ff3ee087e83b712ebc703bba452bf/Automat-24.8.1-py3-none-any.whl",
-      "sha256": "bf029a7bc3da1e2c24da2343e7598affaa9f10bf0ab63ff808566ce90551e02a"
+      "url": "https://files.pythonhosted.org/packages/a2/7b/f1215b9612432a097600271a8af57353bfa27d6ac05846027fce97283a6f/FormEncode-2.1.0-py3-none-any.whl",
+      "sha256": "94369669e3d73cd6a5bbd31face5ff054831f2c5dd5ece2c7be4b4e26623e384"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/f8/68/5e285ba9465550a48e837b08b27fa99ef238618f6085a1464afaa4dc8426/PGPy-0.6.0.tar.gz",
+      "sha256": "279c2e353f4c3a319f00bd9bd582456e420f8a3ac6de2b4e9731444746828383"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/66/0e/9ee7bc0b48ec45d93b302fa2d787830dca4dc454d31a237faa5815995988/PyDispatcher-2.0.7-py3-none-any.whl",
+      "sha256": "96543bea04115ffde08f851e1d45cacbfd1ee866ac42127d9b476dc5aefa7de0"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/fd/05/752f09e5cf3a9160d38ab024a225ac377466c82c445b26e5320375794ee9/SQLObject-3.11.0-py2.py3-none-any.whl",
+      "sha256": "a48898967e694f08d76825abc31a89f472b3b55f048a51cd457d32169a7cacf7"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/49/d2/7b3e869b983fbf29d770fc2893f8df7c1739c6ff03a2b926b4fc43e4263e/twisted-24.7.0-py3-none-any.whl",
+      "sha256": "734832ef98108136e222b5230075b1079dad8a3fc5637319615619a7725b0c81"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/6a/21/5b6702a7f963e95456c0de2d495f67bf5fd62840ac655dc451586d23d39a/attrs-24.2.0-py3-none-any.whl",
+      "sha256": "81921eb96de3191c8258c199618104dd27ac608d9366f5e35d011eae1867ede2"
     },
     {
       "type": "file",
@@ -52,11 +77,6 @@
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/a2/7b/f1215b9612432a097600271a8af57353bfa27d6ac05846027fce97283a6f/FormEncode-2.1.0-py3-none-any.whl",
-      "sha256": "94369669e3d73cd6a5bbd31face5ff054831f2c5dd5ece2c7be4b4e26623e384"
-    },
-    {
-      "type": "file",
       "url": "https://files.pythonhosted.org/packages/64/91/1abe62ee350fdfac186d33f615d0d3a0b3b140e7ccf23c73547aa0deec44/gevent-24.10.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
       "sha256": "9ca2266e08f43c0e22c028801dff7d92a0b102ef20e4caeb6a46abfb95f6a328"
     },
@@ -77,11 +97,6 @@
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/ec/08/49bfe7cf737952cc1a9c43e80cc258ed45dad7f183c5b8276fc94cb3862d/googleapis_common_protos-1.65.0-py2.py3-none-any.whl",
-      "sha256": "2972e6c496f435b92590fd54045060867f3fe9be2c82ab148fc8885035479a63"
-    },
-    {
-      "type": "file",
       "url": "https://files.pythonhosted.org/packages/27/1f/3a72917afcb0d5cd842cbccb81bf7a8a7b45b4c66d8dc4556ccb3b016bfc/google_auth-2.35.0-py2.py3-none-any.whl",
       "sha256": "25df55f327ef021de8be50bad0dfd4a916ad0de96da86cd05661c9297723ad3f"
     },
@@ -89,6 +104,11 @@
       "type": "file",
       "url": "https://files.pythonhosted.org/packages/be/8a/fe34d2f3f9470a27b01c9e76226965863f153d5fbe276f83608562e49c04/google_auth_httplib2-0.2.0-py2.py3-none-any.whl",
       "sha256": "b65a0a2123300dd71281a7bf6e64d65a0759287df52729bdd1ae2e47dc311a3d"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/ec/08/49bfe7cf737952cc1a9c43e80cc258ed45dad7f183c5b8276fc94cb3862d/googleapis_common_protos-1.65.0-py2.py3-none-any.whl",
+      "sha256": "2972e6c496f435b92590fd54045060867f3fe9be2c82ab148fc8885035479a63"
     },
     {
       "type": "file",
@@ -132,13 +152,18 @@
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/23/08/a1ce0415a115c2b703bfa798f06f0e43ca91dbe29d6180bf86a9287b15e2/protobuf-5.28.2-cp38-abi3-manylinux2014_x86_64.whl",
-      "sha256": "5e8a95246d581eef20471b5d5ba010d55f66740942b95ba9b872d918c459452f"
+      "url": "https://files.pythonhosted.org/packages/dd/25/0b7cc838ae3d76d46539020ec39fc92bfc9acc29367e58fe912702c2a79e/proto_plus-1.25.0-py3-none-any.whl",
+      "sha256": "c91fc4a65074ade8e458e95ef8bac34d4008daa7cce4a12d6707066fca648961"
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/7c/6f/db31f0711c0402aa477257205ce7d29e86a75cb52cd19f7afb585f75cda0/proto_plus-1.24.0-py3-none-any.whl",
-      "sha256": "402576830425e5f6ce4c2a6702400ac79897dab0b4343821aa5188b0fab81a12"
+      "url": "https://files.pythonhosted.org/packages/5d/ae/3257b09328c0b4e59535e497b0c7537d4954038bdd53a2f0d2f49d15a7c4/protobuf-5.28.3-cp38-abi3-manylinux2014_x86_64.whl",
+      "sha256": "712319fbdddb46f21abb66cd33cb9e491a5763b2febd8f228251add221981135"
+    },
+    {
+      "type": "file",
+      "url": "https://files.pythonhosted.org/packages/d9/dd/e0aa7ebef5168c75b772eda64978c597a9129b46be17779054652a7999e4/pyOpenSSL-24.2.1-py3-none-any.whl",
+      "sha256": "967d5719b12b243588573f39b0c677637145c7a1ffedcd495a487e58177fbb8d"
     },
     {
       "type": "file",
@@ -154,16 +179,6 @@
       "type": "file",
       "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
       "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
-    },
-    {
-      "type": "file",
-      "url": "https://files.pythonhosted.org/packages/66/0e/9ee7bc0b48ec45d93b302fa2d787830dca4dc454d31a237faa5815995988/PyDispatcher-2.0.7-py3-none-any.whl",
-      "sha256": "96543bea04115ffde08f851e1d45cacbfd1ee866ac42127d9b476dc5aefa7de0"
-    },
-    {
-      "type": "file",
-      "url": "https://files.pythonhosted.org/packages/d9/dd/e0aa7ebef5168c75b772eda64978c597a9129b46be17779054652a7999e4/pyOpenSSL-24.2.1-py3-none-any.whl",
-      "sha256": "967d5719b12b243588573f39b0c677637145c7a1ffedcd495a487e58177fbb8d"
     },
     {
       "type": "file",
@@ -187,8 +202,8 @@
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/3b/92/44669afe6354a7bed9968013862118c401690d8b5a805bab75ac1764845f/service_identity-24.1.0-py3-none-any.whl",
-      "sha256": "a28caf8130c8a5c1c7a6f5293faaf239bbfb7751e4862436920ee6f2616f568a"
+      "url": "https://files.pythonhosted.org/packages/08/2c/ca6dd598b384bc1ce581e24aaae0f2bed4ccac57749d5c3befbb5e742081/service_identity-24.2.0-py3-none-any.whl",
+      "sha256": "6b047fbd8a84fd0bb0d55ebce4031e400562b9196e1e0d3e0fe2b8a59f6d4a85"
     },
     {
       "type": "file",
@@ -199,16 +214,6 @@
       "type": "file",
       "url": "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl",
       "sha256": "8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
-    },
-    {
-      "type": "file",
-      "url": "https://files.pythonhosted.org/packages/fd/05/752f09e5cf3a9160d38ab024a225ac377466c82c445b26e5320375794ee9/SQLObject-3.11.0-py2.py3-none-any.whl",
-      "sha256": "a48898967e694f08d76825abc31a89f472b3b55f048a51cd457d32169a7cacf7"
-    },
-    {
-      "type": "file",
-      "url": "https://files.pythonhosted.org/packages/49/d2/7b3e869b983fbf29d770fc2893f8df7c1739c6ff03a2b926b4fc43e4263e/twisted-24.7.0-py3-none-any.whl",
-      "sha256": "734832ef98108136e222b5230075b1079dad8a3fc5637319615619a7725b0c81"
     },
     {
       "type": "file",
@@ -237,13 +242,8 @@
     },
     {
       "type": "file",
-      "url": "https://files.pythonhosted.org/packages/9e/00/e58be3067025ffbeed48094a07c1972d8150f6d628151fde66f16fa0d4ae/zope.interface-7.1.0-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
-      "sha256": "07add15de0cc7e69917f7d286b64d54125c950aeb43efed7a5ea7172f000fbc1"
-    },
-    {
-      "type": "file",
-      "url": "https://files.pythonhosted.org/packages/f8/68/5e285ba9465550a48e837b08b27fa99ef238618f6085a1464afaa4dc8426/PGPy-0.6.0.tar.gz",
-      "sha256": "279c2e353f4c3a319f00bd9bd582456e420f8a3ac6de2b4e9731444746828383"
+      "url": "https://files.pythonhosted.org/packages/b1/60/abc01b59a41762cf785be8e997a7301e3cb93d19e066a35f10fb31ac0277/zope.interface-7.1.1-cp311-cp311-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+      "sha256": "f1d52d052355e0c5c89e0630dd2ff7c0b823fd5f56286a663e92444761b35e25"
     }
   ]
 }
