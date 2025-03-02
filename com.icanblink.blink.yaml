@@ -1,9 +1,9 @@
 app-id: com.icanblink.blink
 runtime: org.kde.Platform
-runtime-version: 5.15-23.08
+runtime-version: 6.8
 sdk: org.kde.Sdk
 base: com.riverbankcomputing.PyQt.BaseApp
-base-version: 5.15-23.08
+base-version: 6.8
 cleanup-commands:
   - /app/cleanup-BaseApp.sh
 command: blink.sh
@@ -98,7 +98,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/AGProjects/python3-otr
-        commit: 88d6b999a21bff80344cfbfa3d07964b52832139
+        tag: 2.0.2
     build-commands:
       - pip3 install --prefix=${FLATPAK_DEST} .
 
@@ -125,7 +125,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/AGProjects/python3-sipsimple
-        tag: 5.3.0
+        tag: 5.3.2
       - type: file
         url: https://github.com/pjsip/pjproject/archive/refs/tags/2.10.tar.gz
         sha256: 936a4c5b98601b52325463a397ddf11ab4106c6a7b04f8dc7cdd377efbb597de
@@ -145,7 +145,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/AGProjects/blink-qt
-        tag: 5.9.1
+        tag: 6.0.2
     build-commands:
       - pip3 install --prefix=${FLATPAK_DEST} .
       # Install desktop files

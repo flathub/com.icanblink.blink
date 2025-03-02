@@ -41,32 +41,11 @@ Dependencies are declared in `requirements.txt` file. Use the target runtime and
 the `python-dependencies.sh` script to build/update the dependencies module:
 
 ```bash
-flatpak --user --share=network --filesystem=host --command=pip3 run 'org.kde.Sdk//5.15-23.08' \
+flatpak --user --share=network --filesystem=host --command=pip3 run 'org.kde.Sdk//6.8' \
 install --ignore-installed --report - --dry-run --quiet --requirement requirements.txt | \
 ./python-dependencies.sh > modules/python-dependencies.json 
 
 ```
-
-<!--
-### mpv
-```bash
-curl -s 'https://raw.githubusercontent.com/flathub/io.mpv.Mpv/master/io.mpv.Mpv.yml' | yq -M -o json -P e \
-  | jq '. |= . + {"name": "mpv-deps", "buildsystem": "simple", "build-commands": ["echo"]}' \
-  | jq 'del(."app-id")' \
-  | jq 'del(."runtime")' \
-  | jq 'del(."runtime-version")' \
-  | jq 'del(."sdk")' \
-  | jq 'del(."command")' \
-  | jq 'del(."rename-desktop-file")' \
-  | jq 'del(."rename-icon")' \
-  | jq 'del(."finish-args")' \
-  | jq 'del(.modules[] | select(.name == "appdata" or .name == "yt-dlp"))' \
-  | jq 'del(.modules[] | select(.name == "mpv") | .sources[] | select(.type == "file" or .type == "shell"))' \
-  | jq 'walk(if type == "object" then del(."x-checker-data") else . end)' \
-  > modules/io.mpv.Mpv.json
-
-```
--->
 
 ### x11vnc
 ```bash
