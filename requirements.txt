@@ -1,23 +1,54 @@
-# Dependencies for Blink
-# See: https://github.com/AGProjects/blink-qt/blob/master/INSTALL
+# Build dependencies not in SDK
 #
-# Dependencies for SIP SIMPLE SDK
-# See: https://github.com/AGProjects/python3-sipsimple/blob/master/docs/Install.linux
+# Also list these and all their otherwise unused dependencies in the `cleanup` 
+# section of `com.icanblink.blink.yaml`!
+setuptools-rust  # needed by maturin
+puccinialin      # needed by maturin
+maturin          # needed by cryptography (has Rust)
 
-cryptography
+# Complicated transient dependencies
+cffi          # needed by cryptography
+cryptography  # needed by pgpy (has Rust)
+
+# Dependencies for AP Project SIP SIMPLE SDK
+# See: https://github.com/AGProjects/python3-sipsimple/blob/master/docs/Install.linux
 dnspython
-gevent
-google-api-python-client
-gmpy2
-greenlet
-lxml
-lxml_html_clean
-oauth2client
-pgpy
-pyOpenSSL
-python-dateutil
-service-identity
-sqlobject
+lxml[html_clean]
 twisted
-wheel
+python-dateutil
+greenlet
 zope.interface
+requests
+gmpy2
+wheel
+gevent
+
+#git+https://github.com/AGProjects/python3-application@release-3.0.9
+#git+https://github.com/AGProjects/python3-eventlib
+#git+https://github.com/AGProjects/python3-gnutls
+#git+https://github.com/AGProjects/python3-otr@2.1.0
+#git+https://github.com/AGProjects/python3-msrplib
+#git+https://github.com/AGProjects/python3-xcaplib
+#git+https://github.com/AGProjects/python3-sipsimple ← handled separately
+
+# Dependencies for Blink itself
+# See: https://github.com/AGProjects/blink-qt/blob/master/debian/control
+#
+# Commented out dependencies are handled above or directly in the manifest file.
+#application
+#eventlib
+google-api-python-client
+google-auth-oauthlib
+#lxml
+pgpy
+#pyqt6
+#pyqt6.qtsvg
+#pyqt6.qtwebchannel
+#pyqt6.qtwebengine
+#otr
+#requests
+#sipsimple
+sqlobject
+#twisted
+#zope.interface
+standard-imghdr  # Removed from Python 3.13 stdlib

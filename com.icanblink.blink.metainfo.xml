@@ -66,14 +66,89 @@
   </screenshots>
 
   <url type="homepage">https://icanblink.com/</url>
-  <url type="bugtracker">https://icanblink.com/help/</url>
+  <url type="bugtracker">https://lists.ag-projects.com/mailman/listinfo/blink</url>
   <url type="help">https://icanblink.com/help/</url>
+  <url type="contribute">https://github.com/AGProjects/blink-qt/</url>
+  <url type="vcs-browser">https://github.com/AGPRojects/blink-qt/</url>
 
   <provides>
     <binary>blink</binary>
   </provides>
 
   <releases>
+    <release version="6.0.6" date="2026-01-28">
+      <description>
+        <ul>
+          <li>Fixed missing dependency</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.5" date="2026-01-27">
+      <description>
+        <ul>
+          <li>Replaced oauth2client with google auth</li>
+          <li>Fixed video colors on MacOS</li>
+          <li>Removed debug print</li>
+          <li>Fixed mouse positions in resizing and moving video</li>
+          <li>Fixed resize cursor in video</li>
+          <li>Initial port to Cython 3 with backwards compatibilty</li>
+          <li>Update mac requirements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.4" date="2025-03-07">
+      <!-- Missing changelog entry -->
+    </release>
+    <release version="6.0.3" date="2025-02-26">
+      <description>
+        <ul>
+          <li>Fix requesting Sylk API token</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.2" date="2025-02-03">
+      <description>
+        <ul>
+          <li>Updated dependencies</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.1" date="2025-01-31">
+      <description>
+        <ul>
+          <li>Fixed traceback in dragging audio sessions to a conference</li>
+        </ul>
+      </description>
+    </release>
+    <release version="6.0.0" date="2025-01-28" urgency="high">
+      <description>
+        <ul>
+          <li>Added Logs window</li>
+          <li>Added Call Transfer menu</li>
+          <li>Added audio auto-record function</li>
+          <li>Added outbound account selection gfor message session</li>
+          <li>Added button to open last unread messages</li>
+          <li>Added controls to see last transferred files for chat contacts</li>
+          <li>Added pause/resume for file transfers</li>
+          <li>Added support to remove conversations</li>
+          <li>Restore chat window if minimized</li>
+          <li>Use default conference as conference server, local domain will be appended</li>
+          <li>PGP decryption/encryption fixes</li>
+          <li>TLS verification fixes</li>
+          <li>Message rendering fixes</li>
+          <li>Message session fixes</li>
+          <li>Sylk-Server API messages replication fixes</li>
+          <li>Silence all audio notifications if Disable ringtones button pressed</li>
+          <li>Fixed updating codecs if SDK defaults have changed</li>
+          <li>Throttle incoming message audio notifications</li>
+          <li>Throttle desktop notifications for messages</li>
+          <li>Refactored file transfers</li>
+          <li>Refresh audio devices when open the Devices menu</li>
+          <li>Fixes for PyQt6 migration</li>
+          <li>Make app compatible with MacOS</li>
+        </ul>
+      </description>
+    </release>
     <release version="5.9.1" date="2024-07-17" urgency="medium">
       <description>
         <ul>
@@ -86,177 +161,211 @@
     </release>
     <release version="5.9.0" date="2024-07-16">
       <description>
-        Migrate code for QT6 compatibilty
-        Refactored web views to use latest QWebEngine
-        Chat window only opens on user interactions
-        Improved MacOS compatibilty
-        Implemented persistent Bonjour messaging
-        Added account selection for outgoing messages
-        Added audio/video call entries to messages
-        Added dialog to remove messages
-        Added option to start a random conference
-        Added menu item to show session info panel on audio calls
-        Added right-click contextual menu to calls
-        Added unread counter to contact and menu to show unread messages
-        Added virtual messages group to show all contacts that have messages
-        Added info button to audio sessions
-        Reorganized contact menu structure
-        Fix retrying sending locally failed messages
-        Fixed wrongly stored Sylk API messages
-        Fixed only deleting filetranfer files from cache
-        Send images by file transfers in messages/MSRP chat
-        Improved message rendering themes
-        Bugfixes for drag/drop
-        Bugfixes for filetransfers
-        Bugfixes for messages
-        Bugfixes for messages with Bonjour account
-        Bugfixes for PGP message handling
-        Bugfixes for sending IMDN messages        
+        <ul>
+          <li>Migrate code for QT6 compatibilty</li>
+          <li>Refactored web views to use latest QWebEngine</li>
+          <li>Chat window only opens on user interactions</li>
+          <li>Improved MacOS compatibilty</li>
+          <li>Implemented persistent Bonjour messaging</li>
+          <li>Added account selection for outgoing messages</li>
+          <li>Added audio/video call entries to messages</li>
+          <li>Added dialog to remove messages</li>
+          <li>Added option to start a random conference</li>
+          <li>Added menu item to show session info panel on audio calls</li>
+          <li>Added right-click contextual menu to calls</li>
+          <li>Added unread counter to contact and menu to show unread messages</li>
+          <li>Added virtual messages group to show all contacts that have messages</li>
+          <li>Added info button to audio sessions</li>
+          <li>Reorganized contact menu structure</li>
+          <li>Fix retrying sending locally failed messages</li>
+          <li>Fixed wrongly stored Sylk API messages</li>
+          <li>Fixed only deleting filetranfer files from cache</li>
+          <li>Send images by file transfers in messages/MSRP chat</li>
+          <li>Improved message rendering themes</li>
+          <li>Bugfixes for drag/drop</li>
+          <li>Bugfixes for filetransfers</li>
+          <li>Bugfixes for messages</li>
+          <li>Bugfixes for messages with Bonjour account</li>
+          <li>Bugfixes for PGP message handling</li>
+          <li>Bugfixes for sending IMDN messages</li>
+        </ul>
       </description>
     </release>
     <release version="5.6.0" date="2023-07-10">
       <description>
-        Added support for filetransfer messages
-        Added support for encrypting/decrypting MSRP file transfers
-        Added support for file encryption/decryption
-        Added support for displaying conference files
-        Added support for pull filetransfers
-        Added HTTP download function
-        Added filepane content
-        Added replace function for chat messages
-        Added menuitem in chat to send files
-        Added unique name generator function
-        Support removing messages
-        Fixed displaying decryption error
-        Fixed parsing images in chat, they should be base64 encoded
-        Fixed traceback for incoming messages without disposition
-        Prevent traceback on PGPKeys load when there is no chat in the session
-        Several UI fixes
-        Python &gt;= 3.10 fixes
-        Update help and release notes urls    
+        <ul>
+          <li>Added support for filetransfer messages</li>
+          <li>Added support for encrypting/decrypting MSRP file transfers</li>
+          <li>Added support for file encryption/decryption</li>
+          <li>Added support for displaying conference files</li>
+          <li>Added support for pull filetransfers</li>
+          <li>Added HTTP download function</li>
+          <li>Added filepane content</li>
+          <li>Added replace function for chat messages</li>
+          <li>Added menuitem in chat to send files</li>
+          <li>Added unique name generator function</li>
+          <li>Support removing messages</li>
+          <li>Fixed displaying decryption error</li>
+          <li>Fixed parsing images in chat, they should be base64 encoded</li>
+          <li>Fixed traceback for incoming messages without disposition</li>
+          <li>Prevent traceback on PGPKeys load when there is no chat in the session</li>
+          <li>Several UI fixes</li>
+          <li>Python &gt;= 3.10 fixes</li>
+          <li>Update help and release notes urls</li>
+        </ul>
       </description>
     </release>
     <release version="5.5.1" date="2022-11-06">
       <description>
-        Handle scaling for different screen resolutions
+        <ul>
+          <li>Handle scaling for different screen resolutions</li>
+        </ul>
       </description>
     </release>
     <release version="5.5.0" date="2022-10-21">
       <description>
-        Added multi-language support
-        Added Dutch translation
-        Added documentation folder doc/
-        Added messaging notes
-        Improved python 3.10 compatibility
-        Added more logging
-        Fixed opening last coversations multiple times
+        <ul>
+          <li>Added multi-language support</li>
+          <li>Added Dutch translation</li>
+          <li>Added documentation folder doc/</li>
+          <li>Added messaging notes</li>
+          <li>Improved python 3.10 compatibility</li>
+          <li>Added more logging</li>
+          <li>Fixed opening last coversations multiple times</li>
+        </ul>
       </description>
     </release>
     <release version="5.4.0" date="2022-09-30">
       <description>
-        Added OTR encryption to SIP Message sessions
-        Add option to add/remove realtime chat during audio/video calls
-        PGP encryption fixes
-        Added more log mesaages
+        <ul>
+          <li>Added OTR encryption to SIP Message sessions</li>
+          <li>Add option to add/remove realtime chat during audio/video calls</li>
+          <li>PGP encryption fixes</li>
+          <li>Added more log mesaages</li>
+        </ul>
       </description>
     </release>
     <release version="5.3.0" date="2022-09-07">
       <description>
-        Added OpenPGP encryption for SIP Messages
-        Added offline messaging based on SylkServer API
-        Added multiple device synchronization for SIP messages
-        Added message trace/logging
-        Added advanced messaging options in account preferences
-        Improved python 3.10 compatibilty
-        Fixed Google contacts to not use deprecated OOB flow
-        Several fixes for IMDN and history storage
+        <ul>
+          <li>Added OpenPGP encryption for SIP Messages</li>
+          <li>Added offline messaging based on SylkServer API</li>
+          <li>Added multiple device synchronization for SIP messages</li>
+          <li>Added message trace/logging</li>
+          <li>Added advanced messaging options in account preferences</li>
+          <li>Improved python 3.10 compatibilty</li>
+          <li>Fixed Google contacts to not use deprecated OOB flow</li>
+          <li>Several fixes for IMDN and history storage</li>
+        </ul>
       </description>
     </release>
     <release version="5.2.0" date="2022-06-09">
       <description>
-        Added SIP Message functionality
-        Added history for chat and messages
-        Solved issues with python 3.10
-        Fixed wrong classes on chat messages
-        Fixed background icon path
-        Fixed encryption widget
-        Fixed monkey patch warning
-        Added status support for (chat) messages
-        Use SIP message method as default for 'chat'
-        Added IMDN support for messages
-        Added menuitem to show last conversations
-        Added setting to add unknown message contacts to contact list
-        Fixed google contacts
-        Reorganized 'Advanced' preferences
-        Added option to show name and uri in call history menu
-        Updated copyright years
-        Cleaned up code/syntax
+        <ul>
+          <li>Added SIP Message functionality</li>
+          <li>Added history for chat and messages</li>
+          <li>Solved issues with python 3.10</li>
+          <li>Fixed wrong classes on chat messages</li>
+          <li>Fixed background icon path</li>
+          <li>Fixed encryption widget</li>
+          <li>Fixed monkey patch warning</li>
+          <li>Added status support for (chat) messages</li>
+          <li>Use SIP message method as default for 'chat'</li>
+          <li>Added IMDN support for messages</li>
+          <li>Added menuitem to show last conversations</li>
+          <li>Added setting to add unknown message contacts to contact list</li>
+          <li>Fixed google contacts</li>
+          <li>Reorganized 'Advanced' preferences</li>
+          <li>Added option to show name and uri in call history menu</li>
+          <li>Updated copyright years</li>
+          <li>Cleaned up code/syntax</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.8" date="2021-11-15">
       <description>
-        Replaced Let's Encrypt Root CA
+        <ul>
+          <li>Replaced Let’s Encrypt Root CA</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.7" date="2021-09-15">
       <description>
-        Fix for account creation
+        <ul>
+          <li>Fix for account creation</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.6" date="2021-09-06">
       <description>
-        Remove obsolete python-enum34 dependency
+        <ul>
+          <li>Remove obsolete python-enum34 dependency</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.5" date="2021-08-27">
       <description>
-        Screen sharing fixes
+        <ul>
+          <li>Screen sharing fixes</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.4" date="2021-08-17">
       <description>
-        Added presence and message_summary account settings
+        <ul>
+          <li>Added presence and message_summary account settings</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.3" date="2021-07-07">
       <description>
-        Bump SDK minimum version to benefit of bug fixes
+        <ul>
+          <li>Bump SDK minimum version to benefit of bug fixes</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.2" date="2021-07-03">
       <description>
-        Fixed handling drag and drop inline images in chat window
+        <ul>
+          <li>Fixed handling drag and drop inline images in chat window</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.1" date="2021-06-26">
       <description>
-        Fixed loading icons from XCAP server
-        Increase the size of some widgets
+        <ul>
+          <li>Fixed loading icons from XCAP server</li>
+          <li>Increase the size of some widgets</li>
+        </ul>
       </description>
     </release>
     <release version="5.1.0" date="2021-06-22">
       <description>
-        Implemented auto answer
-        Added per contact auto answer setting
-        Added NAT traversal preferences panel
-        Fixed XCAP getheaders of HTTP objects, renamed to get in Python3
-        Fixed xcap trace logging
-        Fixed saving local icon
-        Fixed a broken import
-        Rename chat window title
-        Automatically set sip2sip.info server settings URL
-        Refactored application menus
-        Rename some preferences options
+        <ul>
+          <li>Implemented auto answer</li>
+          <li>Added per contact auto answer setting</li>
+          <li>Added NAT traversal preferences panel</li>
+          <li>Fixed XCAP getheaders of HTTP objects, renamed to get in Python3</li>
+          <li>Fixed xcap trace logging</li>
+          <li>Fixed saving local icon</li>
+          <li>Fixed a broken import</li>
+          <li>Rename chat window title</li>
+          <li>Automatically set sip2sip.info server settings URL</li>
+          <li>Refactored application menus</li>
+          <li>Rename some preferences options</li>
+        </ul>
       </description>
     </release>
     <release version="5.0.0" date="2021-06-14">
       <description>
-        Added VP9 codec
-        Implemented TLS certificate verification
-        Added per account TLS peer name to verify against
-        Update default CA list
-        Enable by default TLS transport
-        Fixed logging
+        <ul>
+          <li>Added VP9 codec</li>
+          <li>Implemented TLS certificate verification</li>
+          <li>Added per account TLS peer name to verify against</li>
+          <li>Update default CA list</li>
+          <li>Enable by default TLS transport</li>
+          <li>Fixed logging</li>
+        </ul>
       </description>
     </release>
   </releases>

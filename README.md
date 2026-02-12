@@ -1,30 +1,35 @@
-## Blink
-This is the Qt version of Blink, a fully featured, easy to use SIP client
-for Linux and Microsoft Windows.
+# Blink Flatpak
+This is the Qt version of Blink, a fully featured, easy to use SIP client.
 
 Homepage: http://icanblink.com
 
-## Features
+## Users
+
+### Features
 
 The complete list of features and implemented standards are available at:
 
 http://icanblink.com/features/
 
-## Installation
+### Installation
 
-Installation instructions can be found at:
+Add the Flathub remote.
 
-http://icanblink.com/download/
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
-## Support
+Install the Thonny Flatpak.
+
+    flatpak install flathub com.icanblink.blink
+
+### Support
 
 For help on using Blink Qt go to http://icanblink.com/help/
 
-## Changelog
+### Changelog
 
 The changelog is available at http://icanblink.com/changelog/
 
-## Credits
+### Credits
 
  * AG Projects: http://ag-projects.com
  * NLnet foundation: http://nlnet.nl
@@ -33,45 +38,72 @@ The changelog is available at http://icanblink.com/changelog/
 
 ------
 
-## Flatpak development
+## Maintainers
 
-### Python dependencies
+### Build
 
-Dependencies are declared in `requirements.txt` file. Use the target runtime and
-the `python-dependencies.sh` script to build/update the dependencies module:
+1. Get the source code:
 
-```bash
-flatpak --user --share=network --filesystem=host --command=pip3 run 'org.kde.Sdk//5.15-23.08' \
-install --ignore-installed --report - --dry-run --quiet --requirement requirements.txt | \
-./python-dependencies.sh > modules/python-dependencies.json 
+       git clone https://github.com/flathub/com.icanblink.blink.git
+       cd com.icanblink.blink
 
-```
+2. Add the Flathub repository:
 
-<!--
-### mpv
-```bash
-curl -s 'https://raw.githubusercontent.com/flathub/io.mpv.Mpv/master/io.mpv.Mpv.yml' | yq -M -o json -P e \
-  | jq '. |= . + {"name": "mpv-deps", "buildsystem": "simple", "build-commands": ["echo"]}' \
-  | jq 'del(."app-id")' \
-  | jq 'del(."runtime")' \
-  | jq 'del(."runtime-version")' \
-  | jq 'del(."sdk")' \
-  | jq 'del(."command")' \
-  | jq 'del(."rename-desktop-file")' \
-  | jq 'del(."rename-icon")' \
-  | jq 'del(."finish-args")' \
-  | jq 'del(.modules[] | select(.name == "appdata" or .name == "yt-dlp"))' \
-  | jq 'del(.modules[] | select(.name == "mpv") | .sources[] | select(.type == "file" or .type == "shell"))' \
-  | jq 'walk(if type == "object" then del(."x-checker-data") else . end)' \
-  > modules/io.mpv.Mpv.json
+       flatpak remote-add --user --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
-```
--->
+3. Install Flatpak Builder:
 
-### x11vnc
-```bash
-curl 'https://github.com/LibVNC/x11vnc/commit/69eeb9f7baa1.patch' > patches/x11vnc-scan-limit-access-to-shared-memory.patch
-curl 'https://github.com/LibVNC/x11vnc/commit/95a10ab64c2d.patch' > patches/x11vnc-xfc-null-ptr.patch
-curl 'https://github.com/LibVNC/x11vnc/commit/a48b0b1cd887.patch' > patches/x11vnc-gcc10-fix.patch
+       sudo (apt|dnf|zypper|pacman|…) install flatpak-builder
 
-```
+4. Build the Flatpak:
+
+        flatpak-builder --system --ccache --install --install-deps-from=flathub --force-clean --repo=repo build com.icanblink.blink.yaml
+
+5. Run the Flatpak:
+
+        flatpak run com.icanblink.blink
+
+### Update
+
+The Python dependencies for the Flatpak are generated with the help of the
+[Flatpak Pip Generator](https://github.com/flatpak/flatpak-builder-tools/tree/master/pip),
+which produces `json` files for Python packages to be included in the Flatpak
+manifest’s `modules` section.
+
+1. First, install the Python dependencies for the PIP and Cargo generators:
+
+       python3 -m pip install aiohttp requirements-parser toml yq
+
+2. Clone the `flatpak-builder-tools` repository:
+
+       git clone https://github.com/flatpak/flatpak-builder-tools.git
+
+3. Open the `requirements.txt` file and follow the links there to check if all
+   listed requirement items are up-to-date with what is listed at the links
+   in the respective sections.
+
+   If new build dependencies are added, add clean-up rules to the `cleanup`
+   section of `com.icanblink.blink.yaml`.
+
+4. Open https://github.com/AGProjects/python3-sipsimple/blob/master/get_dependencies.sh
+   and check that the PJSIP version and ZRTPCPP commit inside of the
+   `name: python3-sipsimple` block in `com.icanblink.blink.yaml` match what is
+   specified in the `get_dependencies.sh` file.
+
+5. Run the Flatpak Pip Generator script for the necessary packages
+   (replace “\<SDK-Version>” with the SDK version listed inside `com.icanblink.blink.yaml`):
+
+       ./flatpak-builder-tools/pip/flatpak-pip-generator.py --runtime="org.kde.Sdk//<SDK-Version>" --requirements-file requirements.txt --output pypi-dependencies
+
+6. Run the fixup script to add Rust dependencies to all Python packages:
+
+       ./pypi-dependencies-fixup-rust.py ./flatpak-builder-tools/cargo/flatpak-cargo-generator.py
+
+   This patches the `pypi-dependencies.json` file to ensure all Cargo
+   dependencies are downloaded by `flatpak-builder` to make an offline build
+   possible.
+
+7. Open https://icanblink.com/changelog-linux/ and add the new changelog
+   entries to `com.icanblink.blink.metainfo.xml` following the existing style.
+
+8. Perform test build and *run it* to test as many features as possible.
