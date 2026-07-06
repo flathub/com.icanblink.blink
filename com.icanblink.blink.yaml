@@ -12,7 +12,7 @@ command: blink
 finish-args:
   - --device=all
   - --filesystem=xdg-download
-  - --filesystem=~/.blink:create
+  - --persist=.blink
   - --share=ipc
   - --share=network
   - --socket=pulseaudio
